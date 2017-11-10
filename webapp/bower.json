@@ -1,0 +1,26 @@
+{
+  "name": "myapp",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "wxhCodeLife <369854308@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7"
+  },
+  "devDependencies": {
+    "angular-ui-router": "^0.3.1",
+    "oclazyload": "ocLazyLoad#^1.0.9",
+    "angular-local-storage": "^0.4.0"
+  },
+  "private": true
+}
