@@ -1,0 +1,48 @@
+<div class="wrap_main_all wrap_main_all_other">
+	<h2>转账到全时钱包</h2>
+	<span class="backToMain"><a class="transferBank" style="display: none;">返回</a><a class="toMain">返回</a></span>
+	<div class="approve">
+		<main class="recharge_main prepaid_main">
+			<div class="recharge_money recharge_money_one">
+				<p>对方手机号：</p>
+				<label><input type="text" id="phone_number"></input><!-- <img ng-src="{{imagesSRC+'public/shanchu.png'}}" style="width: 1rem" /> --><img ng-src="./build/public/shanchu.png" style="width: 1rem" /></label>
+				<p>确认对方手机号：</p>
+				<label><input type="text" id="other_phoneNumberAgain" placeholder="请再次输入对方手机号"></input><!-- <img ng-src="{{imagesSRC+'public/shanchu.png'}}" style="width: 1rem" /> --><img ng-src="./build/public/shanchu.png" style="width: 1rem" /></label>
+				<p>转账金额(元)：</p>
+				<label><input type="text" id="pre_money"  ng-model="pre_money" placeholder="请输入转账金额"></input><!-- <img ng-src="{{imagesSRC+'public/shanchu.png'}}" style="width: 1rem" /> --><img ng-src="./build/public/shanchu.png" style="width: 1rem" /></label>
+				<p>转账说明(选填)：</p>
+				<label><input type="text" id="transferInstructions" placeholder="请输入转账说明"></input><!-- <img ng-src="{{imagesSRC+'public/shanchu.png'}}" style="width: 1rem" /> --><img ng-src="./build/public/shanchu.png" style="width: 1rem" /></label>
+				<span class="next" ng-click="transfer_next()" style="margin-top: 1rem;">下一步</span>
+			</div>
+			<div class="recharge_money recharge_money_next transfer_money" style="display:none">
+				<p>转账金额(元):<a class="trans">{{pre_money}}</a></p>
+				<p>支付方式：</p>
+				<div class="recharge_money_nextbox">
+					<h3>
+						<input type="radio" checked="checked"></input>
+						<!-- <img ng-src="{{imagesSRC+'balance/zhifu_03.png'}}"> -->
+						<img ng-src="./build/balance/zhifu_03.png">
+						<span class="zhangHuyue">账户余额(元):{{balance_wrap}}</span>
+					</h3>
+				</div>
+				<p>支付密码<b style="font-weight: normal;float: right;" ng-click="forget_payPassword()">忘记支付密码？</b></p>
+				<label><input class="payPassword_transfer" type="password"></input><!-- <img ng-src="{{imagesSRC+'public/shanchu.png'}}" style="width: 1rem" /> --><img ng-src="./build/public/shanchu.png" style="width: 1rem" /></label>
+				<span class="next" ng-click="balanceTransfers()">提交</span>
+			</div>
+		</main>
+	</div>
+	<div class="mark" id="mark_one" style="display:none">
+		<div>
+			<span ng-click="close()">×</span>
+			<p class="text"></p>
+			<p ng-click="close()" class="change"><a>确定</a></p>
+		</div>			
+	</div>
+	<div class="mark" style="display:none" id="mark_two">
+		<div>
+			<span ng-click="close()">×</span>
+			<p>您已成功向<b style="font-weight: normal;">{{userName}}</b style="font-weight: normal;">转账<b>{{pre_money}}</b>元</p>
+			<p class="true"><a>确定</a></p>
+		</div>			
+	</div>
+</div>

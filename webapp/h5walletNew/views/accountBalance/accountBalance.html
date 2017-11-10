@@ -1,0 +1,18 @@
+<!--账户余额 页面-->
+<ion-view title="账户余额" id="accountBalance-view">
+	<ion-nav-buttons side="left">
+      <button class="button button-light home-view-button" ng-click="onAccountBalanceBackFun()" id="accountBalanceBack" ng-show="isAppFlag">
+        <i class="ion-ios-arrow-back"></i>
+      </button>
+    </ion-nav-buttons>
+	<ion-content>
+		<div class="card">
+			<img class="accountBalanceImg">
+			<p class="userName"><!-- {{customerNameCN}} --><b>{{mobileNo}}</b></p>
+			<p class="balance">账户余额（元）</p>
+			<p class="balanceNum">{{balance_wrap}}</p>
+			<p class="balanceSub" ng-click="rechargeFun()">充值</p>
+		</div>
+		<p class="transDetail" ng-click="transactionDetails()">交易明细</p>
+	</ion-content>
+</ion-view>

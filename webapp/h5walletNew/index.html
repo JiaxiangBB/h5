@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>全时钱包</title>
+		<link rel="shortcut icon" href="./images/favicon.ico" /> 
+		<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+		<link rel="stylesheet" type="text/css" href="build/css/common.min.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+		<link rel="stylesheet" type="text/css" href="lib/css/ionic.css">
+		<!-- <script src="js/jq.js"></script> -->
+		<script src="build/js/jq.min.js"></script>
+		<script src="js/jquery.page.js"></script>
+		<script src="js/JsBarcode.all.js"></script> 
+		<script src='js/jquery.qrcode.min.js'></script>
+
+		<script src="js/jsencrypt.js"></script>
+		<script src="js/tripledes.js"></script>
+		<script src="js/mode-ecb.js"></script>
+		<!-- <script src="js/md5.js"></script> -->
+		<script src="https://cdn.bootcss.com/blueimp-md5/2.7.0/js/md5.min.js"></script>
+		
+		<script src="lib/js/ionic.bundle.min.js"></script>
+		<script src="js/app.js"></script>	
+		<!-- <script src="js/public.js"></script> -->
+		<script src="build/js/public.min.js"></script>
+		<script src="js/JsBridge.js"></script>
+		
+		<!--压缩的js-->
+		<!-- <script src="build/js/app.min.js"></script> -->
+		<script src="build/js/all.min.js"></script>
+		<!--压缩的js结束-->
+
+		<!-- <script src="views/home/imageJs.js"></script> -->
+		<!-- 选择支付方式 -->
+		<!-- <script src="js/payWayCtrl.js"></script> -->
+		<!--设置-->
+		<!-- <script src="views/settings/settingsCtrl.js"></script>
+		<script src="views/settings/personalInforCtrl.js"></script> -->
+		<!--设置 实名认证-->
+		<!-- <script src="views/settings/realNameAuthCtrl.js"></script> -->
+		<!--密码管理-->
+		<!-- <script src="views/settings/passwordSetCtrl.js"></script> -->
+		<!--找回支付密码-->
+		<!-- <script src="views/settings/comProblemsCtrl.js"></script> -->
+		<!--常见问题-->
+		<!-- <script src="views/settings/findPayPassCtrl.js"></script> -->
+		<!--修改支付密码-->
+		<!-- <script src="views/settings/changePayPassCtrl.js"></script> -->
+		<!--账户余额-->
+		<!-- <script src="views/accountBalance/bankPhoneCodeCtrl.js"></script>
+		<script src="views/accountBalance/accountBalanceCtrl.js"></script> -->
+		<!--账户余额 交易明细-->
+		<!-- <script src="views/accountBalance/transactionDetailsCtrl.js"></script> -->
+		<!--添加全时通卡-->
+		<!-- <script src="views/fullTimeCard/fullTimeCardCtrl.js"></script>
+		<script src="views/fullTimeCard/addFullCardCtrl.js"></script> -->
+		<!--全时通卡 充值-->
+		<!-- <script src="views/fullTimeCard/rechfullTimeCardCtrl.js"></script> -->
+		<!--全时通卡 余额-->
+		<!-- <script src="views/fullTimeCard/balanFullTimeCardCtrl.js"></script> -->
+		<!--全时通卡 交易明细-->
+		<!-- <script src="views/fullTimeCard/fullCardTraDetailsCtrl.js"></script> -->
+		<!--优惠券-->
+		<!-- <script src="views/coupons/couponsCtrl.js"></script> -->
+		<!-- 付款码 -->
+		<!-- <script src="views/sweepTheYard/sweepTheYardCtrl.js"></script>
+		<script src="views/inviteCode/inviteCodeCtrl.js"></script> -->
+		<!-- 添加银行卡 -->
+		<!-- <script src="views/addBank/bankListCtrl.js"></script>
+		<script src="views/addBank/addBankCtrl.js"></script>
+		<script src="views/addBank/agreementCtrl.js"></script>
+		<script src="views/addBank/supportCtrl.js"></script> -->
+		<!-- 查询账单列表 -->
+		<!-- <script src="views/billList/billListCtrl.js"></script> -->
+		<!-- 转账 -->
+		<!-- <script src="views/transfer/transferCtrl.js"></script>
+		<script src="views/transfer/transferPasswordCtrl.js"></script>
+		<script src="views/transfer/transferSuccessCtrl.js"></script>
+		<script src="views/transfer/transferRecordsCtrl.js"></script> -->
+		<!-- 申请电子卡 -->
+		<!-- <script src="views/applyCard/applyCardCtrl.js"></script>
+		<script src="views/applyCard/instructionsCtrl.js"></script>
+		<script src="views/applyCard/applyCardRecordsCtrl.js"></script>
+		<script src="views/applyCard/informationCtrl.js"></script>
+		<script src="views/applyCard/applyOrderCtrl.js"></script>
+		<script src="views/applyCard/applyPayPasswordCtrl.js"></script>
+		<script src="views/applyCard/applySuccessCtrl.js"></script>
+		<script src="views/applyCard/applyCardListCtrl.js"></script> -->
+		<!-- 手机充值 -->
+		<!-- <script src="views/phoneRecharge/phoneRechargeCtrl.js"></script>
+		<script src="views/phoneRecharge/payPasswordCtrl.js"></script>
+		<script src="views/phoneRecharge/payMessageCtrl.js"></script>
+		<script src="views/phoneRecharge/topUpSuccessCtrl.js"></script>
+		<script src="views/phoneRecharge/phoneRechargeRecordsCtrl.js"></script> -->
+		<!-- 生活缴费 -->
+		<!-- <script src="views/waterElectricityFuelGas/waterElectricityFuelGasCtrl.js"></script>
+		<script src="views/waterElectricityFuelGas/waterAgreementCtrl.js"></script>
+		<script src="views/waterElectricityFuelGas/paymentRecordsCtrl.js"></script>
+		<script src="views/waterElectricityFuelGas/institutionsListCtrl.js"></script>
+		<script src="views/waterElectricityFuelGas/billingDetailsCtrl.js"></script>
+		<script src="views/waterElectricityFuelGas/paymentConfirmCtrl.js"></script>
+		<script src="views/waterElectricityFuelGas/paymentPasswordCtrl.js"></script>
+		<script src="views/waterElectricityFuelGas/paymentMessageCtrl.js"></script>
+		<script src="views/waterElectricityFuelGas/paymentSuccessCtrl.js"></script> -->
+
+		<!-- <script src="views/cardBalanceQuery/cardBalanceQueryCtrl.js"></script>
+		<script src="views/applyCreditCard/applyCreditCardCtrl.js"></script> -->
+		<!--设置支付密码-->
+		<!-- <script src="views/setPayPswd/setPayPswdCtrl.js"></script> -->
+	</head>
+	<body>
+	<!--侧边栏-->
+<!-- 	<ion-side-menus> -->
+		<!--主内容部分-->
+<!-- 		<ion-side-menu-content> -->
+			<!--导航栏-->
+			<ion-nav-bar>
+				<ion-nav-back-button class="button-light">
+        			<i class="ion-ios-arrow-back nav-back"></i>
+    			</ion-nav-back-button>
+			</ion-nav-bar>
+			<!--导航视图-->
+			<ion-nav-view>
+			</ion-nav-view>
+		<!-- </ion-side-menu-content> -->
+		
+		<!--侧边栏部分 右滑菜单-->
+<!-- 		<ion-side-menu side="right">
+			<ion-header-bar class="bar-calm">
+				<h1 class="title">系统设置</h1>
+			</ion-header-bar>
+			<!--内容区-->
+<!-- 			<ion-content>
+				<div class="list">
+					<a class="item item-icon-left" ui-sref="#" menu-close>
+						<i class="icon ion-wifi"></i>wifi设置
+					</a>
+				</div>
+			</ion-content>
+		</ion-side-menu>
+	</ion-side-menus>	 -->
+		<!--实名认证 成功弹框-->
+		<script id="templates/modalOne.html" type="text/ng-template">
+	      <ion-modal-view id="markOne">
+	      	<div class="markBox">
+				<h4 class="title">提示</h4>
+				<p>实名认证成功，欢迎您的使用！</p>
+				<div class="subBox"> 
+					<span class="" ng-click="realNameSuccessd()">确定</span>
+				</div>
+	      	</div>
+	      </ion-modal-view>
+	    </script>
+	    <!--实名认证 FAPStatus: 1 弹框-->
+	    <script id="templates/modalTwo.html" type="text/ng-template">
+	      <ion-modal-view id="markTwo">
+	        <ion-content class="markBox">
+				<p>{{FAPErrorMessage}}</p>
+	        </ion-content>
+	      </ion-modal-view>
+	    </script>
+	    <!--实名认证失败 弹框-->
+	    <script id="templates/modalThree.html" type="text/ng-template">
+	      <ion-modal-view id="markThree">
+	        <ion-content class="markBox">
+				<p>{{msg}}</p>
+	        </ion-content>
+	      </ion-modal-view>
+	    </script>
+	    <!--卡余额查询 弹框-->
+	    <script id="templates/modalFour.html" type="text/ng-template">
+	      <ion-modal-view id="markFour">
+	        <ion-content class="markBox">
+	        	<div>
+					<p class="p1">您尾号为{{cardNumber}}的卡余额为</p>
+					<p class="p2">{{msg}}元</p>
+	        	</div>
+	        	<p class="sureQuery" ng-click="sureQueryFun()">确定</p>
+	        </ion-content>
+	      </ion-modal-view>
+	    </script>
+	    <!--全时通卡 删除-->
+	    <script id="templates/modalFive.html" type="text/ng-template">
+	      <ion-modal-view id="markFive">
+	        <ion-content class="markBox">
+	        	<div>
+					<p class="p2">提示</p>
+					<p class="p1">是否解绑此全时通卡</p>
+	        	</div>
+	        	<p class="cancelQuery" ng-click="closeDelFullCard()">取消</p>
+	        	<p class="sureQuery" ng-click="sureDelFullCard()">确定</p>
+	        </ion-content>
+	      </ion-modal-view>
+	    </script>
+	    <!--判断支付密码是否为空-->
+	    <script id="templates/modalSix.html" type="text/ng-template">
+	      <ion-modal-view id="markSix">
+	        <ion-content class="markBox">
+	        	<div>
+					<p class="p2">提示</p>
+					<p class="p1">为保障您的支付安全</p>
+					<p class="p1">请先进行支付密码的设置</p>
+	        	</div>
+	        	<p class="cancelQuery" ng-click="closeSetPswd()">取消</p>
+	        	<p class="sureQuery" ng-click="sureSetPswd()">确定</p>
+	        </ion-content>
+	      </ion-modal-view>
+	    </script>
+	</body>
+</html>

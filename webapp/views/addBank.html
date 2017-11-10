@@ -1,0 +1,65 @@
+<main class="wrap_main_all wrap_main_all_other">
+	<div class="wrap_main_all">
+		<h2>添加银行卡</h2>
+		<span class="backToMain"><a class="toBank" style="display: none;">返回</a><a class="toMain">返回</a></span>
+		<!------------------添加银行卡卡号 开始------------------>
+		<form class="cardNumber_form" style="display:block">
+			<p class="error_message" style="height:2rem;line-height:2rem;opacity:0">
+                <span class="error_tip" style="display:block"><!-- <img ng-src="{{imagesSRC+'login/cuowu.png'}}"> --><img ng-src="./build/login/cuowu.png"></span><b></b>
+            </p>
+			<div class="safety_form_group" style="display: block">
+				<label>银行卡号：</label>
+				<input class="addCardNumber" type="text">
+			</div>
+			<div class="change_password_submit" style="display: block">
+				<a ng-click="cardNumber_next()">下一步</a>
+			</div>
+		</form>
+		<!------------------添加银行卡 结束------------------>
+		<!------------------添加银行卡 储蓄卡 开始------------------>
+		<form class="addCardCard_form" style="display:none">
+			<p class="error_message" style="height:2rem;line-height:2rem;opacity:0">
+                <span class="error_tip" style="display:block"><!-- <img ng-src="{{imagesSRC+'login/cuowu.png'}}"> --><img ng-src="./build/login/cuowu.png"></span><b></b>
+            </p>
+			<div class="safety_form_group" style="display: block">
+				<label>姓名：</label>
+				<input class="theName" type="text" val="{{customerNameCN}}">
+			</div>
+			<div class="safety_form_group" style="display:block;">
+				<label>身份证号：</label>
+				<input class="idNumber" type="text">
+			</div>
+			<div class="safety_form_group" style="display:block;">
+				<label>银行预留手机号：</label>
+				<input class="banksPhoneNumber" type="text">
+			</div>
+			<div class="change_password_submit" style="display: block">
+				<a class="cardtype0" style="display: block" ng-click="addCardCard()">提交</a>
+				<a id="CreditCard_next" style="display: none" ng-click="creditCard_next()">下一步</a>
+			</div>
+		</form>
+		<!------------------添加银行卡 储蓄卡 结束------------------>
+		<!------------------添加银行卡 信用卡 开始------------------>
+		<form class="addCreditCard_form" style="display: none">
+			<div class="addBand_main_date">
+				<p>卡有效期：</p>
+				<input type="hidden" class="addBand_date" sel="10/16" />
+			</div>
+			<div class="safety_form_group" style="display: block">
+				<label>cvv2码（卡背面签名条后三位数字）：</label>
+				<input class="cvvNumber" type="text">
+			</div>
+			<div class="change_password_submit" style="display: block">
+				<a ng-click="addCreditCardSub()">提交</a>
+			</div>
+		</form>
+		<!------------------忘记支付密码 结束------------------>
+	</div>
+	<div class="mark" id="mark_one" style="display:none">
+		<div>
+			<span ng-click="close()">×</span>
+			<p class="text"></p>
+			<p  ng-click="close()" class="change"><a class="true">确定</a></p>
+		</div>			
+	</div>
+</main>

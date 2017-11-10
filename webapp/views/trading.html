@@ -1,0 +1,56 @@
+<div class="wrap_main_all wrap_main_all_other wrap_main_all_trading">
+	<h2>交易明细</h2>
+	<span class="backToMain approve_back"><a class="toMain">返回</a></span>
+	<div class="help trading">
+		<header class="trading_header">
+			<p>时间范围：</p>
+			<p>
+				<input type="text" id="beginDate" gldp-id="beginDate" />
+			    <input type="text" id="endDate" gldp-id="endDate" />
+				<div class="clear"></div>
+			   	<div gldp-el="beginDate" style="z-index:100;width:280px;height:300px;position:absolute;top:0;left:0;"></div>
+			    <div gldp-el="endDate" style="z-index:100;width:280px;height:300px;position:absolute;top:0;left:0;"></div>
+			</p>
+			<p class="trading_p"><label>订单号：</label><label>交易状态：</label></p>
+			<p>
+				<input type="text" style="margin-right:15px;"/>
+				<select id="choise">
+					<option>待支付</option>
+					<option>已支付</option>
+					<option>失败</option>
+					<option>已关闭</option>
+					<option>取消</option>
+					<option>已退货</option>
+				</select>
+				<a ng-click="searchList()">搜索</a><a ng-click="clear()">清空</a>
+			</p>
+		</header>
+		<main class="trading_main">
+			<ul>
+				<li id="listOne">
+					<span>创建订单</span>
+					<span>订单号</span>
+					<span>交易类型</span>
+					<span>金额(元)</span>
+					<span>交易状态</span>
+					<span>操作</span>
+				</li>
+				<li class="listTwo" ng-repeat="item in tradingList">
+					<span>{{item.createTime}}</span>
+					<span class="tradingNum">{{item.orderSerialNo}}</span>
+					<span>{{item.transactionType}}</span>
+					<span class="trxAmount"></span>
+					<span class="state"></span>
+					<span><a class="detail">查看</a><a ng-click="todetail()" style="display:none">充值</a></span>
+				</li>
+				<li id='sorry'>
+					<p><!-- <img ng-src="{{imagesSRC+'remind/jingshi.png'}}"/> --><img ng-src="./build/remind/jingshi.png"/>抱歉，没有找到符合筛选条件的记录</p>
+				</li>
+			</ul>
+		</main>
+		<footer class="help_footer">
+			<div id="page"></div>
+		</footer>
+	</div>
+</div>
+	

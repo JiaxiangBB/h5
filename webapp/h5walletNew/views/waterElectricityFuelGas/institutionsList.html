@@ -1,0 +1,19 @@
+<ion-view title="机构选择" id="institutionsList-view" cache-view="false">
+	<ion-nav-buttons side="right">
+      <button class="button button-light home-view-button" ui-sref="settings">
+        <i class="ion-ios-more"></i>
+      </button>
+    </ion-nav-buttons>
+	<ion-content>
+		<div class="institutionsList">
+			<p>机构列表</p>
+			<ul>
+				<li ng-click="waterElectricityFuelGas($event)" ng-repeat="item in companyList">{{item.companyName}}</li>
+			</ul>
+			<div class="noneImg" ng-show="isHideImg">
+				<span>暂无可供缴费的机构</span>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
+

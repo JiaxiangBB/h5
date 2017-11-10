@@ -1,0 +1,30 @@
+<ion-view title="付款" id="sweepTheYard-view" cache-view="false">
+	<ion-content>
+	<div class="sweepBox">
+		<div class="qrCode">
+			<p>{{qrCode}}</p>
+			<div class="codeOne">
+				<img src="" id="imgcode">
+			</div>	
+			<div class="codeTwo" id="qr_container">
+			</div>
+			<div class="bottom">
+				<p data-type="0" ng-click="sweepPayWay()">使用全时钱包 付款 <span>更换</span></p>
+			</div>
+		</div>
+		<div class="other">
+			<p>如果付款失败，将尝试其他付款方式</p>
+			<div>
+				<dl>
+					<dt><img src=""></dt>
+					<dd>付款码</dd>
+				</dl>
+				<dl style="opacity: 0.5;">
+					<dt><img src=""></dt>
+					<dd>扫码付</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+	</ion-content>
+</ion-view>

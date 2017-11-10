@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>注册登录</title>
+	<meta charset="UTF-8">
+	<!--让IE以最新的内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<!--让视口宽度为设备宽度,不允许用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<!--不自动识别电话号码和邮编 -->
+	<meta name="format-detection" content="telephone=no,email=no"/>
+	<!--开启对webapp的支持 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!--强制全屏显示 -->
+	<meta name="full-screen" content="yes">
+	<!--禁止浏览器从缓存中访问页面内容 -->
+	<meta http-equiv="Pragma" content="no-cache">
+	<!--web app 应用下状态(屏幕顶部条)的颜色,默认值为 default(白色) -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../../route.js"></script>
+</head>
+<body>
+<div class="wrap cashier_app">
+	<header class="header">
+		<a><img id="backImg" src="?" onerror="imgUrl('images/back.png','backImg');"></a>
+	</header>
+	<div class="main">
+		<section class="payment_main_pay content">
+            <h2 class="con_title">欢迎来到全时钱包</h2>
+            <ul class="login_list">
+                <li>
+                    <dl>
+		 				<dt style="width: 1rem; margin-right: 1.5rem;"><img id="phone" src="?" onerror="imgUrl('images/shoujihao1@2x.png','phone');"></dt>
+		 				<dd><input type="text" placeholder="请输入11位手机号" id="login_tel"></input></dd>
+		 			</dl>
+                </li>
+                <li>
+                    <dl>
+		 				<dt style="width: 1.5rem;"><img id="pas" src="?" onerror="imgUrl('images/mima1@2x.png','pas');"></dt>
+		 				<dd><input type="password" placeholder="请输入密码" id="login_psw"></input></dd>
+		 			</dl> 
+		 			<span>6-16位字符，支持数字、字母、符号，不支持空格</span>
+                </li>
+                <li>
+                   <dl>
+		 				<dt style="width: 1.5rem;">
+		 				<img id="mes" src="?" onerror="imgUrl('images/yanzhengma1@2x.png','mes');">
+		 				</dt>
+		 				<dd>
+		 				<!-- <img src="javaScript:getRootPath()PublicAction.getRandomImgCode.do?FAPView=JSON" id="pic_num" onclick="changeImg()"> -->
+		 				<input type="text" placeholder="金额" id="login_money">
+		 				
+		 				</input></dd>
+		 			</dl> 
+                </li>
+                <!-- <li>
+                    <dl>
+		 				<dt style="width: 1rem; margin-right: 1.5rem;"><img src="../images/shoujihao1@2x.png"></dt>
+		 				<dd><input type="text" placeholder="请输入当前日期，如：201701071659" id="orderNo"></input></dd>
+		 			</dl>
+                </li> -->
+                <li>
+                    <dl>
+		 				<dt style="width: 1rem; margin-right: 1.5rem;"><img id="mall" src="?" onerror="imgUrl('images/shoujihao1@2x.png','mall');"></dt>
+		 				<dd><input type="text" id="mallId" value="324234230800581"></input></dd>
+		 			</dl>
+                </li>
+                <li>
+                    <dl>
+		 				<dt style="width: 1rem; margin-right: 1.5rem;"><img id="opeurl" src="?"  onerror="imgUrl('images/shoujihao1@2x.png','opeurl');"></dt>
+		 				<dd><input type="text" id="notifyUrl" value="http://ohepay.com/PublicPayAction.commonNotifyUrl.do"></input></dd>
+		 			</dl>
+                </li>
+            </ul>
+            <div class="login_sign">
+            	<button id="login">登录</button>
+            </div>
+	    </section>
+	</div>
+</div>
+<div class="login_mask"></div>
+<script src="../js/jquery-1.12.3.min.js"></script>
+<script src="../js/jsencrypt.js"></script>
+<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.min.js"></script>
+<script src="../js/tripledes.js"></script>
+<script src="../js/mode-ecb.js"></script>
+<script src="../js/md5.js"></script>
+<script src="../js/base64.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/login.js"></script>
+</body>
+</html>

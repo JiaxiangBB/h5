@@ -1,0 +1,36 @@
+<!--全时通卡 页面-->
+<ion-view title="全时通卡" id="rechfullTimeCard-view">
+	<ion-content>
+		<div class="balanceRecharge">
+			<h2>全时通卡充值</h2>
+			<p>您正在为为好（<span>{{fullCardNum}}</span>）的全时通卡充值</p>
+			<ion-list class="rechfullTimeCard">
+				<ion-item class="item-icon-left realName-border">
+					<span class="rechargeNum"></span>
+					<input id="pre_money" type="text" name="" placeholder="请输入充值金额">
+				</ion-item>
+				<p class="payCardlist_null" style="display: none;">您还没有添加银行卡<b ng-click="addBankView()">添加</b></p>
+				<p class="payCardlist_card" style="padding: 0;">使用<span></span>付款<b ng-click="changeCard()">更换</b></p>
+				<p class="cardNum bankCardHao" style="display: none;">{{bankCardNum}}</p>
+				<!-- <p>使用招商银行储蓄卡（6613）付款<b>更换</b></p> -->
+				<div class="submitBut" ng-click="nextPhoneCode()">下一步</div>
+			</ion-list>
+		</div>
+		<div class="phoneMessage" style="display: none;">
+			<h2>银行手机验证码</h2>
+			<p style="display: none;">已将验证码发送到您银行预留手机号，请查收填写并点击提交，银行卡将实时扣款0.01元</p>	
+			<div class="getCode">
+				<div class="obtainCode">
+					<span class="messageCode sign_next_again" ng-click="balanceRechargeCode()">获取验证码</span>
+					<span class="messageCode sign_next_time" style="border:none;background:none;display:none"><b class="sign_time"></b>秒后再获取</span>
+					<input type="" name="" class="msgCode" placeholder="请输入短信中的验证码">
+				</div>
+				<p class="orderNum" style="display: none;"></p>
+				<!--全时通卡-->
+				<p class="orderNo" style="display: none;"></p>
+				<p class="flowno" style="display: none;"></p>
+				<div class="submitBut" ng-click="ConfirmPay()">确认付款</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

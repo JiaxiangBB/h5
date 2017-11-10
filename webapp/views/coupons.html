@@ -1,0 +1,50 @@
+<div class="wrap_main_all wrap_main_all_other wrap_main_all_couponsNav">
+	<h2>我的优惠<p id="applicationRecord" ng-click="constitution()" style="display:none">优惠券使用说明</p></h2>
+	<span class="backToMain"><a class="toMain">返回</a></span>
+	<div class="approve">
+		<!--优惠券-->
+		<main class="recharge_main prepaid_main couponsWrap">
+			<div class="approve_list">
+				<div class="couponsNav">
+					<ul>
+						<li class="firstCoupon">可使用</li>
+						<li class="usedCoupon">已使用</li>
+						<li class="expiredCoupon">已过期</li>
+					</ul>
+				</div>
+				<div class="couponsAccessible" id="couponsAccessible">
+					<!-- 可以使用的优惠券 -->
+					<ul class="couponsCanuse" id="couponsCanuse">
+						
+					</ul>
+					<!-- 已经使用的优惠券 -->
+					<ul class="couponsUsed" id="couponsUsed" style="display:none;">
+						
+					</ul>
+					<!-- 已经过期的优惠券 -->
+					<ul class="couponsExpired" id="couponsExpired" style="display:none;">
+						
+					</ul>
+				</div>
+			</div>
+		</main>
+		<footer class="help_footer">
+			<div id="page"></div>
+		</footer>
+	</div>
+	<!--优惠券 优惠券使用说明-->
+	<div class="mark" id="markApply" style="display:none;">
+		<div>
+			<span ng-click="closeadd()">×</span>
+			<h4>优惠券使用说明</h4>
+			<div class="agreement">
+				<p>
+					1. 本卡为复华商业集团旗下商业体通用卡<br>
+					2. 本卡不支持余额提现和计息<br>
+					3. 本卡有效期为三年，支持逾期换卡<br>
+					4. 购卡时已向购卡人开具发票，消费时不再另行开具发票
+				</p>
+			</div>				
+		</div>
+	</div>
+</div>

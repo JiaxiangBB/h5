@@ -1,0 +1,384 @@
+ <div class="wrap_w" ng-init="test_wrap()">
+	<div class="wrap_left"  ng-click="hide_right_list()">
+		<header class="wrap_left_header">
+			<span class="life_Application"></span>
+			<span class="message_Center">
+				<b>12</b>
+			</span>
+			<a class="back"><!-- <img ng-src="{{imagesSRC+'login/logo1.png'}}"> --><img ng-src="./build/login/logo1.png"></a>
+			<ul class="wrap_nav">
+				<!-- <li class="back"><a>首页</a></li> -->
+			</ul>
+			<p>
+				<a class="back">首页</a>
+				<a ng-click="toclient()">客户端下载</a>
+				<a>消息 <span>(0)</span></a>
+				<!-- <a ng-click="toHelp(customerNo,sessionId,customerNameCN,mobile,accountBalance,balance_wrap,quanShiCard,payPwdFlag,password)">帮助中心</a> -->
+			</p>
+		</header>
+		<main ui-view class="wrap_left_main">	
+		</main>
+		<!-- 手机端生活缴费 -->
+		<div class="phoneLifePay"><!-- <img ng-src="{{imagesSRC+'public/yingyongzhongxin.png'}}"> --><img ng-src="./build/public/yingyongzhongxin.png"></div>
+		<ul class="phoneLifePayCost">
+			<li><!-- <img alt="" ng-src="{{imagesSRC+'public/yingyong_shenghuo.png'}}"> --><img alt="" ng-src="./build/public/yingyong_shenghuo.png"></li>
+			<li><!-- <img ng-src="{{imagesSRC+'public/yingyong_chongzhi.png'}}"> --><img ng-src="./build/public/yingyong_chongzhi.png"></li>
+			<li><!-- <img ng-src="{{imagesSRC+'public/yingyongguanbi.png'}}"> --><img ng-src="./build/public/yingyongguanbi.png"></li>
+		</ul>
+		<!-- 卡余额查询 弹框 -->
+		<div class="mark" id="mark_cardQurey" style="display:none;" >
+			<div>
+				<h3>卡余额查询<span ng-click="cardClose()" class="close"></span></h3>
+				<p class="cardpic fl"><!-- <img ng-src="{{imagesSRC+'login/kayang.png'}}"> --><img ng-src="./build/login/kayang.png"></p>
+				<form class="balance_form fl" style="display:block">
+					<label id="errorMe" style="height:2rem;width:100%;display:none;line-height:2rem;font-size:12px;border-radius:5px;background:#FFE4C4;padding-left:10px;">
+						请输入正确的全时通卡号
+					</label>
+					<label for="cardNumber"><b class="cardText">卡号：</b></label>
+					<input class="cardNumber" id="cardNumber" name="cardNumber" type="text">
+					<label for="cardPassword"><b class="cardText">密码：</b></label>
+					<input class="cardPassword" id="cardPassword" name="cardPassword" type="password">
+					<a ng-click="CardQurey()" class="query_aniu">查询</a>
+				</form>
+				<p class="cardNum" style="display:none">您的卡余额为：</p>
+				<p class="cardBalance" style="display:none">{{balance}}</p>
+			</div>
+		</div>
+		<div class="mark" id="mark_one" style="display:none;z-index:1000;">
+			<div>
+				<span ng-click="close()">×</span>
+				<p class="text"></p>
+				<p><a class="change" ng-click="read_name()"></a><a ng-click="close()" class="loss">稍后再说</a></p>
+			</div>			
+		</div>
+		<div class="mark" id="mark_two" style="display:none;z-index:1000;">
+			<div>
+				<span ng-click="close()">×</span>
+				<p class="text"></p>
+				<p class="change"><a>确定</a></p>
+			</div>			
+		</div>
+		<footer class="wrap_left_footer">
+			<div class="wrap_l_f_box">
+				<div class="wrap_l_f_list">
+					<p class="p1"><a ng-click="toabout()">关于我们</a><a ng-click="toguild()">新手指引</a><a ng-click="tohelp()">帮助中心</a></p>
+					<p class="p2">@2017 ohepay.com&nbsp;京ICP备16058768号-1</p>
+				</div>
+				<div class="wrap_l_f_pic">
+					<div class="wrap_l_f_pic_logo"><!-- <img ng-src="{{imagesSRC+'login/logo_white.png'}}"> --><img ng-src="./build/login/logo_white.png"></div>
+					<p class="authentication">
+						<a style="margin-top:5px;" href="http://www.bcpcn.com/product/rz/bq/BCP9100401726.html" target="_blank" class="login_1"><!-- <img style="height:28px;" ng-src="{{imagesSRC+'login/csrz.png'}}" border="0" /> --><img style="height:28px;" ng-src="./build/login/csrz.png" border="0" /></a>
+						<a style="margin-top:1px;" id='___szfw_logo___' href='https://credit.szfw.org/CX20161216030678820310.html' target='_blank'><!-- <img ng-src="{{imagesSRC+'login/3_3.png'}}" border="0" /> --><img ng-src="./build/login/3_3.png" border="0" /></a>
+						<a style="margin-top:6px;" id="kw_verify"></a>
+						<a style="margin-top:10px;" key ="5853a099efbfb0083429bae0"  logo_size="83x30"  logo_type="business"  href="http://www.anquan.org" id="ppbVerify"></a>
+						<a style="margin-top:7px;" target="_blank" id="smtVerify"></a>
+					</p>
+				</div>
+				<div class="wrap_l_f_phone">
+					<p class="wrap_l_f_p1">全国服务热线:</p>
+					<p class="wrap_l_f_p2">全国服务热线:09:00--21:00</p>
+					<h2>400-175-8899</h2>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div class="mark markRight" style="display:none;z-index:1000;">
+		<div>
+			<span ng-click="close()">×</span>
+			<p class="text"></p>
+			<p class="change" ng-click="toWrap()"><a>确定</a></p>
+		</div>
+	</div> 
+	<!-- 全时钱包自助缴费协议 -->
+	<div class="mark" id="mark_registration" style="display:none;z-index:100000">
+		<div style="width:20rem;left:95%">
+			<span ng-click="close()" style="width:16rem;">×</span>
+			<h4>全时钱包服务协议</h4>
+			<h6>最后更新时间：2016年9月6日</h6>
+			<div class="agreement" style="margin-left:-10rem;">
+				<p>第一条 总则 <br>
+为明确双方的权利和义务，规范双方行为，甲方(全时钱包个人用户)、乙方(北京复安通电子商务有限公司)本着平等互利的原则，就甲方在乙方网站进行自助缴费相关事宜达成本协议。
+第二条 甲方权利及义务 <br>
+（一）甲方自愿申请使用乙方缴费服务。 <br>
+（二）甲方对乙方缴费服务如有疑问、建议或意见时，可拨打乙方客服电话400-898-5888或登录乙方网站（网址：www.ohepay.com）进行咨询和投诉。 <br>
+（三）甲方用于支付的银行账户，需为甲方个人拥有合法使用权的账户，并具有网上支付功能。一旦甲方点击确认支付，则不能进行变更或撤销支付行为。甲方应谨慎操作，对因甲方操作不当造成的损失，乙方不承担赔偿责任，但可以应甲方或行政司法机关要求提供相应支付信息。 <br>
+（四）甲方保证提供的资料真实、准确、完整。对于因甲方提供信息不真实、不准确或不完整所造成的甲方、乙方或其他第三方损失由甲方承担。甲方必须正确填写账单信息，并且妥善保管预留信息，为充分保护甲方合法权益，除在乙方办理业务使用之外，不要通过任何方式向任何第三人提供此信息。 <br>
+（五）甲方确认交费后应及时查看订单状态，甲方发现缴费指令未执行、未适当执行、延迟执行的，应及时通过拨打客服电话400-898-5888或通过在线客服通知乙方。乙方应积极调查并告知甲方调查结果，因甲方自身原因造成的甲方损失由甲方自行承担。因甲方未及时查看订单状态而造成的损失（包括但不限于因缴费失败后未及时再行缴费产生的滞纳金，罚款等），乙方不承担责任。<br> 
+（六）甲方同意乙方有权基于向甲方提供更优质服务或其他乙方产品的目的而保留并使用甲方在使用本服务期间填写的所有信息及历史使用记录，或者为完成相应服务和交易向其他第三方披露该等信息。<br> 
+（七）甲方承诺在使用乙方提供的服务时，遵守国家法律、法规，维护社会公共利益或公共道德。甲方从事非法活动或不正当交易产生的一切后果与责任，由甲方独立承担。<br>
+第三条 乙方权利、义务 <br>
+（一）乙方有权根据甲方资信情况或交易记录，决定是否受理甲方的缴费业务。乙方可以根据注册信息等相关要素对甲方从事交易的权限和身份进行核实。乙方有权根据自己的判断，在无需通知的情况下，暂时或永久拒绝甲方使用本协议约定服务，且无须承担任何责任。<br> 
+（二）乙方有权根据自身业务的发展，增加、减少或撤销缴费服务项目，调整缴费服务的内容，对缴费功能进行升级、改造。 因甲方提供的账单逾期或甲方账户资金不足等任何甲方原因导致账单支付不成功的，乙方将向甲方返回失败信息，因此导致甲方逾期时间增长或任何其他损失的，该损失应由甲方自行承担。即便如此，乙方系统向甲方返回的信息为缴费成功，但因对应的服务银行及公共事业单位的系统或操作导致该账单最终还是需要支付滞纳金的，甲方同意完全承担该等滞纳金，甲方对此有异议的，将直接与对应的银行及公共事业单位协商解决，乙方有义务应甲方要求提供相关缴费信息。<br> 
+（三）一旦甲方使用本协议约定服务，且通过乙方系统向甲方发送相应指令的，不论本协议是否终止，基于该指令所涉及的已支付款项和费用均不予退回。 <br>
+（四）乙方有义务在技术上确保整个网上交易平台的安全、有效、正常运行，保证甲方顺利使用本协议约定服务，并向甲方提供交易记录、账户状态等查询的服务。<br> 
+（五）乙方对甲方在注册中提供的相关身份资料及在交易中产生的交易记录负有保密义务，但本协议另有规定除外。 <br>
+（六）乙方可对甲方收取合理的交易费用，并可能根据业务发展对费用进行变更。乙方应向甲方明示交易费用及其变更，如甲方不接受相关费用标准及其变更，则不应进行交易。一旦甲方使用本协议约定服务，即视为甲方同意接受包括费用条款在内的所有约定。<br>
+第四条 免责条款 <br>
+（一）若甲方向乙方缴费系统提交的账单为逾期账单，导致其缴费的结果为销账失败。由此产生的违约金或赔偿金，由甲方自行承担。若甲方对此有异议的，可与各公共事业单位进行协商，乙方可协助提供相关交付信息。 <br>
+（二）因不可抗力及通讯故障、停电、黑客攻击、银行问题、公共事业单位出账问题等非乙方原因所引起交易中断、交易错误的，乙方不承担责任。<br>
+第五条 协议变更和终止 <br>
+（一）乙方将有权随时修改本协议的有关条款，一旦本协议的内容发生变动，乙方将会通过网站公告方式告知甲方。 <br>
+（二）如果甲方不同意乙方对本协议相关条款所做的修改，甲方应停止使用本协议约定的服务。甲方继续使用本协议约定服务的，视为甲方理解并接受修改后的协议条款。 <br>
+（三）甲方同意乙方在发现甲方违反本协议约定、注册资料虚假、异常交易或有疑义或有违法嫌疑时，有权不经通知先行中断或终止甲方账户、密码，并拒绝甲方使用乙方部分或全部服务功能，并不对因上述情况而发生的服务中断或终止而承担任何赔偿责任。<br> 
+（四）如甲方在乙方平台上存在违法行为或违反本协议的行为，或因甲方此前使用本服务的行为引发争议的，乙方有权要求甲方予以赔偿。如因乙方违反本协议约定，造成甲方损失的，乙方将对乙方的直接损失承担赔偿责任。<br>
+第六条 差错和争议的解决 <br>
+（一）甲方发现自身未按规定操作，或由于自身其他原因造成缴费指令未执行、未适当执行、延迟执行的，应及时通过拨打客服电话400-898-5888或通过在线客服通知乙方。乙方应积极调查并告知甲方调查结果。<br> 
+（二）双方在履行本协议的过程中，如发生争议，应协商解决。协商不成的，任何一方均可向乙方所在地人民法院提起诉讼。<br>
+第七条 协议的解释 <br>
+本协议的成立、生效、履行和解释，均适用中华人民共和国法律；无相关法律规定的，应适用乙方网站相关协议及附属规则。<br>
+				</p>
+			</div>				
+		</div>			
+	</div>
+	<div class="wrap_right">
+		<ul>
+			<li>
+				<a ng-click="markCardQurey()">
+					<dl>
+						<dt><!-- <img ng-src="{{imagesSRC+'login/kayuechaxun_hover.png'}}"> --><img ng-src="./build/login/kayuechaxun_hover.png"></dt>
+						<dd>卡余额查询</dd>
+					</dl>
+				</a>
+			</li>
+			<li>
+				<a ng-click="show_phone()" class="phone">
+					<dl>
+						<dt><!-- <img ng-src="{{imagesSRC+'first/shoujichongzhi.png'}}"> --><img ng-src="./build/first/shoujichongzhi.png"></dt>
+						<dd>手机充值</dd>
+					</dl>
+				</a>
+			</li>
+			<li>
+				<a ng-click="show_life()" class="life"><dl>
+					<dt><!-- <img ng-src="{{imagesSRC+'first/shenghuojiaofei.png'}}"> --><img ng-src="./build/first/shenghuojiaofei.png"></dt>
+					<dd>生活缴费</dd>
+				</dl></a>
+			</li>
+			<!-- <li>
+				<a ng-click="show_card()" class="card">
+					<dl>
+						<dt><img ng-src="{{imagesSRC+'remind/card1.png'}}"></dt>
+						<dd>申请信用卡</dd>
+					</dl>
+				</a>
+			</li> -->
+		</ul>
+		<div>
+			<a><dl>
+				<dt><!-- <img ng-src="{{imagesSRC+'first/shoujichongzhi.png'}}"> --></dt>
+				<dd>全部应用</dd>
+			</dl></a>
+		</div>
+	</div>
+	
+	<!-------------------------------- 手机充值 -------------------------------------->
+	
+	<div class="right_list" ng-show="show_phone_list">
+		<div class="right_list_img"><!-- <img ng-src="{{imagesSRC+'use/yingyongbeijing.png'}}"> --><img ng-src="./build/use/yingyongbeijing.png"></div>
+		<div class="right_list_header">
+			<dl>
+				<dt><!-- <img ng-src="{{imagesSRC+'use/shoujichongzhi1.png'}}"> --><img ng-src="./build/use/shoujichongzhi1.png"></dt>
+				<dd>
+					<h2>手机充值</h2>
+					<p>快速到账，方便快捷</p>
+				</dd>
+			</dl>
+		</div>
+		<div class="right_list_main" ng-show="show_list">
+			<p class="right_list_p">手机号 <label><input type="text" id=phone_number></input><!-- <img ng-src="{{imagesSRC+'public/shanchu.png'}}"> --><img ng-src="./build/public/shanchu.png"></label></p>
+			<p style="line-height:2.5rem;color:red;margin-left:4rem;" id="error"></p>
+			<p style="line-height:2.5rem;">充值面额</p>
+			<ul id="phoneList">
+				
+			</ul>
+			<button class="right_list_next" ng-click="show_money()">
+				下一步
+			</button>
+		</div>
+		<div class="recharge_money recharge_money_next" ng-show="show_money_pay">
+			<p>支付金额(元):<a id="phoneMoney"></a></p>
+			<p>支付方式：</p>
+			<p style="display:none" class="cardAccountNo">{{cardHao}}</p>
+			<div class="payCardlist">
+				<div class="payCardlist_card payPhoneList">
+
+				</div>
+				<div class="payCardlist_btn"><button ng-click="add_banks()">使用新银行卡</button></div>			
+			</div>
+			<form class="payPawd">
+				<p>支付密码<b style="font-weight: normal;float: right;" ng-click="forget_payPassword()">忘记支付密码？</b></p>
+				<label><input type="password" id="payPsd"></input><!-- <img ng-src="{{imagesSRC+'public/shanchu.png'}}" style="width: 1rem" /> --><img ng-src="./build/public/shanchu.png" style="width: 1rem" /></label>
+			</form>
+			<form class="shortMessage" style="display:none">
+				<p>短信验证码</p>
+				<label><input type="text" id="shortMessage" style="width:60%"></input><button ng-click="SendPhoneMessage()" class="SendPhoneMessage SendLifePhone">点击获取</button><a class="sign_next_time" style="border:none;background:none;display:none"><i class="sign_time"></i>秒后再获取</a></label>
+			</form>
+			<button class="next variousSubmission" ng-click="recharge_sub()">提交</button>
+			<div class="backGo" ng-click="backGo()">返回</div>
+		</div>
+	</div>
+	<!-------------------------------- 生活缴费 -------------------------------------->
+	<div class="right_list" ng-show="show_life_list">
+		<div class="right_list_img"><!-- <img ng-src="{{imagesSRC+'use/yingyongbeijing.png'}}"> --><img ng-src="./build/use/yingyongbeijing.png"></div>
+		<div class="right_list_header">
+			<dl>
+				<dt><!-- <img ng-src="{{imagesSRC+'remind/life.png'}}"> --><img ng-src="./build/remind/life.png"></dt>
+				<dd>
+					<h2>生活缴费</h2>
+					<p class="switching" style="cursor:pointer"><i style="font-style:normal;">北京</i><span>[切换]</span></p>
+				</dd>
+			</dl>
+		</div>
+		<div class="right_list_main">
+			<ul class="lifeList">
+				<li>
+					<span class="shuiList">添加账号  ></span>
+					<!-- <img ng-src="{{imagesSRC+'remind/water24.png'}}"/> --><img ng-src="./build/remind/water24.png"/><i>水费</i>
+				</li>
+				<li>
+					<span class="dianList">添加账号  ></span>
+					<!-- <img ng-src="{{imagesSRC+'remind/electric24.png'}}"/> --><img ng-src="./build/remind/electric24.png"/><i>电费</i>
+				</li>
+				<li>
+					<span class="meiList">></span>
+					<!-- <img ng-src="{{imagesSRC+'remind/fire24.png'}}"/> --><img ng-src="./build/remind/fire24.png"/><i>燃气费</i>
+				</li>
+			</ul>
+			<div class="paymentUnit">
+				<p>缴费单位</p>
+				<select id="ddlRegType">
+					<option>请选择</option>
+					<option ng-repeat="item in companyList">{{item.companyName}}</option>
+				</select>
+				<p>客户编号：<span>（查看纸质账单或手机短信）</span></p>
+				<input type="text"  placeholder="请输入9-10位缴费号码" class="unitNum"/>
+				<p><input type="checkbox" class="paymentService" />我已阅读并同意<a ng-click="walletPayment()">《全时钱包自助缴费服务协议》</a></p>
+				<button class="right_list_next" style="margin-top:1rem;" ng-click="pay()">去缴费</button>
+				<div class="backGo">返回</div>
+			</div>
+			<div class="paymentUnit paymentList">
+				<p>购买金额（元）：</p>
+				<input type="text"  placeholder="请输入购电金额" class="unitNum payNum"/>
+				<p>账单详情</p>
+				<ul>
+					<li><span class="pUint">{{pUint}}</span>缴费单位</li>
+					<li><span class="CustomerID"></span>客户编号</li>
+					<li><span class="truename"></span>户名</li>
+					<li><span><i class="bills"></i>元</span>账单金额</li>
+					<li><span class="yearmonth">2016-09</span>缴费日期</li>
+					<!-- <li><span>北京市朝阳区东三环</span>用户地址</li>
+					<li><span><i>200.00</i>元</span>补加金额</li>
+					<li><span><i>2.00</i>元</span>扣减金额</li>
+					<li><span><i>20.00</i>元</span>补交阶梯差价金额</li>
+					<li><span>2016-09</span>补交阶梯差价电费月份</li>
+					<li><span><i>2</i>次</span>缴费次数</li> -->
+				</ul>
+				<button class="right_list_next" style="margin-top:1rem;" ng-click="PaymentMethod()">下一步</button>
+				<div class="backGo">返回</div>
+			</div>
+			<div class="paymentUnit cityChoice">
+				<p>热门城市入口：</p>
+				<table>
+					<tr>
+						<td>北京</td><td>上海</td><td>成都</td><td>广州</td><td>深圳</td>
+					</tr>
+					<tr>
+						<td>武汉</td><td>合肥</td><td>杭州</td><td>三亚</td><td>厦门</td>
+					</tr>
+					<tr>
+						<td>重庆</td><td>天津</td><td>大连</td>
+					</tr>
+				</table>
+				<p>全国城市选择：</p>
+				<form action="" method=post name=form1>
+					<select name="selectp" onChange="selectcityarea('selectp','selectc','form1');" class="selectp">
+					   <option value="0" selected>省份</select>
+					 <select name="selectc" style="margin-top:.5rem;" class="selectc">
+					   <option value="0" selected>城市</select>
+				</form>
+				<button class="right_list_next" style="margin-top:1rem;">确定</button>
+				<div class="backGo">返回</div>
+			</div>
+			<div class="paymentUnit paymentAccount">
+				<p>缴费账户：</p>
+				<ul>
+					<!-- <li ng-repeat="item in List">
+						<p class="payID"><span>{{item.userNo}}</span>客户编号</p>
+						<p style="display:none" class="itemName">{{item.itemName}}</p>
+						<p><span>北京市朝阳区东三环</span>用户地址</p>
+						<p class="powerful"><a ng-click="removeList()">删除记录</a><a class="payAgain">再次缴费</a></p>
+					</li> -->
+					<li ng-click="addAccount()">
+						<!-- <img ng-src="{{imagesSRC+'remind/add.png'}}"/> -->
+						<img ng-src="./build/remind/add.png"/>
+						<h2>添加新账户</h2>
+					</li>
+				</ul>
+				<div class="backGo">返回</div>
+			</div>
+			<div class="recharge_money recharge_money_next rechargeMoney">
+				<p>支付金额(元):<a id="phoneMoneyLife"></a></p>
+				<p>支付方式：</p>
+				<p style="display:none" class="cardAccountNo">{{cardHao}}</p>
+				<div class="payCardlist">
+					<div class="payLifeList">
+	
+					</div>
+					<div class="payCardlist_btn"><button ng-click="add_banks()">使用新银行卡</button></div>			
+				</div>
+				<form class="payPawd">
+					<p>支付密码<b style="font-weight: normal;float: right;" ng-click="forget_payPassword()">忘记支付密码？</b></p>
+					<label><input type="password" id="payListPsd"></input><!-- <img ng-src="{{imagesSRC+'public/shanchu.png'}}" style="width: 1rem" /> --><img ng-src="./build/public/shanchu.png" style="width: 1rem" /></label>
+				</form>
+				<form class="shortMessage" style="display:none">
+					<p>短信验证码</p>
+					<label><input type="text" id="shortMessageLife" style="width:60%"></input><button ng-click="SendPhoneMessage()" class="sign_next_again SendPhoneMessage">点击获取</button><a class="sign_next_time" style="border:none;background:none;display:none"><i class="sign_time"></i>秒后再获取</a></label>
+				</form>
+				<button class="next variousSubmission" ng-click="recharge_sub()">提交</button>
+				<div class="backGo">返回</div>
+			</div> 
+		</div>
+	</div>
+		<!-------------------------------- 申请信用卡 -------------------------------------->
+	<div class="right_list" ng-show="show_card_list">
+		<div class="right_list_img"><!-- <img ng-src="{{imagesSRC+'use/yingyongbeijing.png'}}"> --><img ng-src="./build/use/yingyongbeijing.png"></div>
+		<div class="right_list_header right_cardlist_header">
+			<dl>
+				<dt><!-- <img ng-src="{{imagesSRC+'remind/card2.png'}}"> --><img ng-src="./build/remind/card2.png"></dt>
+				<dd>
+					<h2>申请电子卡</h2>
+				</dd>
+			</dl>
+		</div>
+		<div class="right_list_main">
+			<ul class="cardList">
+				<li>
+					<p ng-click="sed_ard()">
+						<!-- <img ng-src="{{imagesSRC+'remind/spd.png'}}"/> -->
+						<img ng-src="./build/remind/spd.png"/>
+						<span>浦发银行信用卡在线申请</span>
+						<i>></i>
+					</p>
+					<p class="cardListText">参与各卡种办卡活动<br>享有各卡种相应优惠</p>
+				</li>
+				<!-- <li>
+					<p ng-click="sed_ard()">
+						<img ng-src="{{imagesSRC+'remind/spd.png'}}"/>
+						<span>浦发银行信用卡在线申请</span>
+						<i>></i>
+					</p>
+					<p class="cardListText">参与各卡种办卡活动<br>享有各卡种相应优惠</p>
+				</li> -->
+				<!-- <li>
+					<p ng-click="sed_ard()">
+						<img ng-src="{{imagesSRC+'remind/spd.png'}}"/>
+						<span>浦发银行信用卡在线申请</span>
+						<i>></i>
+					</p>
+					<p class="cardListText">参与各卡种办卡活动<br>享有各卡种相应优惠</p>
+				</li> -->
+			</ul>
+		</div>
+	</div>
+</div>
+ 

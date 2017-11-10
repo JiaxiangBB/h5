@@ -1,0 +1,906 @@
+.smtk_login{
+	width:64px;
+	height:auto;
+	position:absolute;
+	left:56.5%;
+	bottom:20px;
+	z-index:100;
+}
+.login{
+	width:100%;
+	height:100%;
+	position: relative;
+	overflow: hidden;
+
+}
+.login label img{
+	display:block;
+}
+/*-----------------------头部header 开始------------------------*/
+.login_header{
+	width: 100%;
+}
+.login_header p{
+	width: 248px;
+	position: absolute;
+	background: green;
+}
+.login_header p span:hover{
+	background: url(../login/kayuechaxun_hover.png);
+}
+.merchant_login{
+	color: #ea5532;
+	border:1px solid #ea5532;
+}
+.merchant_login:hover{
+	background: #ea5532;
+	color: #fff;
+}
+.register{
+	color: #fff;
+	border:1px solid #fff;
+}
+.register:hover{
+	background: #fff;
+	color: #2e2e2e;
+}
+/*----------------logn运动效果 开始--------------*/
+.login_main{
+	width: 240px;
+	height:240px;
+	position: absolute;
+	left:50%;
+	top: 18%;
+	margin-left:-120px;
+	background: url(../login/logoicon.png);
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+}
+@keyframes login_y {
+	0%{left:50%;margin-left:-120px;top: 18%;}
+	50%{left:50%;margin-left:-120px;top: 14%;}
+	100%{left:50%;margin-left:-120px;top: 18%;}
+}
+@-webkit-keyframes login_y {
+	0%{left:50%;margin-left:-120px;top: 18%;}
+	50%{left:50%;margin-left:-120px;top: 14%;}
+	100%{left:50%;margin-left:-120px;top: 18%;}
+}
+@-o-keyframes login_y {
+	0%{left:50%;margin-left:-120px;top: 18%;}
+	50%{left:50%;margin-left:-120px;top: 14%;}
+	100%{left:50%;margin-left:-120px;top: 18%;}
+}
+@-moz-keyframes login_y {
+	0%{left:50%;margin-left:-120px;top: 18%;}
+	50%{left:50%;margin-left:-120px;top: 14%;}
+	100%{left:50%;margin-left:-120px;top: 18%;}
+}
+@-ms-keyframes login_y {
+	0%{left:50%;margin-left:-120px;top: 18%;}
+	50%{left:50%;margin-left:-120px;top: 14%;}
+	100%{left:50%;margin-left:-120px;top: 18%;}
+}
+.login_main{
+	-webkit-animation:login_y 4s infinite ease-in-out;
+	-moz-animation:login_y 4s infinite ease-in-out ;
+	-o-animation:login_y 4s infinite ease-in-out  ;
+} 
+/*-----------------------logn运动效果 结束-------------*/
+/*-----------------------nav 浮动导航 开始-------------*/
+.New_guidelines{
+	position: absolute;
+	top:18%;
+	left:321px;
+	width: 86px;
+	height: 76px;
+}
+.New_guidelines .p1,.Questions .p1{
+	position: relative;
+	height: 20px;
+	line-height: 20px;
+	padding-left: 22px;
+	margin-bottom: 24px;
+}
+.New_guidelines .p1 a,.About_Us .p1 a,.Questions .p1 a{
+	display:inline-block;
+	cursor: pointer;
+	font-size: 16px;
+	color: #fff;
+	width:80px;
+}
+.New_guidelines .p1 a:hover,.About_Us .p1 a:hover,.Questions .p1 a:hover{
+	color: #ea5532;
+}
+.New_guidelines .p1 span,.About_Us .p1 span,.Questions .p1 span{
+	position: absolute;
+	top:9px;
+	left:0;
+	display: inline-block;
+	width: 10px;
+	height: 1px;
+	background: #ea5532;
+}
+.New_guidelines .p2{
+	padding-left: 39px;
+}
+.New_guidelines .p2 span{
+	display: inline-block;
+	width:32px ;
+	height:32px ;
+	background: url(../login/1-22.png) 5px 5px  no-repeat;
+}
+.New_guidelines img{
+	width: 32px;
+	height: 32px;
+	transition:transform 2s ease-in-out;
+}
+.New_guidelines:hover img,.About_Us:hover .p2 span,.Questions:hover .p2 span{
+	transform: rotate(360deg);
+}
+.About_Us{
+	position: absolute;
+	top: 36%;
+	right: 225px;
+	width: 100px;
+	height: 80px;
+}
+.About_Us .p2{
+	padding-left: 37px;
+	margin-bottom: 16px;
+}
+.About_Us .p2 span{
+	display: inline-block;
+	width:40px;
+	height:40px;
+	background: url(../login/2-28.png) 6px 6px  no-repeat;
+	transition:transform 2s ease-in-out;
+}
+.About_Us .p1{
+	position: relative;
+	height: 20px;
+	line-height: 20px;
+	padding-left: 24px;
+}
+.Questions{
+	position: absolute;
+	top:50%;
+	left:205px;
+	width: 88px;
+	height: 86px;
+}
+.Questions .p2{
+	padding-left: 32px;
+	margin-bottom: 20px;
+}
+.Questions .p2 span{
+	display: inline-block;
+	width: 42px;
+	height: 42px;
+	background: url(../login/3-30.png) 6px 6px  no-repeat;
+	transition:transform 2s ease-in-out;
+}
+/*-----------------------nav 浮动导航 结束-------------*/
+/*-----------------------头部header 结束------------------------*/
+/*-----------------------背景线 运动 开始------------------------*/
+.Movement_line{
+	overflow: hidden;
+	position: absolute;
+	top: 28%;
+	left: 50%;
+	width: 1920px;
+	height: 129px;
+	margin-left: -960px;
+}
+.Movement_line2{
+	overflow: hidden;
+	position: absolute;
+	top: 28%;
+	left: 50%;
+	width: 1920px;
+	height: 129px;
+	margin-left:960px;
+}
+@keyframes line {
+	0%{margin-left: -960px;}
+	50%{margin-left:-2880px;}
+	100%{margin-left:-960px;}
+}
+@keyframes line2 {
+	0%{margin-left:960px;}
+	50%{margin-left: -960px;}
+	100%{margin-left: 960px;}
+}
+.Movement_line{
+	-webkit-animation:line 60s infinite linear;
+}
+.Movement_line2{
+	-webkit-animation:line2 60s infinite linear;
+}
+/*-----------------------背景线 运动 结束------------------------*/
+/*-----------------------logo用户登录注册 开始------------------------*/
+.login-wrap{
+	position: absolute;
+	top:60px;
+	left: 50%;
+	width: 340px;
+	height: 366px;
+	padding: 24px 36px 0 36px;
+	margin-left: -170px;
+	background-color: rgba(0,0,0,0.9);
+	border-radius: 20px;
+	z-index: 1000;
+}
+.login-title{
+	height:30px;
+	line-height:30px;
+	color:#fff;
+	margin-bottom:8px;
+	font-size:18px;
+}
+.login-title .login_icon{
+	display: inline-block;
+	width: 30px;
+	height:30px;
+	line-height:30px;
+}
+.login-title span{
+	display: inline-block;
+	height:30px;
+	line-height:30px;
+	padding-left:14px;
+}
+.login-title .close{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-left: 166px;
+	cursor: pointer;
+}
+.login-tip-wrap{
+	height:22px;
+	line-height:22px;
+	color:#fff;
+	border-radius: 11px;
+	text-align: center;
+	font-size:12px;
+	margin-bottom:8px;
+}
+.login-tip{
+	height:22px;
+	line-height:22px;
+	color:#fff;
+	background-color: #ea5532;
+	border-radius: 11px;
+	text-align: center;
+	font-size:12px;
+}
+.login-form-group{
+	position: relative;
+	font-size:14px;
+	height:38px;
+	line-height:38px;
+	border-radius: 4px;
+	background-color: #fff;
+	color:#ccc;
+	margin-bottom:16px;
+}
+.login-form-group .login_input{
+	position: absolute;
+	left:44px;
+	border: 0;
+	width: 194px;
+	height: 38px;
+	line-height: 38px;
+	margin-boottom:16px;
+}
+.login-form-group .login_img{
+	position: absolute;
+	left:11px;
+	top:10px;
+}
+.login-form-group .delete_icon{
+	position: absolute;
+	top:4px;
+	right: 12px;
+	width: 16px;
+	height: 16px;
+}
+.login-form-group_last{
+	margin-bottom: 12px;
+}
+.login-form-group .inputImg_code{
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right:10px;
+	top:8px;
+}
+.login-form-group .inputImg_code{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100px;
+	height: 38px;
+}
+.login-form-group .inputImg_code .zhengque{
+	width: 16px;
+	height: 16px;
+	margin-top: 12px;
+}
+.inputImg_code span{
+	width:72px;
+	height:26px;
+	margin-top: 7px;
+	background-color: #ccc;
+	display: inline-block;
+	margin-left: 6px;
+}
+.inputImg_code span img{
+
+}
+.input_code{
+	height: 38px;
+	line-height: 38px;
+	padding-left:11px;
+	border: 0;
+	border-radius: 4px;
+}
+.pass_text{
+	padding-left:180px;
+}
+.pass_text a{
+	color: #ea5532;
+	font-size: 12px;
+}
+.login_submit{
+	padding-top:12px;
+	padding-bottom: 4px;
+}
+.login_submit button{
+	border: 0;
+}
+.login_submit button{
+	color:#fff;
+	width:100%;
+	height:40px;
+	line-height:40px;
+	background-color: #ea5532;
+	text-align: center;
+	font-size:16px;
+	border-radius: 20px;
+}
+.zhuce_text{
+	padding-left:200px ;
+}
+.zhuce_text a{
+	color: #ea5532;
+	font-size: 12px;
+	margin-top: -4px;
+}
+/*-----------------------logo用户登录注册 结束------------------------*/
+/*-----------------------卡余额查询 开始------------------------*/
+.cardBalance_query{
+	position: absolute;
+	top:128px;
+	left:260px;
+	width: 680px;
+	height: 340px;
+	background: #fff;
+	border-radius: 20px;
+	z-index: 2000;
+	padding: 10px 40px 0 40px;
+}
+.cardBalance_query h3{
+	position: relative;
+	font-weight: 600;
+	font-size: 16px;
+	height: 37px;
+	line-height: 37px;
+	border-bottom: 1px solid #ccc;
+}
+.cardBalance_query h3 span{
+	position: absolute;
+	top:11px;
+	right: 0;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url(../login/colse.png);
+	cursor: pointer;
+}
+.balance_query p{
+	width:280px;
+	height:160px;
+	padding-top: 24px;
+	margin-right: 40px;
+}
+.balance_form{
+	width: 280px;
+	height: 292px;
+	padding-top: 12px;
+}
+.balance_form span{
+	display: block;
+	font-size: 16px;
+	width: 280px;
+	height: 32px;
+	line-height: 32px;
+}
+.balance_form input{
+	width: 280px;
+	height: 40px;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	padding-left: 4px;
+	margin-bottom: 4px;
+}
+.balance_form .query_aniu{
+	display: block;
+	margin-top: 32px;
+	width: 280px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	background: #ea5532;
+	border-radius: 18px;
+	color: #fff;
+	cursor: pointer;
+}
+/*-----------------------卡余额查询 结束------------------------*/
+/*-----------------------footer开始------------------------*/
+.login_footer{
+	background:url("../login/dibushuiyin.png") no-repeat 905px 0 #fff;
+	position: fixed;
+	height:128px;
+	bottom:0;
+	width:100%;
+	margin:0 auto;
+	clear: both;
+}
+.footer_nav{
+	width:350px;
+	padding-top:38px;
+}
+.footer_nav span{
+	height:14px;
+	line-height:14px;
+}
+.footer_nav span a{
+	color:#333;
+	font-size:14px;
+	margin-right:40px;
+}
+.footer_nav span a:hover{
+	color:#ea5532;
+}
+.footer_nav p{
+	font-size:12px;
+	height:12px;
+	line-height:12px;
+	color:#999;
+	margin-top:35px;
+}
+.footer_logo{
+	width:630px;
+	padding-top:33px;
+}
+.footer_logo .login_bot{
+	margin-left:160px;
+	width: 117px;
+	height: 26px;
+	margin-bottom: 16px;
+}
+.footer_logo p a{
+	display: inline-block;
+	width:80px;
+	height: auto;
+	margin-right: 10px;
+}
+.footer_logo .authentication{
+	height:50px;
+	line-height:50px;
+}
+.footer_tell{
+	padding-top:38px;
+	width:207px;
+}
+.footer_tell .p1{
+	height:30px;
+	line-height:30px;
+	font-size:30px;
+	color:#000;
+	margin-bottom:25px;
+}
+.footer_tell .p2{
+	font-size:14px;
+	height:14px;
+	line-height:14px;
+	color:#000;
+}
+/*-----------------------footer 结束------------------------*/
+/*-----------------------屏幕 适配------------------------*/
+@media screen and (min-width:320px) and (max-width:750px){
+	.smtk_login{
+		display:none;
+	}
+	.login{
+		width:100%;
+		background: url(../login/750homebg.jpg) no-repeat;
+		background-size:cover;
+	}
+	.login_header{
+		width:84%;
+		margin:0 auto;
+		height:10.3%;
+		padding-top:5.8%;
+	}
+	.login_header .wrap_1200{
+		width:100%;
+		height:100%;
+		padding-left:28%;
+	}
+	.login_header .pclogin_nav {
+		display:none;
+	}
+	.login_header .wrap_1200 img{
+		display:inline-block;
+		width: 43.8%;
+		margin-right:43.6%;
+	}
+	.login_header .wrap_1200 .cardQurey{
+		display:inline-block;
+		width:7.6%;
+		height:7.6%;
+		background: url(../login/phonetouxiang.png) no-repeat;
+		background-size:100%;
+	}
+	.login_content {
+		width:100%;
+		height:100%;
+		margin:0 auto;	
+	}
+	.login_content .wrap_1200{
+		width:100%;
+		height:89.6%;
+		position:relative;
+	}
+	.login_main{
+		display:none;
+		-webkit-animation:login_y 0s infinite ease-in-out;
+		-moz-animation:login_y 0s infinite ease-in-out ;
+		-o-animation:login_y 0s infinite ease-in-out  ;
+	}
+	.Movement_line,.Movement_line2{
+		display:none;
+	}
+	.login_footer{
+		display:none;
+	}
+	/*手机页面适配*/
+	.New_guidelines .p1 a, .About_Us .p1 a, .Questions .p1 a {
+	    display: inline-block;
+	    cursor: pointer;
+	    font-size: 14px;
+	    color: #fff;
+	    width: 80px;
+	}
+	.phoneLogin_wrap{		
+		position:absolute;
+		width:84%;
+		bottom:9.7%;
+		left:8%;
+		display:block;
+	}
+	.phoneLogin_wrap a{
+		display: inline-block;
+    	width: 47.6%;
+    	height:40px;
+    	line-height: 40px;
+    	font-size: 14px;
+    	background: #ea5632;
+    	color: #fff;
+    	text-align: center;
+    	border-radius: 30px;
+	}
+	.phoneLogin_wrap .phone_loginR{
+		background:#fff;
+		color:#ea5632;
+	}
+	.New_guidelines{
+		top:12.6%;
+		left:22.6%;
+	}
+	.About_Us{
+		top:43.4%;
+		right: 10.6%;
+	}
+	.Questions{
+		top:48.8%;
+		left:5.1%;
+	}
+	/********手机端登录框 开始********/
+	.phonelogin-wrapform{
+		position: absolute;
+		width:84%;
+		height:56.85%;	
+		top:14.4%;
+		left: 50%;
+		padding: 3.9% 9.2% 0 9.2%;
+		margin-left: -42%;
+		background-color: rgba(0,0,0,0.9);
+		border-radius: 20px;
+		z-index: 1000;		
+	}
+	.phonelogin-wrapform .login-form{
+		width:100%;
+		height:100%;
+	}
+	.phonelogin-wrapform .login-form .login-title{
+		width:100%;
+		height:11.3%;
+		line-height:11.3%;
+		font-size:1.3rem;	
+		margin-bottom:0;
+	}
+	.phonelogin-wrapform .login-form .login-title img{
+		display:inline-block;
+		width:11.3%;
+		height:92%;
+	}
+	.phonelogin-wrapform .login-form .login-title span{
+		display: inline-block;
+    	height: 78.7%;
+    	padding-left: 14px;
+	}
+	.phonelogin-wrapform .login-form .login-title .close{
+	    width: 5.7%;
+	    height: 45.3%;
+	    margin-left: 32.2%;
+	    cursor: pointer;
+	    margin-top:5px;
+	}
+	.phonelogin-wrapform .login-form .login-title .close img{
+		width:100%;
+		height:100px;
+	}
+	.phonelogin-wrapform .login-form .login-form-group{
+		position: relative;
+		font-size:12px;
+		height:16%;
+		color:#ccc;
+		margin-bottom:0;
+		border-bottom:1px solid #333;
+		background-color:rgba(0,0,0,0);
+	}
+	.phonelogin-wrapform .login-form .login-form-group .login_input{
+		position: absolute;
+		left:12.6%;
+		top:12.38%;
+		border: 0;
+		width:79.7%;
+		height:100%;
+		padding-left:4.8%;
+		background-color:rgba(0,0,0,0);
+		color:#ccc;
+	}
+	.phonelogin-wrapform .login-form .login-form-group .login_img{
+		width:9.3%;
+		height:46.15%;
+		position: absolute;
+		left:2%;
+		top:40.38%;
+	}
+	.phonelogin-wrapform .login-form .login-form-group_last .login_input{
+		width: 51.4%;
+	    font-size: 12px;	
+	}
+	.phonelogin-wrapform .login-form .login-form-group_last span{
+		position: absolute;
+		left:64.09%;
+		top:20.38%;
+		width:35%;
+	}
+	.phonelogin-wrapform .login-form .pass_text{
+		margin-top:3%;
+		padding-left:59.09%;
+	}
+	.phonelogin-wrapform .login-form .pass_text a{
+		color: #ea5532;
+		font-size: 12px;
+	}
+	.phonelogin-wrapform .login-form .login_submit{
+		height:12.3%;
+		padding-top:0;
+	}
+	.phonelogin-wrapform .login-form .login_submit button{
+		color:#fff;
+		width:100%;
+		height:100%;
+		line-height:30px;
+		background-color: #ea5532;
+		text-align: center;
+		font-size:1.2rem;
+		border-radius: 40px;
+	}
+	.phonelogin-wrapform .login-form .zhuce_text{
+		margin-top:1.5%;
+		padding-left:73.87%;
+	}
+	.phonelogin-wrapform .login-form .zhuce_text a{
+		color: #ea5532;
+		font-size: 12px;
+		margin-top: -4px;
+	}
+	/********************************/
+	/*-----------------------卡余额查询 开始------------------------*/
+	.phone_cardBalance_query{
+		position: absolute;
+		top:16%;
+		left:50%;
+		width: 84%;
+		height: 56.85%;
+		margin-left:-42%;
+		background: #fff;
+		border-radius: 20px;
+		z-index: 2000;
+		padding: 3.9% 9.2% 0 9.2%;
+	}	
+	.phone_cardBalance_query h3{
+		position: relative;
+		font-weight: 400;
+		font-size: 2rem;
+		height: 11.33%;
+		line-height: 48px;
+		border-bottom: 0px solid #ccc;
+	}
+	.balance_query{
+		width:100%;
+		height:88.7%;
+	}
+	.login-form_jqurey{
+		position: relative;
+	    font-size: 14px;
+	    height:16%;
+	    line-height: 75%;
+	    border-radius: 4px;
+	    color: #333;
+	    margin-bottom: 16px;
+	    padding-top:2.7%;
+	}
+	.phone_cardBalance_query h3 span{
+		position: absolute;
+		top:11px;
+		right: 0;
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		background: url(../login/phoneguanbi.png);
+		cursor: pointer;
+	}
+	.phone_cardBalance_query .balance_query p{
+		width:280px;
+		height:160px;
+		padding-top: 24px;
+		margin-right: 40px;
+		display:none;
+	}
+	.phone_cardBalance_query .balance_form{
+		width: 100%;
+		height: 100%;
+		padding-top: 0px;
+	}
+	.login-form_jqurey label{
+		display: inline-block;
+		width: 15.6%;
+		height: 78px;
+		line-height: 78px;
+	}
+	.login-form_jqurey span{
+		display:inline-block;
+		font-size: 26px;
+		width: 80px;
+		height: 78px;
+		line-height: 78px;
+	}
+	.login-form_jqurey input{
+		display: inline-block;
+		width: 82.65%;
+		height: 78px;
+		border-radius: 8px;
+		border: 0px solid #ccc;
+		padding-left: 16px;
+		margin-bottom: 0px;
+		font-size:28px;
+		color:#ccc;
+	}
+	.phone_cardBalance_query .query_aniu_jquery{
+		display: block;
+		margin-top: 30.47%;
+		width: 100%;
+		height: 80px;
+		line-height: 80px;
+		text-align: center;
+		background: #ea5532;
+		border-radius: 40px;
+		color: #fff;
+		cursor: pointer;
+		font-size:32px;
+	}
+/*-----------------------卡余额查询 结束------------------------*/
+	
+}
+@media screen and (min-width:751px)/*  and (max-width:1440px) */{
+	.login{
+		width:100%;
+		background: url('../login/home_background.jpg');
+		background-repeat:no-repeat;/* "http://image.ohepay.com/login/home_background.jpg" */
+		background-size:100% 100%;
+	}
+	.login_header{
+		height: 100px;
+		line-height: 100px;
+	}
+	.phoneLogin_wrap{
+		display:none;
+	}
+	.login_header .wrap_1200{
+		width:1200px;
+	}
+	.login_header img{
+		position: absolute;
+		top:33px;
+		width: 155px;
+		height:34px;
+	}
+	.login_header p{
+		top:0;
+		right:0;
+	}
+	.login_header p a{
+		position: absolute;
+		top:32px;
+		display: inline-block;
+		width: 70px;
+		height: 36px;
+		line-height: 36px;
+		text-align: center;
+		/*border:1px solid #fff;*/
+		border-radius:20px;
+		/*color:#fff;*/
+		font-size:16px;
+		margin-right: 20px;
+		cursor: pointer;
+	}
+	.merchant_login{
+		left: 62px;
+	}
+	.register{
+		left: 156px;
+	}
+	.login_header p span{
+		position: absolute;
+		top: 32px;
+		cursor: pointer;
+		display: inline-block;
+		width: 36px;
+		height: 36px;
+		background: url(../login/kayuechaxun.png);
+		margin-right: 20px;
+	}
+	.login_header .pclogin_nav {
+		display:block;
+	}
+	.Movement_line,.Movement_line2{
+		display:none;
+	}
+	.login_footer{
+		display:block;
+	}
+	.Movement_line,.Movement_line2{
+		display:block;
+	}
+}
+@media screen and (min-width:1440px){
+
+}

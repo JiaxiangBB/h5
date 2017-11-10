@@ -1,0 +1,34 @@
+<main class="busMain">
+	<div class="main_details">
+		<div class="details_left">
+			<div class="left_img"><img ng-src="{{shopDinksData.shopImg}}"></div>
+			<ul>
+				<li>
+					<img ng-src="{{shopDinksData.shopImgSuo[0].ImgSuo01}}">
+				</li>
+				<li>
+					<img ng-src="{{shopDinksData.shopImgSuo[1].ImgSuo02}}">
+				</li>
+				<li>
+					<img ng-src="{{shopDinksData.shopImgSuo[2].ImgSuo03}}">
+				</li>
+			</ul>
+		</div>
+		<div class="details_right">
+			<h4>{{shopDinksData.shopTitle}}</h4>
+			<p class="shopID" style="display: none;">{{shopDinksData.id}}</p>
+			<p>价格<i>¥</i><span class="shopPrices">{{shopDinksData.shopPrices}}</span></p>
+			<p>数量<button class="btn01">-</button><input type="number" placeholder="1"><button>+</button></p>
+			<p class="shopChat" id="shopChat1"><b></b>加入购物车</p>
+		</div>
+	</div>
+	<div class="main_details_title"></div>
+	<div class="details_img">
+		<img ng-src="{{shopDinksData.shopImgJie[0].ImgJie01}}">
+		<img ng-src="{{shopDinksData.shopImgJie[1].ImgJie02}}">
+		<img ng-src="{{shopDinksData.shopImgJie[2].ImgJie03}}">
+		<img ng-src="{{shopDinksData.shopImgJie[3].ImgJie04}}">
+		<img ng-src="{{shopDinksData.shopImgJie[4].ImgJie05}}">
+	</div>
+</main>
+			

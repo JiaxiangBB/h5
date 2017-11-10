@@ -1,0 +1,30 @@
+<ion-view title="找回支付密码" id="findPayPass-view">
+	<ion-content>
+		<div class="findPayPswd">
+			<h2>找回支付密码</h2>
+			<p style="display: none;">短信已发送至&nbsp;<b>{{mobileNo}}</b></p>	
+			<div class="getCode">
+				<div class="messageBox">
+					<span class="messageCode sign_next_again" ng-click="sendPhoneCode()">获取验证码</span>
+					<span class="messageCode sign_next_time" style="border:none;background:none;display:none"><b class="sign_time"></b>秒后再获取</span>
+					<input type="" name="" class="msgCode" placeholder="请输入短信中的验证码">
+				</div>
+				<div class="submitBut" ng-click="resetpay_submit()">下一步</div>
+			</div>
+		</div>
+		<div class="findPayPswdSub" style="display: none;">
+			<h2>重新设置支付密码</h2>
+			<ion-list class="resetPayPass">
+				<ion-item class="item-icon-left realName-border">
+					<span class="lock"></span>
+					<input id="newPassword" type="password" name="" placeholder="请输入新的六位数字支付密码">
+				</ion-item>
+				<ion-item class="item-icon-left">
+					<span class="lock"></span>
+					<input id="confiemNewPassword" type="password" name="" placeholder="请再次输入新的支付密码">
+				</ion-item>
+				<div class="submitBut" ng-click="reset_paypassword()">提交</div>
+			</ion-list>
+		</div>
+	</ion-content>
+</ion-view>

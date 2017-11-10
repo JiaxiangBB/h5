@@ -1,0 +1,51 @@
+<ion-view title="我的优惠券" id="coupons-view">
+	<!-- <ion-nav-buttons side="right">
+      <button class="button button-light home-view-button">
+        <i class="ion-ios-help-outline"></i>
+      </button>
+    </ion-nav-buttons> -->
+	<ion-content>
+		<div class="couponsBox">
+			<div class="couponsTab">
+				<span class="firstCoupon">可使用</span>
+				<span class="usedCoupon">已使用</span>
+				<span class="expiredCoupon">已过期</span>
+				<p></p>
+			</div>
+			<div class="couponsList">
+				<!--可使用-->
+				<ul class="couponsCanuse" id="couponsCanuse">
+<!-- 					<li>
+						<p class="money">
+							<span><i>50</i>元</span>
+							<label>优惠券</label>
+						</p>
+						<p class="time">
+							<span>有效期：<i>2017.04.01-2017.04.30</i></span>
+							<label>
+								<b></b>
+								<em>单次消费满<small>68</small>元可用<br>仅可用于线下扫码消费</em>
+							</label>
+							<big>来源：<i>注册并实名绑卡</i></big>
+						</p>
+					</li> -->
+				</ul>
+				<!--已使用-->
+				<ul class="couponsUsed" id="couponsUsed" style="display:none;">
+					
+				</ul>
+				<!--已过期-->
+				<ul class="couponsExpired" id="couponsExpired" style="display:none;">
+
+				</ul>
+			</div>
+		</div>
+	</ion-content>
+	<div class="mask" style="display:none;">
+		<div class="maskContent">
+			<h2>提示</h2>
+			<p>此优惠仅可在满减活动中使用</p>
+			<button>确定</button>
+		</div>
+	</div>
+</ion-view>

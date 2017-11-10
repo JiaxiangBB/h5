@@ -1,0 +1,38 @@
+
+<div class="wrap_main_all wrap_main_all_other">
+	<h2>全部全时通卡</h2>
+	<span class="back" style="display:block"><a href="#">返回</a></span>
+	<main class="list_main">
+		<div>
+			<label class="main_card_bg"></label>
+			<dl>
+				<dt><!-- <img ng-src="{{imagesSRC+'card/add.png'}}"> --><img ng-src="./build/card/add.png"></dt>
+				<dd><a ng-click="add_cards()" class="add_card">添加全时通卡</a></dd>
+			</dl>
+		</div>
+		<ul>
+			<li class="QshiCard" ng-repeat="item in resultQshi">
+				<p>卡余额(元)</p>
+				<h2></h2>
+				<p class="cardNumberQshi" style="clear:both"></p>
+				<p class="cardNumberQshiNum" style="display:none"></p>
+				<span class="card_recharge"><a>充值</a></span>
+				<span  class="deleteQshiCard"><a>删除</a></span>
+			</li>
+		</ul>
+	</main>
+	<div class="mark" id="mark_one" style="display:none">
+		<div>
+			<span ng-click="close()">×</span>
+			<p class="text"></p>
+			<p><a class="change" ng-click="read_name()"></a><a ng-click="close()" class="loss">稍后再说</a></p>
+		</div>			
+	</div>
+	<div class="mark" id="mark_two" style="display:none;z-index:1000;">
+		<div>
+			<span ng-click="close()">×</span>
+			<p class="text"></p>
+			<p><a class="change">确定</a></p>
+		</div>			
+	</div>
+</div>

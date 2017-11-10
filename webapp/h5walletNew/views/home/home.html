@@ -1,0 +1,123 @@
+<!--主入口页面-->
+<ion-view title="全时钱包" id="home-view">
+	<ion-nav-buttons side="left">
+      <!-- <button class="button button-light home-view-button settingsView"> -->
+      <button class="button button-light home-view-button" ng-click="goBackApp()">
+        <i class="ion-ios-arrow-back"></i>
+      </button>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+      <button class="button button-light home-view-button" ng-click="toSettingsFun()">
+        <i class="ion-ios-more"></i>
+      </button>
+    </ion-nav-buttons>
+	<ion-content overflow-scroll="true">
+		<div class="baseInfor row"><!--data-type="accountBalance"-->
+			<div class="col col-center">
+				<p class="accountBalance">{{balance_wrap}}</p>
+				账户余额
+			</div><!--data-type="fullTimeCard"-->
+			<div class="col col-center fullTimeCard"  ng-click="fullTimeCardFun()">
+				<p>{{card_num}}</p>
+				全时通卡
+			</div>
+			<!-- <div class="col col-center" data-type="coupons">
+				<p>1</p>
+				优惠券
+			</div> -->
+		</div>
+		<ion-list>
+			<ion-item class="item-icon-left item-icon-right myBill" ng-click="myBillsFun()">
+				<i class="icon myBills"><img></i>
+	    			我的账单
+	    		<span class="icon jinru_back"></span>
+			</ion-item>
+			<ion-item class="item-icon-left item-icon-right setPayPswd" ng-click="setPayPswdFun()">
+				<i class="icon setPayPswds"><img></i>
+	    			设置支付密码
+	    		<span class="icon jinru_back"></span>
+			</ion-item>
+		</ion-list>
+		<div class="card mainEntr">
+			<span class="rukouStar"></span>
+			<div class="row">
+				<div class="col col-center" data-type="bankList">
+					<img id="img01" />
+					<p>银行卡</p>
+				</div>
+				<div class="col col-center" data-type="sweepTheYard">
+					<img id="img02"/>
+					<p>付款码</p>
+				</div>
+				<div class="col col-center" data-type="cardBalanceQuery">
+					<img id="img03" />
+					<p>卡余额查询</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-center" data-type="billList">
+					<img id="img04"/>
+					<p>账单</p>
+				</div>
+				<div class="col col-center" data-type="transfer">
+					<img id="img05"/>
+					<p>转账</p>
+				</div>
+				<div class="col col-center" data-type="applyCard">
+					<img id="img06"/>
+					<p>申请电子卡</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-center" style="opacity: 0.2">
+					<img id="img07"/>
+					<p>借款</p>
+				</div>
+				<div class="col col-center" data-type="inviteCode">
+					<img id="img08"/>
+					<p>邀请码</p>
+				</div>
+				<div class="col col-center" data-type="setPayPswd">
+					<img id="img09"/>
+					<p>设置支付密码</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mainEntr payLifeEntr">
+			<span class="rukouStar"></span>
+			<div class="row">
+				<div class="col col-center" data-type="waterElectricityFuelGas">
+					<img id="img09"/>
+					<p data-type="1">水费</p>
+				</div> 
+				<div class="col col-center" data-type="waterElectricityFuelGas">
+					<img id="img10"/>
+					<p data-type="2">电费</p>
+				</div>
+				<div class="col col-center" data-type="waterElectricityFuelGas">
+					<img id="img11"/>
+					<p data-type="3">燃气费</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-center" data-type="phoneRecharge">
+					<img id="img12"/>
+					<p>手机充值</p>
+				</div>
+				<div class="col col-center" data-type="applyCreditCard">
+					<img id="img13"/>
+					<p>申请信用卡</p>
+				</div>
+				<div class="col col-center" style="opacity: 0.2">
+					<img id="img14"/>
+					<p>信用卡还款</p>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+	<ion-footer-bar align-title="center" class="bar-clear homeFooter">
+		<p class="title">
+			<img class="footrImg"/>
+		</p>
+	</ion-footer-bar>
+</ion-view>

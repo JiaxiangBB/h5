@@ -1,0 +1,95 @@
+<main class="wrap_left_main" ng-init="message()">
+	<div class="wrap_main_all wrap_main_all_other wrap_main_all_safety" style="padding:0.7rem 1rem 0 1rem">
+		<h2 style="margin-left:0">安全管理</h2>
+		<span class="approve_back self_back"><a class="backToSafety" style="display: none">返回</a><a class="toMain">返回</a></span>
+		<!------------------安全管理 未实名 开始------------------>
+		<div class="safety_box" style="display: block;" id="safety_box">
+			<ul>
+				<li>
+					<p class="fl">
+						<span>实名状态<b class="status1"></b></span>
+						<b class="Noreal_name">未实名</b>
+						<b class="real_name_message">*景峰<small>110* **** **** *210</small></b>
+					</p>
+					<span class="safety_lir fr">
+						<a class="real_name" ng-click="read_name()">立即认证</a>
+						<a class="immediately_link">已实名</a>
+					</span>
+				</li>
+				<li>
+					<p class="fl">
+						<span>登录密码</span>
+						<b class="loginPassword">********</b>
+					</p>
+					<span class="safety_lir fr"><a ng-click="change_password()">修改</a></span>
+				</li>
+				<li>
+					<p class="fl">
+						<span>支付密码<b class="status2"></b></span>
+						<b class="payPassword">未设置<!--******--></b>
+					</p>
+					<span class="safety_lir fr">
+						<a class="set set_paypassword" ng-click="set_paypassword()">设置</a>
+						<a class="change_paypassword"  ng-click="change_paypassword()">修改</a>
+						<a class="forget_payPassword" style="font-style:normal;margin-left:10px;" ng-click="forget_payPassword()">忘记密码</a>
+					</span>
+				</li>
+			</ul>
+		</div>
+		<!------------------安全管理 未实名 结束------------------>
+		<!------------------修改登录密码 开始------------------>
+		<form class="change_password_form" style="display: none">
+			<p class="error_message" style="opacity:0">
+                <span class="error_tip" style="display:block"><!-- <img ng-src="{{imagesSRC+'login/cuowu.png'}}"> --><img ng-src="./build/login/cuowu.png"></span><b></b>
+            </p>
+			<div class="safety_form_group" style="display: block">
+				<label>当前密码：</label>
+				<input class="phone_number oldPassword" type="password" id="login_pass">
+			</div>
+			<div class="safety_form_group" style="display:block;">
+				<label>新密码：</label>
+				<input class="phone_number newPswd" type="password" id="newPswd">
+			</div>
+			<div class="safety_form_group" style="display:block;">
+				<label>确认新密码：</label>
+				<input class="phone_number confirmPassword" type="password">
+			</div>
+			<div class="change_password_submit" style="display: block">
+				<a ng-click="changgeLoginPswd()">提交</a>
+			</div>
+		</form>
+		<!------------------修改登录密码 结束------------------>
+		<!------------------修改支付密码 开始------------------>
+		<form class="changePayPswd_form" style="display: none">
+			<p class="error_message" style="opacity:0">
+                <span class="error_tip" style="display:block"><!-- <img ng-src="{{imagesSRC+'login/cuowu.png'}}"> --><img ng-src="./build/login/cuowu.png"></span><b></b>
+            </p>
+			<div class="safety_form_group" style="display: block">
+				<label>当前密码：</label>
+				<input class="currentPayPswd" type="password" id="pay_password">
+			</div>
+			<div class="safety_form_group" style="display:block;">
+				<label>新密码：</label>
+				<input class="newPayPswd" type="password" id="newpayPswd">
+			</div>
+			<div class="safety_form_group" style="display:block;">
+				<label>确认新密码：</label>
+				<input class="conNewPayPswd" type="password">
+			</div>
+			<div class="change_password_submit" style="display: block"  ng-click="changePayPassword()">
+				<a>提交</a>
+			</div>
+		</form>
+		<!------------------修改支付密码 结束------------------>
+		
+	</div>
+	<!------------------提示弹框 开始---------------------->
+	<div class="mark" id="mark_one" style="display:none">
+		<div>
+			<span ng-click="close()">×</span>
+			<p class="text"></p>
+			<p ng-click="close()" id="sure" class="change"><a>确定</a></p>
+		</div>			
+	</div>
+	<!------------------提示弹框 结束---------------------->
+</main>

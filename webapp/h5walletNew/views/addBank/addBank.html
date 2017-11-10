@@ -1,0 +1,32 @@
+<ion-view title="添加银行卡" id="addBank-view" cache-view="false">
+	<ion-nav-buttons side="right" ui-sref="addBank">
+      <button class="button button-light home-view-button" ui-sref="support">
+        <span>支持的银行</span>
+      </button>
+    </ion-nav-buttons>
+	<ion-content>
+		<h2>{{customerNameCN}} {{phone}}</h2>
+		<ion-list class="addBank">
+			<ion-item class="item-icon-left realName-border">
+				<span class="bank_Num"></span>
+				<input class="bankCardNum" type="text" name="" placeholder="请输入您的银行卡号">
+			</ion-item>
+			<ion-item class="item-icon-left savingsDeposit" style="display: none;">
+				<span class="bank_Card"></span>
+				<input class="bankCardName" type="text" name="" placeholder="" value="储蓄卡/中国工商银行">
+			</ion-item>
+			<ion-item class="item-icon-left creditCard" style="display: none;">
+				<span></span>
+				<input class="bankCardDate" type="text" name="" placeholder="月／年（有效期）">
+				<input class="bankCardCvv" type="text" name="" placeholder="卡验证码" class="bank_message">
+			</ion-item>
+			<ion-item class="item-icon-left">
+				<span class="bank_phone"></span>
+				<input class="bankCardPhone" type="text" name="" placeholder="请输入银行卡预留手机号">
+			</ion-item>
+			<label ui-sref="agreement">提交即同意<i>《快捷支付服务协议》</i></label>
+			<div class="submitBut" ng-click="submitBut()">提交</div>
+		</ion-list>
+	</ion-content>
+</ion-view>
+

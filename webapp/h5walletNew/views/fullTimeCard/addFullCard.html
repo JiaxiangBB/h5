@@ -1,0 +1,21 @@
+<!--添加全时通卡 页面-->
+<ion-view title="添加全时通卡" id="addFulltimeCard-view">
+	<ion-content>
+		<div class="findPayPswdSub" style="display:block;">
+			<h2>添加全时通卡</h2>
+			<ion-list class="addFullCardNum">
+				<ion-item class="item-icon-left realName-border">
+					<span class="lock lockCard"></span>
+					<input id="fullCardNum" type="text" name="" placeholder="请输入19位全时通卡卡号">
+				</ion-item>
+				<ion-item class="item-icon-left">
+					<span class="lock lockPass"></span>
+					<input id="fullCardPassword" type="password" name="" placeholder="请输入6位卡密码">
+				</ion-item>
+				<div class="submitBut" ng-click="addFullCard()">提交
+					<span>提交即同意<b>《全时通卡服务协议》<b></span>
+				</div>
+			</ion-list>
+		</div>
+	</ion-content>
+</ion-view>

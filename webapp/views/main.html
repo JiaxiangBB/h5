@@ -1,0 +1,134 @@
+<div class="wrap_main_all" ng-init="informationAssets()">
+	<div class="wrap_main_only">
+		<span>i</span>温馨提示：实名认证后才可添加全时通卡及银行卡
+	</div>
+	<div class="wrap_main_left">
+		<div class="wrap_main_l_top">
+			<ul>
+				<li><!-- <img ng-src="{{imagesSRC+'first/geren.png'}}" style="width: 100%;height: 100%"> --><img ng-src="./build/first/geren.png" style="width: 100%;height: 100%"></li>
+				<li>
+					<h2 id="name">{{customerNameCN}}</h2>
+					<p>{{mobile}}</p>
+					<!-- <img ng-src="{{imagesSRC+'first/weishiming.png'}}" style="float:left" ng-show="name_img1"/> -->
+					<img ng-src="./build/first/weishiming.png" style="float:left" ng-show="name_img1"/>
+					<!-- <img ng-src="{{imagesSRC+'first/yishiming.png'}}" style="float:left;" ng-show="name_img2"/> -->
+					<img ng-src="./build/first/yishiming.png" style="float:left;" ng-show="name_img2"/>
+					<a ng-click="read_name()" style="display:inline-block;width:3.5rem;height:2rem;margin-left:.3rem;"><span id="approve" style="width:4.5rem;height:2rem;display:inline-block;line-height:2rem;">{{real_name}}</span></a>
+				</li>
+				<li>
+					<a ng-click="out()"><p>退出</p></a>
+				</li>
+				<li class="wrap_main_l_top_coupons">
+					<dl>
+						<dt></dt>
+						<dd><a ng-click="safety()">安全管理</a></dd>
+					</dl>
+					<dl class="coupons">
+						<dt></dt>
+						<dd><a ng-click="coupons()" class="coupon">优惠券<!-- ({{CouponNum}}) --></a></dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+		<div class="wrap_main_l_bottom">
+			<ul>
+				<li>
+					<div><h2>总资产</h2><span class="strong accountBalance_wrap">{{accountBalance}}</span></div>
+					<dl>
+						<dt></dt>
+						<dd><a ng-click="toTrading()">交易明细</a></dd>
+					</dl>
+				</li>
+				<li class="wrap_main_l_bottom_li">
+					<div><p>账户余额</p><span class="balance_wrap">{{balance_wrap}}</span></div>
+					<dl>
+						<dt class="transfer"></dt>
+						<dd><a ng-click="balance_yue()" class="zhuanzhang">转账</a></dd>
+					</dl>
+					<label><a ng-click="balance_chongzhi()" class="pay_transfer">充值</a></label><!-- <label><a ng-click="deposit_yue()" class="money">提现</a></label> -->
+				</li>
+				<li>
+					<div><p>全时通卡余额</p><span class="quanShiCard_wrap">{{quanShiCard}}</span></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="wrap_main_right">
+		<div class="wrap_main_r_top" ng-show="prompt1">
+			<span>i</span>温馨提示：实名认证后才可以添加全时通卡及银行卡
+		</div>
+		<div class="wrap_main_r_top" style="background:#333;" ng-show="prompt2">
+			您好，上次登录  <b style="font-weight:normal">{{lastLogonTime}}</b>
+		</div>
+		<div class="wrap_main_r_bottom">
+			<div class="wrap_main_r_one">  <!-- ui-sref="wrap.apply" -->
+				<header>全时通卡<a  class="apply" ng-click="applyCard()">申请电子卡</a></header>
+				<main class="main">
+					<label class="main_card_bg"></label>
+					<dl>
+						<dt><!-- <img ng-src="{{imagesSRC+'card/add.png'}}"> --><img ng-src="./build/card/add.png"></dt>
+						<dd><a ng-click="add_cards()" class="add_card">添加全时通卡</a></dd>
+					</dl>
+				</main>
+				<main class="main_two" style="display:none">
+					<ul>
+						<li class="quanShiCardBg" ng-repeat="item in cdcard_list">
+							<p>卡余额（元）</p>
+							<h2></h2>
+							<span class="card_recharge_first card_recharge"><a>充值</a></span>
+							<p class="cardNumberQshi"></p>
+							<p class="cardNumberQshiNum" style="display:none"></p>
+						</li>
+					</ul>
+				</main>
+				<footer>
+					<p><!-- <img ng-src="{{imagesSRC+'first/ka.png'}}"> --><img ng-src="./build/first/ka.png"><span>{{card_num}}</span></p>
+					<div><a ng-click="add_cards()" class="add_card">+</a><a ng-click="cards_list()">...</a></div>
+				</footer>
+			</div>
+			<div class="wrap_main_r_two">
+				<header>银行卡</header>
+				<main class="main">
+					<label class="main_card_bg"></label>
+					<dl>
+						<dt><!-- <img ng-src="{{imagesSRC+'card/add.png'}}"> --><img ng-src="./build/card/add.png"></dt>
+						<dd><a ng-click="add_banks()" class="add_bank">添加银行卡</a></dd>  
+					</dl>
+				</main>
+				<main class="main_two listBank_main" style="display:none">
+					<ul>
+						<li ng-repeat="item in bankcard_list">
+							<label><img ng-src="" style="display:block;width:100%;height:auto;" class="bankBig"/></label>
+							<dl>
+								<dt><img ng-src="" class="bankSmall"></dt>
+								<dd class="bafBankid">{{item.bankName}}</dd>
+								<dd class="bafAcctype"></dd>
+							</dl>
+							<p></p>
+							<i style="display:none">{{item.Accountno}}</i>
+							<span class="deleteBankCard" style="display:none;"><a>删除</a></span>
+						</li>
+					</ul>
+				</main>
+				<footer>
+					<p><!-- <img ng-src="{{imagesSRC+'first/ka.png'}}"> --><img ng-src="./build/first/ka.png"><span>{{bank_num}}</span></p>
+					<div><a class="add_bank" ng-click="add_banks()">+</a><a ng-click="bank_list()">...</a></div>
+				</footer>
+			</div>
+		</div>
+	</div> 
+	<div class="mark" id="mark_one" style="display:none;z-index:1000;">
+		<div>
+			<span ng-click="close()">×</span>
+			<p class="text"></p>
+			<p><a class="change" ng-click="read_name()"></a><a ng-click="close()" class="loss">稍后再说</a></p>
+		</div>			
+	</div>
+	<div class="mark" id="mark_two" style="display:none;z-index:1000;">
+		<div>
+			<span ng-click="close()">×</span>
+			<p class="text"></p>
+			<p><a class="change">确定</a></p>
+		</div>			
+	</div>
+</div>

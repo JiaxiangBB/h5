@@ -1,0 +1,42 @@
+<ion-view title="我的账单" id="billList-view" cache-view="false">
+	<ion-nav-buttons side="right">
+      <button class="button button-light home-view-button">
+       <!--  <span>筛选</span> -->
+      </button>
+    </ion-nav-buttons>
+	<ion-content>
+		<ion-refresher pulling-text="下拉刷新"  on-refresh="doRefresh()"></ion-refresher>
+		<div class="billList">
+			<ul class="list">
+				
+			</ul>
+		</div>
+		<div class="empty" style="display: none;">
+			<img src="">
+			<p>暂时没有账单记录</p><!-- 没有找到近一年的相关记录 -->
+		</div>
+		<div class="emptyTwo" style="display: none;">
+			<p>没有更多账单记录</p>
+		</div>
+		<ion-infinite-scroll  ng-if="!noMorePage" immediate-check="false"  immediate-check="false"  on-infinite="loadMore()"  distance="1%">
+	    </ion-infinite-scroll>
+	</ion-content>
+	<div class="screening">
+		<div class="screeningList">
+			<div>
+				<p class="choose">选择分类</p>
+				<p class="chooseList">
+					<span>转账</span>
+					<span>线下消费</span>
+					<span>手机充值</span>
+					<span>水费</span>
+					<span>电费</span>
+					<span>燃气费</span>
+					<span>余额充值</span>
+				</p>
+				<p class="chooseBtn">选择全部</p>
+			</div>
+		</div>
+	</div>
+</ion-view>
+

@@ -1,0 +1,24 @@
+<!--全时通卡 页面-->
+<ion-view title="全时通卡" id="fullTimeCard-view">
+	<ion-nav-buttons side="left">
+      <button class="button button-light home-view-button" ng-click="onFullCardBackFun()" id="fullCardBack" ng-show="isAppFlag">
+        <i class="ion-ios-arrow-back"></i>
+      </button>
+    </ion-nav-buttons>
+	<ion-content>
+		<h4><!-- {{customerNameCN}} -->&nbsp;{{mobileNo}}</h4>
+		<div class="noneCard" style="display: none;">
+		</div>
+		<p class="noneCardDetail" style="display: none;">如需添加全时通卡，请点击下方按钮</p>
+		<ul class="card cardList" style="display: none;">
+			<!-- <li>
+				<div class="fullCardLiTop"></div>
+				<p class="balanceNum">卡余额<b></b></p>
+				<p class="cardNum"></p>
+				<p class="cardNumberQshiNum" style="display: none;"></p>
+			</li>-->
+		</ul>
+		<!-- <p class="transDetail"><img><span>2</span>如需添加全时通卡，请点击下方按钮</p> -->
+	</ion-content>
+	<div class="addFullCard" ng-click="addFullCards()"></div>
+</ion-view>

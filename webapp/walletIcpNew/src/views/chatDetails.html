@@ -1,0 +1,36 @@
+<main class="busMain">
+	<div class="loginContent">
+		<div class="login_box">
+			<h2>订单详情</h2>
+			<!-- <p class="back">返回</p> -->
+			<p class="payMethod">支付方式：<span>在线支付</span></p>
+			<h2>送货详单</h2>
+			<dl class="deliveryDetails">
+				<dt>
+					<img ng-src="{{shopDinks[0].shopImg}}">
+				</dt>
+				<dd>
+					<h4>{{shopDinks[0].shopTitle}}</h4>
+					<p>价格：<i>¥</i><span>{{shopDinks[0].shopPrices}}</span></p>
+					<p>数量：<b>1</b></p>
+				</dd>
+			</dl>
+			<div class="orderDetails">
+				<div class="orderDetails_inner">
+					<p class="amount">总金额（ 1 件商品）：<i>¥</i><span>{{shopDinks[0].shopPrices}}</span></p>
+					<p class="freight">运费：<i>¥</i><span>10.0</span></p>
+					<hr>
+					<p class="totalAmount">应付款总金额：<i>¥</i><span>{{totalAmount}}</span><input ng-click="submitOrders()" class="submitOrders" type="button" value="提交订单"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mark" id="mark_one" style="display:none;z-index:1000;">
+        <div class="mark_box">
+            <span ng-click="close()">×</span>
+            <div class="next_form" style="display:block;">
+                <p class="text">提交成功</p>
+            </div>
+        </div>          
+    </div>
+</main>

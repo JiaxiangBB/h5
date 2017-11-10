@@ -1,0 +1,31 @@
+<ion-view title="转账" id="transfer-view" cache-view="false">
+	<ion-nav-buttons side="right">
+      <button class="button button-light home-view-button" ui-sref="transferRecords">
+        <span>转账记录</span>
+      </button>
+    </ion-nav-buttons>
+	<ion-content>
+		<div class="transfer" ng-show="transfer">
+			<h2>转到全时钱包账户</h2>
+			<p>全时钱包可以为您安全的转移资金，即时传递您的转帐信息</p>
+			<div class="phone num">
+				<img src="">
+				<input type="text" class="phoneNum" placeholder="请输入对方11位手机号"></input>
+			</div>
+			<button class="next" ng-click="next()">下一步</button>
+		</div>
+		<div class="transferNum" ng-show="transferNum">
+			<h2>{{name}}</h2>
+			<p>{{phone}}</p>
+			<div class="phone money">
+				<img src="">
+				<input type="text" class="transferMoney" placeholder="请输入转账金额（免服务费）"></input>
+			</div>
+			<div class="phone text">
+				<img src="">
+				<input type="text" class="transferInstructions" placeholder="添加转账说明（20个字以内）"></input>
+			</div>
+			<button class="submit" ng-click="transferPassword()">提交</button>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>付款详情</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <script src="../../route.js"></script>
+</head>
+<body>
+<!--标题栏-->
+<div class="wrap">
+	<header class="header">
+	    <a class="guanbi" id="back"><img id="backImg" src="?" onerror="imgUrl('images/guanbi_1@2x.png','backImg');"></a>
+	</header>
+	<div id="wrapper" style="overflow: hidden;" class="main">
+	    <!-- <div id="scroller"> -->
+	        <!--下拉刷新-->
+	        <!-- <div id="pullDown">
+	            <span class="pullDownIcon"></span><span class="pullDownLabel"></span>
+	        </div> -->
+	
+	        <!--页面的内容-->
+	        <section class="payment_main_pay content">
+	            <h2 class="con_title">付款详情</h2>
+	            <ul class="order_list">
+	                <li>
+	                    <a class="list_wrap"> 
+	                        <span class="fl clist_left">订单信息</span>
+	                        <span class="fr clist_right" id="menu"></span>
+	                    </a>
+	                </li>
+	                <li>
+	                    <a class="list_wrap">
+	                        <span class="fl clist_left">全时钱包账号</span>
+	                        <span class="fr clist_right" id="money"></span>
+	                    </a>
+	                </li>
+	                <li>
+	                    <a class="list_wrap" id="list_wrap">
+	                        <span class="fl clist_left">付款方式</span>
+	                        <span class="fr cart"><label></label></span>
+	                    </a>
+	                </li>
+	                <li>
+	                    <a class="list_wrap">
+	                        <span class="fl clist_left">需要付款</span>
+	                        <span class="fr clist_right" id="pay"></span>
+	                    </a>
+	                </li>
+	            </ul>
+	            <p class="fr payment_main_pay_sure">
+	                <button class="queren">确认付款</button>
+	            </p>
+	        </section>
+	        <!--上拉加载-->
+	        <!-- <div id="pullUp">
+	            <span class="pullUpIcon"></span><span class="pullUpLabel"></span>
+	        </div> -->
+	
+	    <!-- </div> -->
+	</div>
+</div>
+<div class="login_mask"></div>
+<script src="../js/jquery-1.12.3.min.js"></script>
+<script src="../js/jsencrypt.js"></script>
+<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.min.js"></script>
+<script src="../js/tripledes.js"></script>
+<script src="../js/mode-ecb.js"></script>
+<script src="../js/base/base64.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/order.js"></script>
+</body>
+</html>

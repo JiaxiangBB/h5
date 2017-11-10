@@ -1,0 +1,48 @@
+<div class="wrap_main_all wrap_main_all_other">
+	<h2>全时通卡充值</h2>
+	<span class="backToMain rechargeBank" style="opacity:0"><a>返回</a></span>
+	<div class="approve">
+		<main class="recharge_main">
+			<ul>
+				<li>
+					<p>卡余额(元)</p>
+					<h2>{{aifavabalance}}</h2>
+					<p class="cardNumberQshi">{{cardNo}}</p>
+				</li>
+			</ul>
+			<div class="recharge_money recharge_money_one">
+				<p>充值金额(元):<a>{{pre_money}}</a></p>
+				<label><input type="text" id="pre_money"  ng-model="pre_money"></input><!-- <img ng-src="{{imagesSRC+'public/shanchu.png'}}" style="width: 1rem" /> --><img ng-src="./build/public/shanchu.png" style="width: 1rem" /></label>
+				<span class="next" ng-click="rechargeNext()">下一步</span>
+			</div>
+			<div class="recharge_money recharge_money_next"  style="display:none;">
+				<p>充值金额(元):<a class="topUpAmount">{{pre_money}}</a></p>
+				<!-- 卡号 -->
+				<p class="cardAccountNo" style="display:none">{{cardHao}}</p>
+				<p>支付方式：</p>
+				<div class="payCardlist">
+					<div class="payCardlist_card" style="height:auto"></div>
+					<div class="payCardlist_btn" style="height:30px">
+						<button ng-click="add_banks()">使用新银行卡充值</button>
+					</div>
+				</div>
+				<div class="message_codebox">
+					<p>短信验证码</p>
+					<label>
+					<input class="message_code" type="text"></input>
+					<input type="hidden" class="orderNo" />
+					<input type="hidden" class="flowno" />
+					<button ng-click="paySendPhoneMessage()" class="sign_next_again paySendPhoneMessage">点击获取</button><a class="sign_next_time" style="border:none;background:none;display:none"><i class="sign_time"></i>秒后再获取</a></label>
+					<span ng-click="recharge()" class="next">提交</span>
+				</div>
+			</div>
+		</main>
+	</div>
+	<div class="mark" id="mark_one" style="display:none">
+		<div>
+			<span ng-click="close()">×</span>
+			<p class="text"></p>
+			<p><a ng-click="close()" class="change">确定</a></p>
+		</div>			
+	</div>
+</div>

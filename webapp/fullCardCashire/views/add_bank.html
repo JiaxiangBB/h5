@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>绑定银行卡</title>
+	<meta charset="UTF-8">
+	<!--让IE以最新的内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<!--让视口宽度为设备宽度,不允许用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<!--不自动识别电话号码和邮编 -->
+	<meta name="format-detection" content="telephone=no,email=no"/>
+	<!--开启对webapp的支持 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!--强制全屏显示 -->
+	<meta name="full-screen" content="yes">
+	<!--禁止浏览器从缓存中访问页面内容 -->
+	<meta http-equiv="Pragma" content="no-cache">
+	<!--web app 应用下状态(屏幕顶部条)的颜色,默认值为 default(白色) -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../../route.js"></script>
+</head>
+<body>
+<div class="wrap cashier_app" style="background:#fff;color:#333;">
+	<header class="header">
+		<a id="back"><img id="backImg" src="?" onerror="imgUrl('images/fanhui@2x.png','backImg');"></a>
+	</header>
+	<div class="main">
+		<section class="payment_main_pay content">
+            <h2 class="con_title" style="margin-bottom:0">添加银行卡</h2>
+            <p
+             class="message"><img id="message" src="?" onerror="imgUrl('images/guanyuwomen@2x.png','message');" /><span class="name"></span><span class="card"></span></p>
+            <ul class="login_list bank_list">
+           		<li class="add_one">
+                    <dl>
+		 				<dt style="width: 1.5rem;"><img id="add_one" src="?" onerror="imgUrl('images/tianjiayinhangka@2x.png','add_one');"></dt>
+		 				<dd><input type="text" placeholder="请输入您的银行卡号" id="cardNo"></input></dd>
+		 			</dl> 
+                </li>
+                <li class="add_two">
+                    <dl>
+		 				<dt style="width: 1.5rem;"><img id="add_two" src="?" onerror="imgUrl('images/guanyuwomen@2x.png','add_two');"></dt>
+		 				<dd><input type="text" placeholder="请输入您的真实姓名" id="custNm"></input></dd>
+		 			</dl>
+                </li>
+                <li class="add_two">
+                   <dl>
+		 				<dt style="width: 1.5rem;"><img id="add_three" src="?" onerror="imgUrl('images/shenfenzhenghao@2x.png','add_three');"></dt>
+		 				<dd><input type="text" placeholder="请输入您的身份证号" id="certno"></input></dd>
+		 			</dl> 
+                </li>
+                <li id="card_list" class="add_two">
+                   <dl>
+		 				<dt style="width: 1rem;margin-right:1.5rem"><img id="add_four" src="?" onerror="imgUrl('images/shoujihao@2x.png','add_four');"></dt>
+		 				<dd><input type="text" placeholder="请输入您的预留手机号" id="mobile"></input></dd>
+		 			</dl> 
+                </li>
+                 <li class="card_list add_card">
+			     	 <dl>
+		 				<dt style="width: 1.5rem;"><img id="add_five" src="?" onerror="imgUrl('images/youxiaoqi@2x.png','add_five');"></dt>
+		 				<dd><input type="text" placeholder="请输入卡有效期,  格式:01/17" id="haveDate"></input></dd>
+		 			</dl> 
+			    </li>
+                <li class="add_card">
+		        	<dl>
+						<dt style="width: 1.5rem;"><img id="add_six" src="?" onerror="imgUrl('images/ccv2@2x.png','add_six');"></dt>
+						<dd><input type="number" placeholder="请输入卡背面签名栏后三位数字" id="cvv"></input></dd>
+					</dl>
+			    </li>
+            </ul>
+            <div class="login_sign sub"  id="subOne">
+            	<button style="background:#3F4483;color:#fff">下一步</button>
+            </div>
+            <div class="login_sign sub" style="display:none" id="subTwo">
+            	<button style="background:#3F4483;color:#fff">提交</button>
+            </div>
+            <div class="login_sign next" style="display:none" id="submitOne">
+            	<button style="background:#3F4483;color:#fff">下一步</button>
+            </div>
+            <div class="login_sign next" style="display:none" id="submitTwo">
+            	<button style="background:#3F4483;color:#fff">提交</button>
+            </div>
+	    </section>
+	</div>
+</div>
+<div class="login_mask"></div>
+	
+<script src="../js/jquery-1.12.3.min.js"></script>
+<script src="../js/jsencrypt.js"></script>
+<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.min.js"></script>
+<script src="../js/tripledes.js"></script>
+<script src="../js/mode-ecb.js"></script>
+<script src="../js/base/base64.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/add_bank.js"></script>
+</body>
+</html>

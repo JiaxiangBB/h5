@@ -1,0 +1,17 @@
+<ion-view title="交易明细" id="billList-view" cache-view="false">
+	<ion-content>
+		<ion-refresher pulling-text="下拉刷新"  on-refresh="doRefresh()">
+	    </ion-refresher>
+		<div class="billList" id="transactionDetails">
+			<ul class="list">
+			<!-- <li>9999</li> -->
+			</ul>
+		</div>
+		<div class="empty" style="display: none;">
+			<img src="">
+			<p>暂时没有充值记录</p><!-- 没有找到近一年的相关记录 -->
+		</div>
+		<ion-infinite-scroll  ng-if="!noMorePage" immediate-check="false"  immediate-check="false"  on-infinite="loadMore()"  distance="1%">
+	    </ion-infinite-scroll>
+	</ion-content>
+</ion-view>

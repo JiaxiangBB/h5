@@ -1,0 +1,36 @@
+<ion-view title="我的银行卡" id="bankList-view" cache-view="false">
+	<ion-nav-buttons side="right">
+      <button class="button button-light home-view-button" ng-click="addBank()">
+        <i class="ion-android-add"></i>
+      </button>
+    </ion-nav-buttons>
+	<ion-content>
+		<div class="bankList">
+			<ul>
+				<li ng-repeat="item in bankcard_list">
+					<p class="bankBg"><img src=""></p>
+					<p class="bankImg"><img src=""></p>
+					<p class="bankMessage">
+						<span class="bankName">中国银行</span>
+						<span class="bankType">理财金卡</span>
+						<span class="bankNum">6222 08** **** ***1 809</span>
+					</p>
+				</li>
+			</ul>
+		</div>
+		<div class="empty">
+			<img src="">
+			<p>您暂未添加银行卡！</p>
+		</div>
+	</ion-content>
+	<div class="mask">
+		<div class="top">
+			<ul>
+				<li>您可对0908尾号工商银行的信用卡进行操作</li>
+				<li>删除</li>
+			</ul>
+		</div>
+		<div class="bottom">取消</div>
+	</div>
+</ion-view>
+

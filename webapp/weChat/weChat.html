@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全时钱包线上约惠，现金送不停</title>
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">   
+    <meta name="format-detection" content="email=no">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+	  	//封装图片路径
+	    function imgUrl(aa,bb){ 
+	    	document.getElementById(bb).src="./"+aa; 
+	    } 
+	    //官网静态资源图片路径
+	    //var imgSRC="http://image.ohepay.com/";
+    </script>
+</head>
+<body>
+	 <div class="box">
+	 	<div class="homePage">
+	 		<img id="home" src="?" onerror="imgUrl('weChatImg/img.jpg','home');">
+	 		<div class="invitation"><span></span><span></span><span></span><span></span></div>
+	 	</div>
+	 	<div class="registrationPage" hidden>
+		 	<img id="one" src="?" onerror="imgUrl('weChatImg/one.jpg','one');">
+			<div class="register">
+				<img id="two1" src="?" onerror="imgUrl('weChatImg/two1.png','two1');">
+				<div class="form">
+					<input type="text" class="list txt phone" placeholder="请输入您的手机号"></input>
+					<input type="text" class="list message" placeholder="请输入短信验证码"></input>
+					<label class="list messageAll">
+						<input type="button" class="btn obtainMessage" value="获取验证码"></input>
+						<input type="button" class="btn messageTime" style="border:none;background:none;color:#333;display: none" value="12 秒后再获取"></input>
+					</label>
+					<input type="password" class="list txt password"  placeholder="请设置6-16位登录密码"></input>
+					<input type="password" class="txt payPassword"  placeholder="请设置6位数字支付密码"></input>
+					<span>您输入的手机号错误，请重新输入</span>
+					<input type="button" class="sub"></input>
+				</div>
+			</div>
+			<div class="success" hidden>
+				<img id="two2" src="?" onerror="imgUrl('weChatImg/two2.png','two2');">	
+				<input type="button" class="download"></input>
+			</div>
+			<img id="three" src="?" onerror="imgUrl('weChatImg/three.jpg','three');"/>
+		</div>
+	 </div>
+	 <div class="registerNow">
+		<img id="four" src="?" onerror="imgUrl('weChatImg/zhuce.png','four');"/>
+	</div>
+<script type="text/javascript" src="js/jq.js"></script>
+<script type="text/javascript" src="js/tripledes.js"></script>
+<script type="text/javascript" src="js/mode-ecb.js"></script>
+<script type="text/javascript" src="js/md5.js"></script>
+<!-- <script type="text/javascript" src="../route.js"></script> -->
+<script type="text/javascript" src="js/weChat.js"></script>
+</body>
+</html>

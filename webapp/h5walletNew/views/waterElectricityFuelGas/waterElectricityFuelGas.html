@@ -1,0 +1,35 @@
+<ion-view title="缴水费" id="waterElectricityFuelGas-view" cache-view="false">
+	<ion-nav-buttons side="right">
+	  <button class="button button-light home-view-button" ng-click="goPaymentRecords()">
+	    <span>缴费记录</span>
+	  </button>
+	</ion-nav-buttons>
+	<ion-content>
+		<!-- 有过缴费记录 -->
+		<ion-list show-delete="data.showDelete">
+			<h2>{{text}}</h2>
+			<p>
+				<img class="account" src="">
+				<span>缴费账户</span>
+			</p>
+			<ion-item ng-repeat="item in list" item="item" class="item-remove-animate"  ng-click="addPaymentAgain(item)"><!-- href="#/item/{{item.id}}"  -->
+				<span class="jiaofeiZhangHu"><b style="font-weight: normal;">{{item.ptdCardNo}}</b> | *{{item.receiverName}}</span>
+				<label class="goPay">再次缴费 </label>
+				<span class="icon jinru_back"></span>
+				<ion-option-button class="button-assertive" ng-click="onItemDeleteShui(item)">删除</ion-option-button>
+			</ion-item>
+			<div class="addZhangHao" ng-click="addPayment()">
+				<img class="add" src="">
+				<span>添加账号</span>
+			</div>
+		</ion-list>
+	</ion-content>
+	<div class="waterMask" ng-show="maskContent">
+		<div class="maskContent">
+			<div>如何知道缴费号码？</div>
+			<p>查看当月／历史纸质账单或手机短信</p>
+			<span ng-click="close()">确认</span>
+		</div>
+	</div>
+</ion-view>
+

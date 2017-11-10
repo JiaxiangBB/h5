@@ -1,0 +1,54 @@
+<div class="wrap_main_all wrap_main_all_other">
+	<h2>账户充值</h2>
+	<span class="backToMain"><a class="prepaidBank" style="display: none;">返回</a><a class="toMain">返回</a></span>
+	<div class="approve">
+		<main class="recharge_main prepaid_main">
+			<form class="recharge_money recharge_money_one">
+				<p>账户余额(元):<a>{{balance_wrap}}元</a></p>
+				<p>充值金额(元):<a>{{pre_money}}</a></p>
+				<label><input type="text" id="pre_money"  ng-model="pre_money"></input><!-- <img ng-src="{{imagesSRC+'public/shanchu.png'}}" style="width: 1rem" /> --><img ng-src="./build/public/shanchu.png" style="width: 1rem" /></label>
+				<span class="next" ng-click="prepaid_next()">下一步</span>
+			</form>
+			<form class="recharge_money recharge_money_next prepaid_money" style="display:none;">
+				<p style="background:#FFDAB9;border-radius:8px;padding-left:32px;position:relative;display:none"><!-- <img ng-src="{{imagesSRC+'remind/jingshi.png'}}" style="width:1.12rem;height:1.12rem;margin-right:10px;position:absolute;left:10px;top:6px;"/> --><img ng-src="./build/remind/jingshi.png" style="width:1.12rem;height:1.12rem;margin-right:10px;position:absolute;left:10px;top:6px;"/>使用全时通卡充值将收取15%充值手续费</p>
+				<p>账户余额(元):<a>{{balance_wrap}}元</a></p>
+				<p>充值金额(元):<a class="topUpAmount">{{pre_money}}</a></p>
+				<!-- 卡号 -->
+				<p class="cardAccountNo" style="display:none">{{cardHao}}</p>
+				<p style="display:none" class="orderNo"></p>
+				<!-- <p class="orderNo" style="">{{order_no}}</p> -->
+				<p>支付方式：</p>
+				<div class="payCardlist">
+					<div class="payCardlist_card"></div>
+					<div class="payCardlist_btn">
+						<button  ng-click="add_banks()">使用新银行卡充值</button>
+					</div>
+				</div>
+				<div class="message_codebox">
+					<p>短信验证码</p>
+					<label><input class="message_code" type="text"></input><button ng-click="paySendPhoneMessage()" class="sign_next_again paySendPhoneMessage">点击获取</button><a class="sign_next_time" style="border:none;background:none;display:none"><i class="sign_time"></i>秒后再获取</a></label>
+					<span ng-click="bankCardRecharge()" class="next">提交</span>
+				</div>
+			</form>			
+			<!-- <form class="chongzhi_form" style="display:none;">
+            	<p>支付密码：<a href="#" class="forget_pass fr">忘记支付密码？</a></p>
+				<label><input class="safetypayPassword" type="text"></input></label>
+				<a class="next" ng-click="bankCardRecharge()">提交</span>
+        	</form> -->
+		</main>
+	</div>
+	<div class="mark" id="mark_one" style="display:none">
+		<div>
+			<span ng-click="close()">×</span>
+			<p class="text"></p>
+			<p ng-click="close()" class="change"><a>确定</a></p>
+		</div>			
+	</div>
+	<div class="mark" style="display:none" id="mark_two">
+		<div>
+			<span ng-click="close()">×</span>
+			<p>您已成功为账户充值 <b>{{pre_money}}</b>元</p>
+			<p  ng-click="toWrap()"><a>确定</a></p>
+		</div>			
+	</div>
+</div>

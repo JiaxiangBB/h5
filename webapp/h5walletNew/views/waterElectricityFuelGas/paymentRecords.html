@@ -1,0 +1,21 @@
+<ion-view title="缴费记录" id="paymentRecords-view" cache-view="false">
+	<ion-content>
+		<ion-refresher pulling-text="下拉刷新"  on-refresh="doRefresh()"></ion-refresher>
+		<ion-infinite-scroll  ng-if="!noMorePage" immediate-check="false"  immediate-check="false"  on-infinite="loadMore()"  distance="1%">
+	    </ion-infinite-scroll>
+
+		<div class="paymentRecords">
+			<ul>
+				
+			</ul>
+		</div>
+		<div class="empty" style="display: none;">
+			<img src="">
+			<p>暂时没有账单记录</p>
+		</div>
+		<div class="emptyTwo" style="display: none;">
+			<p>没有更多账单记录</p>
+		</div>
+	</ion-content>
+</ion-view>
+

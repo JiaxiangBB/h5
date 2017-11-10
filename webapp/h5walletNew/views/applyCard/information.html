@@ -1,0 +1,43 @@
+<ion-view title="购卡信息" id="information-view" cache-view="false">
+	<ion-content>
+		<div class="information">
+			<h2>购卡信息</h2>
+			<ul class="message">
+				<li>
+					<p>购卡面额</p>
+					<p class="denomination" ng-click="denomination()"><input readonly type="text" placeholder="请选择卡面额"></input><b>元</b></p>
+				</li>
+				<li>
+					<p>购卡张数</p>
+					<p class="calculate"><span class="reduce">-</span><input type="text" value="1" class="buyCardsNum"></input><span class="plus">+</span></p>
+				</li>
+				<li>
+					<p>是否需要发票</p>
+					<p class="invoiceJudge">
+						<label><input type="radio" checked name="nax" data-type="no"></input><em>否</em></label>
+						<label><input type="radio" name="nax" data-type="yes"></input><em>是</em></label>
+					</p>
+				</li>
+				<li class="invoice  invoiceTitle" style="display: none;">
+					<input type="text" placeholder="请输入发票抬头"></input>
+				</li>
+				<li class="invoice invoiceNum" style="display: none;">
+					<input type="text" placeholder="请输入发票税号"></input>
+				</li>
+			</ul>
+			<button class="next" ng-click="applyOrder()">下一步</button>
+		</div>
+	</ion-content>
+	<div class="informationMask" style="display: none;" ng-click="close()"></div>
+	<div class="selectDenomination">
+		<ul>
+			<li>请选择购卡面额</li>
+			<li class="choice">1000</li>
+			<li class="choice">500</li>
+			<li class="choice">200</li>
+			<li class="choice">0.01</li>
+		</ul>
+		<p  ng-click="close()">取消</p>
+	</div>
+</ion-view>
+

@@ -1,0 +1,46 @@
+<!-- resetPsd.html -->
+<!------------------重置支付密码 开始------------------>
+<div class="wrap_main_all wrap_main_all_other wrap_main_all_payPasword">
+	<h2 class="payPasword_title">找回支付密码</h2>
+	<span class="approve_back"><a class="toMain">返回</a></span>
+	<form class="reset_pay_password">
+		<div class="reset_pay_error_message" style="display: block">
+			<span class="tell_icon"></span>
+			<p>请点击获取验证码并在手机：<span>{{mobile}}</span>中查看短信验证码</p>
+		</div>
+		<p class="error_message" style="opacity:0">
+            <span class="error_tip" style="display:block"><!-- <img ng-src="{{imagesSRC+'login/cuowu.png'}}"> --><img ng-src="./build/login/cuowu.png"></span><b></b>
+        </p>
+		<div class="resetpay_form_group" style="display: block">
+			<label>短信验证码：</label><span class="gain gainReset" ng-click="sendPhoneCode()"><a class="sign_next_again">点击获取</a><a class="sign_next_time" style="border:none;background:none;display:none"><b class="sign_time"></b>秒后再获取</a></span>
+			<input class="message_code" type="text" placeholder="输入短信验证码">
+		</div>
+		<div class="resetpay_submit" style="display: block" ng-click="resetpay_submit()">
+			<a>下一步</a>
+		</div>
+	</form>
+	<form class="pay_password_form" style="display:none">
+		<p class="error_message" style="opacity:0">
+            <span class="error_tip" style="display:block"><!-- <img ng-src="{{imagesSRC+'login/cuowu.png'}}"> --><img ng-src="./build/login/cuowu.png"></span><b></b>
+        </p>
+		<div class="safety_form_group" style="display: block">
+			<label>支付密码：</label>
+			<input class="paymentCode" type="password" id="newPassword">
+		</div>
+		<div class="safety_form_group" style="display:block;">
+			<label>确认支付密码：</label>
+			<input class="confirmPayPswd" type="password" id="confirmNewPassword">
+		</div>
+		<div class="change_password_submit" style="display: block" ng-click="reset_paypassword()">
+			<a>提交</a>
+		</div>
+	</form>
+	<div class="mark" id="mark_one" style="display:none">
+		<div>
+			<span ng-click="close()">×</span>
+			<p class="text"></p>
+			<p ng-click="close()" class="change"><a>确定</a></p>
+		</div>			
+	</div>
+</div>
+<!------------------重置支付密码 结束------------------>

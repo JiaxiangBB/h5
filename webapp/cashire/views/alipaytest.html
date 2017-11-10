@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>支付订单</title>
+	<meta charset="UTF-8">
+	<!--让IE以最新的内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<!--让视口宽度为设备宽度,不允许用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<!--不自动识别电话号码和邮编 -->
+	<meta name="format-detection" content="telephone=no,email=no"/>
+	<!--开启对webapp的支持 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!--强制全屏显示 -->
+	<meta name="full-screen" content="yes">
+	<!--禁止浏览器从缓存中访问页面内容 -->
+	<meta http-equiv="Pragma" content="no-cache">
+	<!--web app 应用下状态(屏幕顶部条)的颜色,默认值为 default(白色) -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+	<div class="wrap">
+		<header class="header">
+			<p>支付订单</p>
+<!-- 			<a id="back_last"><img src="../images/fanhui@2x.png"></a> -->
+		</header>
+		<main class="main">
+			 <section class="payment_main_shop">
+			 </section> 
+			 <section class="payment_main_pay">
+			 	<ul class="pay_list">
+			 		 <li>
+			 			<dl>
+			 				金额：<input id="amount" name="amount"/>
+			 			</dl>
+			 		</li>
+			 		
+			 	</ul>
+			 	
+			 </section>
+			 <div class="payment_main_pay_sure" id="payment_main_pay_sure1">
+		 		<a>完成订单</a>
+		 	</div>
+		</main>
+	</div>
+	<div class="login_mask"></div>
+<script src="../js/jquery-1.12.3.min.js"></script>
+<script src="../js/jq.js"></script>
+<script src="../js/base64.js"></script>
+<script src="../../route.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/index.js"></script>
+	
+</body>
+<script type="text/javascript">
+// $()
+$("#payment_main_pay_sure1").live("click",function() {
+				var parms_two = {};
+				//订单金额
+				alert($("#amount").val());
+				parms_two.amount =$("#amount").val();
+				// alert(getRootPath());
+				$.ajax({
+					url :getRootPath()+"AliPayAction.aliPayDoubleMoney.do?FAPView=JSON",
+					data : parms_two,
+					success : function(data) {
+						var data=$.parseJSON(data);
+						if(data.FAPStatus=="0"){
+							if(data.success==true){
+								var data=data.data;
+								//console.log(data);
+								var merNo =data.MerNo;
+								var billNo = data.BillNo;
+								var mount =data.Amount;
+								alert("merNo="+merNo+"mount="+mount+"billNo="+billNo);
+								location.href=getRootPath()+"/alipaydoublemoneyapi.jsp?Amount="+mount+"&BillNo="+billNo+"&MerNo="+merNo;	
+							}else{
+								$(".login_mask").css("display","block").text(data.errors.msg);
+				    			 setTimeout(function(){
+									$(".login_mask").css("display","none");
+								},2000);
+							}
+						}else{
+							if(data.FAPErrorMessage){
+								if(data.FAPErrorMessage.replace(/\s+/g,'').substring(0,2)=="no"){
+									$(".login_mask").css("display","block").text("请重新登录");
+					    			 setTimeout(function(){
+										$(".login_mask").css("display","none");
+									},2000);
+								}else{
+									$(".login_mask").css("display","block").text(data.FAPErrorMessage);
+					    			 setTimeout(function(){
+										$(".login_mask").css("display","none");
+									},2000);
+								}
+							}else{
+								if(data.errorCode){
+									$(".login_mask").css("display","block").text(data.errorCode);
+					    			 setTimeout(function(){
+										$(".login_mask").css("display","none");
+									},2000);
+								}else{
+									$(".login_mask").css("display","block").text(data.FAPErrorCode);
+					    			 setTimeout(function(){
+										$(".login_mask").css("display","none");
+									},2000);
+								}
+							}
+						}
+					},
+					error : function() {
+						//location = "index.html";
+					}
+				});
+// 			}
+// 		}
+		
+// 	}
+});
+</script>
+</html>

@@ -1,0 +1,49 @@
+<div class="wrap_main_all wrap_main_all_other">
+	<h2>账户提现</h2>
+	<span class="back" style="display:block"><a href="#">返回</a></span>
+	<div class="approve">
+		<main class="recharge_main prepaid_main">
+			<div class="recharge_money recharge_money_next">
+				<p>账户余额(元):<a>{{balance_wrap}}</a></p>
+				<p>提现金额(元):<a class="balance_tixian">{{pre_money}}</a></p>
+				<p class="cardAccountNo" style="display:none">{{cardHao}}</p>
+				<label><input type="text" id="pre_money"  ng-model="pre_money"></input><!-- <img ng-src="{{imagesSRC+'public/shanchu.png'}}" style="width: 1rem" /> -->
+				<img ng-src="./build/public/shanchu.png" style="width: 1rem" /></label>
+				<p>提现储蓄卡：</p>
+				<div class="withdrawal_CashCard">
+					<div class="withdrawal_CashCard_card"></div>
+					<div class="withdrawal_CashCard_btn">
+						<button ng-click="add_banks()">使用新储蓄卡</button>
+					</div>
+				</div>
+				<p>支付密码<b style="font-weight: normal;float: right;" ng-click="forget_payPassword()">忘记支付密码？</b></p>
+				<label><input class="tixian_password" type="password"></input><!-- <img ng-src="{{imagesSRC+'public/shanchu.png'}}" style="width: 1rem" /> --><img ng-src="./build/public/shanchu.png" style="width: 1rem" /></label>
+				<span class="next" ng-click="accountWithdrawal()">提交</span>
+			</div>
+		</main>
+	</div>
+	<!-- <div class="mark" ng-show="mark">
+		<div>
+			<span ng-click="close()">×</span>
+			<p>您的提现申请已成功提交，请留意账户变化</p>
+			<p><a>确定</a></p>
+		</div>			
+	</div> -->
+	<!-- <div class="mark mark_search" ng-show="mark_search">
+		<div>
+			<span ng-click="close()">×</span>
+			<h4><img ng-src="{{imagesSRC+'public/sousuo.png'}}"><input type="text" placeholder="搜索查询支行名称"></input></h4>
+			<p>支行列表</p>
+			<ul>
+				
+			</ul>
+		</div>			
+	</div> -->
+	<div class="mark" id="mark_one" style="display:none">
+		<div>
+			<span ng-click="close()">×</span>
+			<p class="text"></p>
+			<p><a ng-click="close()" class="true change">确定</a></p>
+		</div>			
+	</div>
+</div>

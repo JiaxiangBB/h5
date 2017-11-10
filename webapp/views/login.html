@@ -1,0 +1,189 @@
+<div class="login" ng-init="test()">
+	<!-- <div class="Movement_line"><img ng-src="{{imagesSRC+'/login/quxian.png'}}"></div>
+	<div class="Movement_line2"><img ng-src="{{imagesSRC+'/login/quxian.png'}}"></div> -->
+	<div class="Movement_line"><img ng-src="./build/login/quxian.png"></div>
+	<div class="Movement_line2"><img ng-src="./build/login/quxian.png"></div>
+	<header class="login_header">
+		<div class="wrap_1200">
+			<!-- <img ng-src="{{imagesSRC+'/login/logo1.png'}}"> -->
+			<img ng-src="./build/login/logo1.png">
+			<!-- <p class="cardQurey fr"></p> -->
+			<p class="pclogin_nav">
+				<!-- <span ng-click="cardBalance()"></span> -->
+				<a class="merchant_login" ng-click="getInfo()">登录</a>
+				<a class="register" ui-sref="wrap.register">注册</a>
+			</p>
+		</div>
+	</header>
+	<!--logn 登陆框开始-->
+	<div class="login_content">
+		<div class="wrap_1200">
+			<div class="login-wrap" style="display: none">
+				<form class="login-form">
+					<div class="login-title">
+						<!-- <img class="login_icon fl" ng-src="{{imagesSRC+'/login/denglu.png'}}"> -->
+						<img class="login_icon fl" ng-src="./build/login/denglu.png">
+						<span class="span fl">登录</span>
+						<!-- <b class="close fl"><img ng-src="{{imagesSRC+'/login/colse.png'}}"></b> -->
+						<b class="close fl"><img ng-src="./build/login/colse.png"></b>
+					</div>
+					<div class="login-tip-wrap">
+						<div class="login-tip" style="display: none">账号或密码输入错误，请重新输入</div>
+					</div>
+					<div class="login-form-group">
+						<label for="phone_number" class="login_img"><!-- <img class="fl" ng-src="{{imagesSRC+'/login/shoujihao.png'}}"> --><img class="fl" ng-src="./build/login/shoujihao.png"></label>
+						<input type="text" class="login_input" id="phone_number" name="phone_number" placeholder="请输入您的手机号">
+						<span class="delete_icon" style="display:none;"><!-- <img ng-src="{{imagesSRC+'/login/shanchu.png'}}"> --><img ng-src="./build/login/shanchu.png"></span>
+					</div>
+					<div class="login-form-group">
+						<label for="password" class="login_img"><!-- <img class="fl" ng-src="{{imagesSRC+'/login/mima.png'}}"> --><img class="fl" ng-src="./build/login/mima.png"></label>
+						<input type="password" class="login_input" id="password" name="password" placeholder="请输入您的密码"> 
+					</div>
+					<div class="login-form-group login-form-group_last">
+						<label class="inputImg_code" ng-click="changeImg()">
+							<!-- <img class="zhengque fl" ng-src="{{imagesSRC+'/login/zhengque.png'}}" style="opacity:0"> -->
+							<img class="zhengque fl" ng-src="./build/login/zhengque.png" style="opacity:0">
+							<span class="fl"><img ng-src="{{preurl+'/PublicAction.getRandomImgCode.do?FAPView=JSON?'}}" id="pic_num"></span>
+						</label>
+						<input type="text" class="input_code" id="password_img" name="password_img" value="" placeholder="请输入图形验证码">
+					</div>
+					<p class="pass_text"><a ui-sref="wrap.password">忘记登录密码？</a></p>
+					<div class="login_submit">
+						<button ng-click="login()">登录</button>
+					</div>
+					<p class="zhuce_text"><a ui-sref="wrap.register">免费注册</a></p>
+				</form>
+			</div>
+			<!--卡余额查询 开始-->
+			<div class="cardBalance_query" style="display: none">
+				<h3>卡余额查询<span class="close"></span></h3>
+				<div class="balance_query">
+					<p class="fl"><!-- <img ng-src="{{imagesSRC+'/login/kayang.png'}}"> --><img ng-src="./build/login/kayang.png"></p>
+					<form class="balance_form fl">
+						<label for="cardNumber"><span>卡号：</span></label>
+						<input class="cardNumber" id="cardNumber" name="cardNumber" type="text">
+						<label for="cardPassword"><span>密码：</span></label>
+						<input class="cardPassword" id="cardPassword" name="cardPassword" type="password">
+						<a class="query_aniu">查询</a>
+					</form>
+				</div>
+			</div>
+			<!--卡余额查询 结束-->
+			<!--logn 运动开始-->
+			<div class="login_main"></div>
+			<!--logn 运动结束-->
+			<!-- *****手机端适配 ******-->
+			 <!-- <a  key ="5853a099efbfb0083429bae0"  logo_size="83x30" id="self" logo_type="business"  href="http://www.anquan.org" >
+		<script src="//static.anquan.org/static/outer/js/aq_auth.js"></script>
+	</a> -->
+			<div class="phoneLogin_wrap">
+				<a class="phone_loginL fl">登录</a>
+				<a class="phone_loginR fr current" ui-sref="wrap.register">注册</a>
+			</div>
+			<div class="phonelogin-wrapform" style="display:none;">
+				<form class="login-form">
+					<div class="login-title">
+						<!-- <img class="login_icon fl" ng-src="{{imagesSRC+'/login/iphonetouxiang.png'}}"> -->
+						<img class="login_icon fl" ng-src="./build/login/iphonetouxiang.png">
+						<span class="span fl">登录</span>
+						<!-- <img class="close fr" ng-src="{{imagesSRC+'/login/colse.png'}}"> -->
+						<img class="close fr" ng-src="./build/login/colse.png">
+					</div>
+ 					<div class="login-tip-wrap">
+						<div class="login-tip" style="display: none">账号或密码输入错误，请重新输入</div>
+					</div>
+					<div class="login-form-group">
+						<label for="phone_number" class="login_img"><!-- <img class="fl" ng-src="{{imagesSRC+'/login/phoneshoujihao.png'}}"> --><img class="fl" ng-src="./build/login/phoneshoujihao.png"></label>
+						<input type="text" class="login_input" id="phone_number" name="phone_number" placeholder="请输入您的手机号">
+					</div>
+					<div class="login-form-group">
+						<label for="password" class="login_img"><!-- <img class="fl" ng-src="{{imagesSRC+'/login/phonemima.png'}}"> --><img class="fl" ng-src="./build/login/phonemima.png"></label>
+						<input type="password" class="login_input" id="password" name="password" placeholder="请输入您的密码">
+					</div>
+					<div class="login-form-group login-form-group_last">
+						<label for="password_img" class="login_img"><!-- <img class="fl" ng-src="{{imagesSRC+'/login/phpneyanzhengma.png'}}"> --><img class="fl" ng-src="./build/login/phpneyanzhengma.png"></label>
+						<input type="text" class="login_input" id="password_img" name="password_img" placeholder="请输入图形验证码">
+						<span class="fl"  ng-click="changeImg()"><img ng-src="{{preurl+'/PublicAction.getRandomImgCode.do?FAPView=JSON?'}}" id="pic_num"></span>
+					</div>
+					<p class="pass_text"><a ui-sref="wrap.password">忘记登录密码？</a></p>
+					<div class="login_submit">
+						<button ng-click="phonelogin()">登录</button>
+					</div>
+					<p class="zhuce_text"><a ui-sref="wrap.register">免费注册</a></p>
+				</form>
+			</div>
+			<!--手机端 卡余额查询 开始-->
+			<div class="phone_cardBalance_query" style="display:none">
+				<h3>卡余额查询<span class="close"></span></h3>
+				<div class="balance_query">
+					<!-- <p class="fl"><img ng-src="{{imagesSRC+'login/kayang.png'}}"></p> -->
+					<form class="balance_form fl">
+						<div class="login-form_jqurey">
+							<label for="cardNumber"><span>卡号：</span></label>
+							<input class="cardNumber" id="cardNumber" name="cardNumber" type="text" value="请输入您的卡号">
+						</div>
+						<div class="login-form_jqurey">
+							<label for="cardPassword"><span>密码：</span></label>
+							<input class="cardPassword" id="cardPassword" name="cardPassword" type="password" value="请输入您的密码">
+						</div>
+						<a class="query_aniu_jquery">查询</a>
+					</form>
+				</div>
+			</div>
+			<!--手机端 卡余额查询 结束-->
+			<!--*****手机端适配 结束******-->
+			<!--nav 浮动导航开始-->
+			<div class="New_guidelines">
+				<p class="p1"><span></span><a ui-sref="wrap.guild">新手指引</a></p>
+				<p class="p2">
+					<span><!-- <img ng-src="{{imagesSRC+'/login/1-32.png'}}"> -->
+						<img ng-src="./build/login/1-32.png">
+					</span>
+				</p>
+			</div>
+			<div class="About_Us">
+				<p class="p2">
+					<span><!-- <img ng-src="{{imagesSRC+'/login/2-40.png'}}"> --><img ng-src="./build/login/2-40.png"></span>
+				</p>
+				<p class="p1"><span></span><a ui-sref="wrap.client">客户端下载</a></p>
+			</div>
+			<div class="Questions">
+				<p class="p2">
+					<span><!-- <img ng-src="{{imagesSRC+'/login/3-42.png'}}"> --><img ng-src="./build/login/3-42.png"></span>
+				</p>
+				<p class="p1"><span></span><a ui-sref="wrap.help">帮助中心</a></p>
+			</div>
+			<!--nav 浮动导航结束-->
+		</div>
+	</div>
+	<!--logn 登陆框 结束-->
+	<!--footer 开始-->
+	<footer class="login_footer">
+		<ul class="wrap_1200">
+			<li class="footer_nav fl">
+				<span>
+					<a ui-sref="wrap.about">关于我们</a>
+					<a ui-sref="wrap.guild">新手指引</a>
+					<a ui-sref="wrap.help">帮助中心</a>
+				</span>
+				<p>@2017 ohepay.com&nbsp;京ICP备16058768号-1</p>
+			</li>
+			<li class="footer_logo fl">
+				<p class="login_bot"><!-- <img ng-src="{{imagesSRC+'/login/logo2.png'}}"> --><img ng-src="./build/login/logo2.png"></p>
+				<p class="authentication">
+					<a style="vertical-align: top;margin-top:3px;" href="//www.bcpcn.com/product/rz/bq/BCP9100401726.html" target="_blank" class="login_1"><!-- <img style="height:26px;" ng-src="{{imagesSRC+'/login/csrz.png'}}" border="0" /> --><img style="height:26px;" ng-src="./build/login/csrz.png" border="0" /></a>
+					<a style="vertical-align: top;" id='___szfw_logo___' href='//credit.szfw.org/CX20161216030678820310.html' target='_blank'><!-- <img ng-src="{{imagesSRC+'/login/3_3.png'}}" border="0" /> --><img ng-src="./build/login/3_3.png" border="0" /></a>
+					<a style="vertical-align: top;margin-top:5px;" id="kx_verify"></a>
+					<a key ="5853a099efbfb0083429bae0"  logo_size="83x30"  logo_type="business"  href="//www.anquan.org" id="ppbVerify"></a>
+					<a target="_blank" id="smtVerify"></a>
+				</p>
+				
+			</li>
+			<li class="footer_tell fl">
+				<p class="p1">400-175-8899</p>
+				<p class="p2">全国服务热线&nbsp;&nbsp;9：00-21：00</p>
+			</li>
+		</ul>
+	</footer>
+	<!--footer 结束-->
+</div>

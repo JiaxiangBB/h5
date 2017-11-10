@@ -1,0 +1,89 @@
+<ion-view title="卡列表" id="applyCardList-view" cache-view="false">
+	<ion-content>
+		<div class="applyCardList">
+			<ul>
+				<li class="special" ng-repeat="item in list">
+					<p class="cardNum">
+						<label><span>卡号</span><i>{{item.cardno}}</i></label>
+						<label><span>密码</span><i>{{item.password}}</i></label>
+					</p>
+					<p class="cardType">
+						<b class="notActive"></b>
+						<span>{{item.status}}</span>
+					</p>
+				</li>
+				<!-- <li>
+					<p class="cardNum">
+						<label><span>卡号</span><i>23123123213131231313</i></label>
+						<label><span>密码</span><i>2312323</i></label>
+					</p>
+					<p class="cardType">
+						<b class="active"></b>
+						<span>已激活</span>
+					</p>
+				</li>
+				<li ui-sref="applyCardList" class="special">
+					<p class="cardNum">
+						<label><span>卡号</span><i>23123123213131231313</i></label>
+						<label><span>密码</span><i>2312323</i></label>
+					</p>
+					<p class="cardType">
+						<b class="frozen"></b>
+						<span>冻结</span>
+					</p>
+				</li>
+				<li>
+					<p class="cardNum">
+						<label><span>卡号</span><i>23123123213131231313</i></label>
+						<label><span>密码</span><i>2312323</i></label>
+					</p>
+					<p class="cardType">
+						<b class="notActive"></b>
+						<span>挂失</span>
+					</p>
+				</li>
+				<li ui-sref="applyCardList" class="special">
+					<p class="cardNum">
+						<label><span>卡号</span><i>23123123213131231313</i></label>
+						<label><span>密码</span><i>2312323</i></label>
+					</p>
+					<p class="cardType">
+						<b class="locking"></b>
+						<span>锁定</span>
+					</p>
+				</li>
+				<li>
+					<p class="cardNum">
+						<label><span>卡号</span><i>23123123213131231313</i></label>
+						<label><span>密码</span><i>2312323</i></label>
+					</p>
+					<p class="cardType">
+						<b class="backCard"></b>
+						<span>退卡</span>
+					</p>
+				</li>
+				<li ui-sref="applyCardList" class="special">
+					<p class="cardNum">
+						<label><span>卡号</span><i>23123123213131231313</i></label>
+						<label><span>密码</span><i>2312323</i></label>
+					</p>
+					<p class="cardType">
+						<b class="destroy"></b>
+						<span>销毁</span>
+					</p>
+				</li>
+				<li>
+					<p class="cardNum">
+						<label><span>卡号</span><i>23123123213131231313</i></label>
+						<label><span>密码</span><i>2312323</i></label>
+					</p>
+					<p class="cardType">
+						<b class="backCard"></b>
+						<span>退卡</span>
+					</p>
+				</li> -->
+			</ul>
+		</div>
+	</ion-content>
+</ion-view>
+

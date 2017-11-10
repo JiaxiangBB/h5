@@ -1,0 +1,32 @@
+<ion-view title="账单详情" id="billingDetails-view" cache-view="false">
+	<ion-content>
+		<div class="paymentConfirm">
+			<h2>
+				<span>{{text}}</span>
+				<img src="">
+				<i>{{money}}</i>
+			</h2>
+			<p class="content">账单详情</p>
+			<ul>
+				<li>
+					<p>缴费单位</p>
+					<span>{{companyName}}</span>
+				</li>
+				<li>
+					<p>客户编号</p>
+					<span>{{paymentNum}}</span>
+				</li>
+				<li>
+					<p>户名</p>
+					<span>{{truename}}</span>
+				</li>
+				<li>
+					<p>缴费时间</p>
+					<span>{{yearmonth}}</span>
+				</li>
+			</ul>
+			<button ng-click="paymentWay()">立即缴费</button>
+		</div>
+	</ion-content>
+</ion-view>
+

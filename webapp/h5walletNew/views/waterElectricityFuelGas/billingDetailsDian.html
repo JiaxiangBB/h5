@@ -1,0 +1,29 @@
+<ion-view title="账单详情" id="billingDetails-view" cache-view="false">
+	<ion-content>
+		<div class="billingDetails">
+			<input type="text" placeholder="请输入购电金额" class="inputMoney"></input>
+			<p class="content">账单详情</p>
+			<ul ng-show="showMessage">
+				<li>
+					<p>缴费单位</p>
+					<span>{{companyName}}</span>
+				</li>
+				<li>
+					<p>客户编号</p>
+					<span class="paymentNum">{{paymentNum}}</span>
+				</li>
+				<li>
+					<p>户名</p>
+					<span>{{truename}}</span>
+				</li>
+				<li>
+					<p>缴费时间</p>
+					<span>{{yearmonth}}</span>
+				</li>
+			</ul>
+			<button class="paymentConfirm">下一步</button>
+		</div>
+	</ion-content>
+</ion-view>
+
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>银行卡支付</title>
+	<meta charset="UTF-8">
+	<!--让IE以最新的内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<!--让视口宽度为设备宽度,不允许用户缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<!--不自动识别电话号码和邮编 -->
+	<meta name="format-detection" content="telephone=no,email=no"/>
+	<!--开启对webapp的支持 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!--强制全屏显示 -->
+	<meta name="full-screen" content="yes">
+	<!--禁止浏览器从缓存中访问页面内容 -->
+	<meta http-equiv="Pragma" content="no-cache">
+	<!--web app 应用下状态(屏幕顶部条)的颜色,默认值为 default(白色) -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../../route.js"></script>
+</head>
+<body>
+<div class="wrap cashier_app"  style="background:#fff;color:#333;">
+	<header class="header">
+		<a id="back"><img id="backImg" src="?" onerror="imgUrl('images/fanhui@2x.png','backImg');"></a>
+	</header>
+	<div class="main">
+		<section class="payment_main_pay content">
+            <h2 class="con_title"  style="margin-bottom:0">验证银行预留手机号</h2>
+            <p class="message"  style="opacity:1;padding-left:1.5rem">短信验证码已发送至<span class="phoneNum"></span></p>
+            <ul class="login_list">
+                <li>
+                	<input type="text" placeholder="请输入支付短信中的验证码" id="message"  style="background:#fff;color:#333"></input>
+                	<!-- <label class="sign_next_time"><b class="sign_time"></b>秒后重新获取</label>
+                	                    <button class="sign_next_again" style="border:1px solid #333;border-radius:15px;">重新获取</button> -->
+                </li>
+            </ul>
+            <div class="login_sign">
+            	<button id="pay" style="background:#3F4483;color:#fff">确认支付</button>
+            </div>
+	    </section>
+	</div>
+</div>
+<div class="login_mask"></div>
+	
+<script src="../js/jquery-1.12.3.min.js"></script>
+<script src="../js/jsencrypt.js"></script>
+<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.min.js"></script>
+<script src="../js/tripledes.js"></script>
+<script src="../js/mode-ecb.js"></script>
+<script src="../js/base/base64.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/add_bank_pay.js"></script>
+</body>
+</html>

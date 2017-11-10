@@ -1,0 +1,73 @@
+<div class="wrap_main_all wrap_main_all_other">
+	<h2>实名认证</h2>
+	<span class="back" style="display:block"><a href="#">返回</a></span>
+	<div class="approve">
+		<main class="approve_main">
+			<p style="background:#BCD2EE;height:3.5rem;line-height:1.1rem;border-radius:8px;padding:0.2rem 0 0 32px;position:relative;"><!-- <img ng-src="{{imagesSRC+'remind/tixing.png'}}" style="width:1.12rem;height:1.12rem;margin-right:10px;position:absolute;left:10px;top:18px;"/> -->
+			<img ng-src="./build/remind/tixing.png" style="width:1.12rem;height:1.12rem;margin-right:10px;position:absolute;left:10px;top:18px;"/>请按照您的身份证如实填写真实姓名及身份证号，身份信息一旦认证通过将无法修改，隐私信息未经您本人许可我们将严格保密</p>
+			<!-- <dl>
+				<dt><img ng-src="{{imagesSRC+'remind/tixing.png'}}" /></dt>
+				<dd>请按照您的身份证如实填写真实姓名及身份证号，身份信息一旦认证通过将无法修改，隐私信息未经您本人许可我们将严格保密</dd>
+			</dl> -->
+			<p>真实姓名：</p>
+			<input type="text" id="username"></input>
+			<p>身份证号：</p>
+			<input type="text" id="certNo"></input>
+			<!-- <ul>
+				<li>
+					<span>+</span>
+					<p>上传身份证正面照片</p>
+					<i>
+						<form method="post"  >
+							<input type="file" id="file" name="facadeImg"/>
+							<lable for="file"></lable>
+						</form>
+					</i>
+					<b>
+						<img id="ImgPr" />
+						<section id="prompt">
+							<input type="file" id="file" />
+							<lable for="file">重新上传</lable>
+						</section>
+					</b>
+				    
+				</li>
+				<li>
+					<span>+</span>
+					<p>上传身份证反面照片</p>
+					<i>
+						<form method="post"  >
+							<input type="file" id="file_two" name="backImg" />
+							<lable for="file_two"></lable>
+						</form>
+					</i>
+					<b>
+						<img id="ImgPr_two" />
+						<section id="prompt_two">
+							<input type="file" id="file_two" />
+							<lable for="file_two">重新上传</lable>
+						</section>
+					</b>
+				    
+				</li>
+			</ul> -->
+			<div ng-click="next_sub()">提交</div>
+		</main>
+	</div>
+	<div class="mark" id="mark_one" style="display:none">
+		<div>
+			<span ng-click="close()">×</span>
+			<p class="text"></p>
+			<p ng-click="close()" class="change"><a>确定</a></p>
+		</div>			
+	</div>
+	<div class="mark" style="display:none" id="mark_two">
+		<div id="mark_search">
+			<span ng-click="close()">×</span>
+			<p style="height: 2rem; line-height: 2rem;">您的实名已成功</p>
+			<!-- <p style="height: 2rem; line-height: 2rem;">您的实名成功提交，请等待审核</p> -->
+			<!-- <p style="height: 2rem; line-height: 2rem;">审核周期为1到2个工作日</p> -->
+			<p><a id="go_wrap">确定</a></p>
+		</div>			
+	</div>
+</div>

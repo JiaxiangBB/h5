@@ -1,0 +1,46 @@
+<ion-view title="充值详情" id="topUpSuccess-view" cache-view="false">
+	<ion-nav-buttons side="right">
+      <button class="button button-light home-view-button" ng-click="goHome()">
+        <span>完成</span>
+      </button>
+    </ion-nav-buttons>
+	<ion-content>
+		<div class="topUpSuccess">
+			<p class="phoneNum">北京移动   {{mobile}}</p>
+			<div class="topUpState">
+				<h2>￥<span>{{moneys}}</span></h2>
+				<p>
+					<img src="">
+					<span>{{status}}</span>
+				</p>
+			</div>
+			<ul>
+				<li>
+					<p>充值说明</p>
+					<span>{{goodsInf}} 即时到账</span>
+				</li>
+				<li>
+					<p>充值号码</p>
+					<span>{{mobile}}</span>
+				</li>
+				<li>
+					<p>充值金额</p>
+					<span>{{amount}}元</span>
+				</li>
+				<li>
+					<p>交易对象</p>
+					<span>{{merchName}}</span>
+				</li>
+				<li>
+					<p>创建时间</p>
+					<span>{{time}}</span>
+				</li>
+				<li>
+					<p>订单号</p>
+					<span>{{orderNo}}</span>
+				</li>
+			</ul>
+		</div>
+	</ion-content>
+</ion-view>
+

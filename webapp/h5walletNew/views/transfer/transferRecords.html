@@ -1,0 +1,18 @@
+<ion-view title="转账记录" id="billList-view" cache-view="false">
+	<ion-content>
+		<ion-refresher pulling-text="下拉刷新"  on-refresh="doRefresh()">
+	    </ion-refresher>
+		<div class="billList transferRecords">
+			<ul class="list">
+				
+			</ul>
+		</div>
+		<div class="empty" style="display: none;">
+			<img src="">
+			<p>您最近没有转账记录</p>
+		</div>
+		<ion-infinite-scroll  ng-if="!noMorePage" immediate-check="false" on-infinite="loadMore()"  distance="1%">
+	    </ion-infinite-scroll>
+	</ion-content>
+</ion-view>
+

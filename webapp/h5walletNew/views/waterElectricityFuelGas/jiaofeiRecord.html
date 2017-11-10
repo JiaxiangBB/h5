@@ -1,0 +1,41 @@
+<ion-view title="缴水费" id="waterElectricityFuelGas-view" cache-view="false">
+	<ion-nav-buttons side="right">
+	  <button class="button button-light home-view-button" ng-click="goPaymentRecords()">
+	    <span>缴费记录</span>
+	  </button>
+	</ion-nav-buttons>
+	<ion-content>
+		<!-- 没有缴费记录 -->
+		<div class="waterElectricityFuelGas">
+			<h2>{{text}}</h2>
+			<div>
+				<img src="">
+				<p class="address">{{city}}</p>
+				<span ng-click="cityChangesFun()">[切换]</span>
+			</div>
+			<ul>
+				<li ng-click="institutionsList()" class="institutionsList">
+					<span>缴费单位</span>
+					<label>{{message}}</label>
+					<i><img src=""></i>
+				</li>
+				<li>
+					<span>客户编号</span>
+					<input class="paymentNum" type="text" placeholder="请输入10位缴费号码">
+					</input>
+					<i ng-click="showMask()" style="width: 0.2rem;height: 0.2rem;"><img src=""></i>
+				</li>
+			</ul>
+			<p class="text" ui-sref="waterAgreement">点击去缴费即为同意《全时钱包自助缴费服务协议》</p>
+			<button class="billingDetails goPayMoney">去缴费</button>
+		</div>
+	</ion-content>
+	<div class="waterMask" ng-show="maskContent">
+		<div class="maskContent">
+			<div>如何知道缴费号码？</div>
+			<p>查看当月／历史纸质账单或手机短信</p>
+			<span ng-click="close()">确认</span>
+		</div>
+	</div>
+</ion-view>
+

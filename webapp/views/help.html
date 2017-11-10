@@ -1,0 +1,61 @@
+<div class="wrap_main_all wrap_main_all_other wrap_main_help">
+	<h2>帮助中心</h2>
+	<span class="back approve_back"><a>返回</a></span>
+	<div class="help">
+		<header class="help_header">
+			<p>
+				<a ng-click="navXiazai()">下载／注册</a>
+				<a ng-click="chongzhiti()">充值／支付／提现</a>
+				<!-- <a>账户管理</a>
+				<a>安全中心</a> -->
+				<span></span>
+			</p>
+			<div style="">
+				<input type="text" placeholder="搜索您的问题"></input>
+				<label></label>
+			</div>
+		</header>
+		<main class="help_main">
+			<ul class="ruhrxiazai">
+				<li style="color: #EA5532"><a ng-click="xizai()">如何下载</a></li>
+				<li><a ng-click="zhuce()">如何注册</a></li>
+				<li><a ng-click="yanzheng()">注册/登录收不到验证码怎么办？</a></li>
+			</ul>
+			<div class="howDownload" style="display:none">
+				<h4 class="title">如何下载</h4>
+				<p class="p1">扫下图二维码，关注全时钱包订阅号或是服务号,界面提示下载 APP。</p>
+				<p class="erweima"><!-- <img ng-src="{{imagesSRC+'login/helperweima1.png'}}"> --><img ng-src="./build/login/helperweima1.png"></p>
+			</div>
+			<div class="howRegistered" style="display:none">
+				<div class="howRegisteredbox">
+					<h4 class="title">如何注册</h4>
+					<p class="p1">1)	进入钱包APP点击注册</p>
+					<p class="zhuce"><!-- <img ng-src="{{imagesSRC+'login/helpzhuce.png'}}"> --><img ng-src="./build/login/helpzhuce.png"></p>
+					<p class="p1">2)	手机号注册获取手机短信验证码，输入后完成激活</p>
+					<p class="zhuceMessage">
+						<!-- <img ng-src="{{imagesSRC+'login/zhuce1.png'}}">
+						<img ng-src="{{imagesSRC+'login/zhuce2.png'}}"> -->
+						<img ng-src="./build/login/zhuce1.png">
+						<img ng-src="./build/login/zhuce2.png">
+					</p>
+					
+				</div>
+			</div>
+				<div class="yanzhengma" style="display:none">
+					<h4  class="title">注册/登录收不到验证码怎么办</h4>
+					<p class="p1">短信验证码通过运营商通道发送，如果暂时没有收到短信验证码，建议等待60秒，60秒后可再次点击获取。如仍未收到请参考以下处理方式：</p>
+					<p class="p1">1）请检查手机号码是否输入正确，是否能正常接收短信（信号问题、欠费、停机等）；</p>
+					<p class="p1">2）请检查手机是否设置了短信或电话拦截等功能；</p>
+					<p class="p1">3）运营商同一时间发送较多信息量时会有一个缓存时间，导致验证码收取延迟，可以重启手机或等待几分钟后再次尝试；</p>
+					<p class="p1">4）咨询运营商是否启用统一退订业务导致验证码收不到；</p>
+					<p class="p1">5）还可以联系客服（400-175-8899）寻求帮助。</p>
+				</div>
+			
+			<div class="zhongzhiti" style="display:none">
+				<h4 class="title">充值支持哪些银行以及各行的支付限额？</h4>
+				<p class="xiane"></p>
+			</div>
+		</main>
+		<footer class="help_footer" style="display:none"></footer>
+	</div>
+</div>

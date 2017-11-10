@@ -1,0 +1,55 @@
+<div class="wrap_main_all wrap_main_all_other">
+	<h2>全部银行卡</h2>
+	<span class="back" style="display:block"><a href="#">返回</a></span>
+	<main class="list_main listBank_main">
+		<div>
+			<label class="main_card_bg"></label>
+			<dl>
+				<dt><!-- <img ng-src="{{imagesSRC+'card/add.png'}}"> -->
+				<img ng-src="./build/card/add.png"></dt>
+				<dd><a ng-click="add_banks()" class="add_bank">添加银行卡</a></dd>
+			</dl>
+		</div>
+		<ul>
+			<li class="deleteBank" ng-repeat="item in result">
+				<label><img ng-src="" style="display:block;width:100%;height:auto;" class="bankBg"/></label>
+				<dl>
+					<dt><img ng-src="" class="bankImg"></dt>
+					<dd class="bafBankName">{{item.bankName}}</dd>
+					<dd style="color: #333" class="bafAcctype"></dd>
+					<dd class="bafBankid" style="display:none">{{item.bafBankid}}</dd>
+				</dl>
+				<p class="cardNumber_bank" ></p>
+				<i style="display:none">{{item.Accountno}}</i>
+				<!-- <span><a>还款</a></span> -->
+				<span class="descript"><a>限额说明</a></span>
+				<span class="deleteBankCard" style="left:11rem;"><a>删除</a></span>
+			</li>
+		</ul>
+	</main>
+	<div class="mark" id="mark_one" style="display:none">
+		<div>
+			<span ng-click="close()">×</span>
+			<p class="text"></p>
+			<p><a class="change" ng-click="read_name()"></a><a ng-click="close()" class="loss">稍后再说</a></p>
+		</div>			
+	</div>
+	<div class="mark" id="mark_two" style="display:none;z-index:1000;">
+		<div>
+			<span ng-click="close()">×</span>
+			<p class="text"></p>
+			<p><a class="change">确定</a></p>
+		</div>			
+	</div>
+	<div class="mark" id="description" style="display:none;z-index:1000;">
+		<div class="description">
+			<span ng-click="close()">×</span>
+			<ul>
+				<li><label>{{cardAttribute}}元</label>单笔限额</li>
+				<li><label>{{ext}}元</label>每日限额</li>
+				<!-- <li><label>200,000</label>每月限额</li> -->
+			</ul>
+			<p class="change"><a>确定</a></p>
+		</div>			
+	</div>
+</div>

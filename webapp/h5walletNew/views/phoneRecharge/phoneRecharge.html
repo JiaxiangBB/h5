@@ -1,0 +1,264 @@
+<ion-view title="手机充值" id="phoneRecharge-view" cache-view="false">
+	<ion-nav-buttons side="right">
+      <button class="button button-light home-view-button" ui-sref="phoneRechargeRecords">
+        <span>充值记录</span>
+      </button>
+    </ion-nav-buttons>
+	<ion-content>
+		<div class="phoneRecharge">
+			<h2>手机充值</h2>
+			<p>全时钱包支持全国各地移动、联通、电信各大运营商，实时充值，安全便捷。</p>
+			<input type="text" class="phone" placeholder="请输入11位手机号" name="fname" maxlength="11"></input>
+			<span class="prompt"></span>
+			<div class="information" ng-show="information">
+				<div class="informationTab">
+					<span ng-repeat="item in informationTab" ng-click="choice($index)">{{item.text}}</span>
+					<p></p>
+				</div>
+				<div class="phoneList" ng-show="phoneList"> <!-- style="color: #EA5532;border-color: #EA5532;" --> 
+					<label ng-repeat="item in mobileRecharge" ng-click="phoneRechargeAmount($index)">
+						<i><em class="ppiId" style="display: none;">{{item.ppiId}}</em><em class="price">{{item.parValue}}</em>元</i>
+						<b class="amount">售价<span>{{item.price}}</span>元</b>
+					</label>
+				</div>
+				<div class="flow" ng-show="flow">
+					<p class="flowListTop">即时生效，当月有效</p>
+					<ion-scroll zooming="true" direction="y"style="width: 100%; height: 2.87rem">
+						<ul class="flowBox">
+							<li class="flowTop" ng-click="DetailLi=!DetailLi">{{phoneFlowList[0].pfpContent}}M<span>{{phoneFlowList[0].pfpList[0].sellprice}}元</span><b class="b1" ng-show="DetailLi"></b><b class="b2" ng-show="!DetailLi"></b></li>
+							<li class="DetailLi" ng-show="DetailLi">
+								<p class="p1" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[0].pfpList[0].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[0].pfpList[0].provinceid}}流量</b></span>
+									<span class="s2">仅限{{phoneFlowList[0].pfpList[0].provinceid}}使用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[0].pfpList[0].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[0].pfpList[0].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[0].pfpList[0].productId}}</i>
+								</p>
+								<p class="p2" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[0].pfpList[1].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[0].pfpList[1].provinceid}}流量</b></span>
+									<span class="s2">{{phoneFlowList[0].pfpList[1].roamingType}}通用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[0].pfpList[1].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[0].pfpList[1].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[0].pfpList[1].productId}}</i>
+								</p>
+							</li>
+						</ul>
+						<ul class="flowBox">
+							<li class="flowTop" ng-click="DetailLi02=!DetailLi02">{{phoneFlowList[1].pfpContent}}M<span>{{phoneFlowList[1].pfpList[0].sellprice}}元</span><b class="b1" ng-show="DetailLi02"></b><b class="b2" ng-show="!DetailLi02"></b></li>
+							<li class="DetailLi" ng-show="DetailLi02">
+								<p class="p1" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[1].pfpList[0].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[1].pfpList[0].provinceid}}流量</b></span>
+									<span class="s2">仅限{{phoneFlowList[1].pfpList[0].provinceid}}使用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[1].pfpList[0].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[1].pfpList[0].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[1].pfpList[0].productId}}</i>
+								</p>
+								<p class="p2" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[1].pfpList[1].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[1].pfpList[1].provinceid}}流量</b></span>
+									<span class="s2">{{phoneFlowList[1].pfpList[1].provinceid}}通用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[1].pfpList[1].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[1].pfpList[1].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[1].pfpList[1].productId}}</i>
+								</p>
+							</li>
+						</ul>
+						<ul class="flowBox">
+							<li class="flowTop" ng-click="DetailLi03=!DetailLi03">{{phoneFlowList[2].pfpContent}}M<span>{{phoneFlowList[2].pfpList[0].sellprice}}元</span><b class="b1" ng-show="DetailLi03"></b><b class="b2" ng-show="!DetailLi03"></b></li>
+							<li class="DetailLi" ng-show="DetailLi03">
+								<p class="p1" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[2].pfpList[0].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[2].pfpList[0].provinceid}}流量</b></span>
+									<span class="s2">仅限{{phoneFlowList[2].pfpList[0].provinceid}}使用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[2].pfpList[0].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[2].pfpList[0].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[2].pfpList[0].productId}}</i>
+								</p>
+								<p class="p2" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[2].pfpList[1].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[2].pfpList[1].provinceid}}流量</b></span>
+									<span class="s2">{{phoneFlowList[2].pfpList[1].provinceid}}通用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[2].pfpList[1].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[2].pfpList[1].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[2].pfpList[1].productId}}</i>
+								</p>
+							</li>
+						</ul>
+						<ul class="flowBox">
+							<li class="flowTop" ng-click="DetailLi04=!DetailLi04">{{phoneFlowList[3].pfpContent}}M<span>{{phoneFlowList[3].pfpList[0].sellprice}}元</span><b class="b1" ng-show="DetailLi04"></b><b class="b2" ng-show="!DetailLi04"></b></li>
+							<li class="DetailLi" ng-show="DetailLi04">
+								<p class="p1" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[3].pfpList[0].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[3].pfpList[0].provinceid}}流量</b></span>
+									<span class="s2">仅限{{phoneFlowList[3].pfpList[0].provinceid}}使用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[3].pfpList[0].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[3].pfpList[0].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[3].pfpList[0].productId}}</i>
+								</p>
+								<p class="p2" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[3].pfpList[1].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[3].pfpList[1].provinceid}}流量</b></span>
+									<span class="s2">{{phoneFlowList[3].pfpList[1].provinceid}}通用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[3].pfpList[1].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[3].pfpList[1].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[3].pfpList[1].productId}}</i>
+								</p>
+							</li>
+						</ul>
+						<ul class="flowBox">
+							<li class="flowTop" ng-click="DetailLi05=!DetailLi05">{{phoneFlowList[4].pfpContent}}M<span>{{phoneFlowList[4].pfpList[0].sellprice}}元</span><b class="b1" ng-show="DetailLi05"></b><b class="b2" ng-show="!DetailLi05"></b></li>
+							<li class="DetailLi" ng-show="DetailLi05">
+								<p class="p1" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[4].pfpList[0].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[4].pfpList[0].provinceid}}流量</b></span>
+									<span class="s2">仅限{{phoneFlowList[4].pfpList[0].provinceid}}使用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[4].pfpList[0].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[4].pfpList[0].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[4].pfpList[0].productId}}</i>
+								</p>
+								<p class="p2" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[4].pfpList[1].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[4].pfpList[1].provinceid}}流量</b></span>
+									<span class="s2">{{phoneFlowList[4].pfpList[1].provinceid}}通用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[4].pfpList[1].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[4].pfpList[1].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[4].pfpList[1].productId}}</i>
+								</p>
+							</li>
+						</ul>
+						<ul class="flowBox">
+							<li class="flowTop" ng-click="DetailLi06=!DetailLi06">{{phoneFlowList[5].pfpContent/1024}}G<span>{{phoneFlowList[5].pfpList[0].sellprice}}元</span><b class="b1" ng-show="DetailLi06"></b><b class="b2" ng-show="!DetailLi06"></b></li>
+							<li class="DetailLi" ng-show="DetailLi06">
+								<p class="p1" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[5].pfpList[0].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[5].pfpList[0].provinceid}}流量</b></span>
+									<span class="s2">仅限{{phoneFlowList[5].pfpList[0].provinceid}}使用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[5].pfpList[0].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[5].pfpList[0].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[5].pfpList[0].productId}}</i>
+								</p>
+								<p class="p2" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[5].pfpList[1].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[5].pfpList[1].provinceid}}流量</b></span>
+									<span class="s2">{{phoneFlowList[5].pfpList[1].provinceid}}通用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[5].pfpList[1].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[5].pfpList[1].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[5].pfpList[1].productId}}</i>
+								</p>
+							</li>
+						</ul>
+						<ul class="flowBox">
+							<li class="flowTop" ng-click="DetailLi07=!DetailLi07">{{phoneFlowList[6].pfpContent/1024}}G<span>{{phoneFlowList[6].pfpList[0].sellprice}}元</span><b class="b1" ng-show="DetailLi07"></b><b class="b2" ng-show="!DetailLi07"></b></li>
+							<li class="DetailLi" ng-show="DetailLi07">
+								<p class="p1" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[6].pfpList[0].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[6].pfpList[0].provinceid}}流量</b></span>
+									<span class="s2">仅限{{phoneFlowList[6].pfpList[0].provinceid}}使用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[6].pfpList[0].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[6].pfpList[0].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[6].pfpList[0].productId}}</i>
+								</p>
+								<p class="p2" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[6].pfpList[1].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[6].pfpList[1].provinceid}}流量</b></span>
+									<span class="s2">{{phoneFlowList[6].pfpList[1].provinceid}}通用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[6].pfpList[1].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[6].pfpList[1].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[6].pfpList[1].productId}}</i>
+								</p>
+							</li>
+						</ul>
+						<ul class="flowBox">
+							<li class="flowTop" ng-click="DetailLi08=!DetailLi08">{{phoneFlowList[7].pfpContent/1024}}G<span>{{phoneFlowList[7].pfpList[0].sellprice}}元</span><b class="b1" ng-show="DetailLi08"></b><b class="b2" ng-show="!DetailLi08"></b></li>
+							<li class="DetailLi" ng-show="DetailLi08">
+								<p class="p1" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[7].pfpList[0].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[7].pfpList[0].provinceid}}流量</b></span>
+									<span class="s2">仅限{{phoneFlowList[7].pfpList[0].provinceid}}使用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[7].pfpList[0].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[7].pfpList[0].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[7].pfpList[0].productId}}</i>
+								</p>
+								<p class="p2" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[7].pfpList[1].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[7].pfpList[1].provinceid}}流量</b></span>
+									<span class="s2">{{phoneFlowList[7].pfpList[1].provinceid}}通用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[7].pfpList[1].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[7].pfpList[1].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[7].pfpList[1].productId}}</i>
+								</p>
+							</li>
+						</ul>
+						<ul class="flowBox">
+							<li class="flowTop" ng-click="DetailLi09=!DetailLi09">{{phoneFlowList[8].pfpContent/1024}}G<span>{{phoneFlowList[8].pfpList[0].sellprice}}元</span><b class="b1" ng-show="DetailLi09"></b><b class="b2" ng-show="!DetailLi09"></b></li>
+							<li class="DetailLi" ng-show="DetailLi09">
+								<p class="p1" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[8].pfpList[0].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[8].pfpList[0].provinceid}}流量</b></span>
+									<span class="s2">仅限{{phoneFlowList[8].pfpList[0].provinceid}}使用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[8].pfpList[0].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[8].pfpList[0].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[8].pfpList[0].productId}}</i>
+								</p>
+								<p class="p2" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[8].pfpList[1].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[8].pfpList[1].provinceid}}流量</b></span>
+									<span class="s2">{{phoneFlowList[8].pfpList[1].provinceid}}通用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[8].pfpList[1].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[8].pfpList[1].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[8].pfpList[1].productId}}</i>
+								</p>
+							</li>
+						</ul>
+						<ul class="flowBox">
+							<li class="flowTop" ng-click="DetailLi10=!DetailLi10">{{phoneFlowList[9].pfpContent/1024}}G<span>{{phoneFlowList[9].pfpList[0].sellprice}}元</span><b class="b1" ng-show="DetailLi10"></b><b class="b2" ng-show="!DetailLi10"></b></li>
+							<li class="DetailLi" ng-show="DetailLi10">
+								<p class="p1" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[9].pfpList[0].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[9].pfpList[0].provinceid}}流量</b></span>
+									<span class="s2">仅限{{phoneFlowList[9].pfpList[0].provinceid}}使用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[9].pfpList[0].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[9].pfpList[0].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[9].pfpList[0].productId}}</i>
+								</p>
+								<p class="p2" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[9].pfpList[1].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[9].pfpList[1].provinceid}}流量</b></span>
+									<span class="s2">{{phoneFlowList[9].pfpList[1].provinceid}}通用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[9].pfpList[1].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[9].pfpList[1].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[9].pfpList[1].productId}}</i>
+								</p>
+							</li>
+						</ul>
+						<ul class="flowBox">
+							<li class="flowTop" ng-click="DetailLi11=!DetailLi11">{{phoneFlowList[10].pfpContent/1024}}G<span>{{phoneFlowList[10].pfpList[0].sellprice}}元</span><b class="b1" ng-show="DetailLi11"></b><b class="b2" ng-show="!DetailLi11"></b></li>
+							<li class="DetailLi" ng-show="DetailLi11">
+								<p class="p1" ng-click="payFloW($event)">
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[10].pfpList[0].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[10].pfpList[0].provinceid}}流量</b></span>
+									<span class="s2">仅限{{phoneFlowList[10].pfpList[0].provinceid}}使用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[10].pfpList[0].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[10].pfpList[0].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[10].pfpList[0].productId}}</i>
+								</p>
+								<p class="p2" ng-click="payFloW($event)"> 
+									<span class="s1"><i class="money" style="font-style: normal;">{{phoneFlowList[10].pfpList[1].sellprice}}</i>元<b style="font-weight: normal;">{{phoneFlowList[10].pfpList[1].provinceid}}流量</b></span>
+									<span class="s2">{{phoneFlowList[10].pfpList[1].provinceid}}通用</span>
+									<i class="goPayFlow">购买</i>
+									<i class="contentFlow" style="display: none;">{{phoneFlowList[10].pfpList[1].content}}</i>
+									<i class="typeFlow" style="display: none;">{{phoneFlowList[10].pfpList[1].roamingType}}</i>
+									<i class="productId" style="display: none;">{{phoneFlowList[10].pfpList[1].productId}}</i>
+								</p>
+							</li>
+						</ul>
+					</ion-scroll>					
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
+

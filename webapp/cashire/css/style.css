@@ -1,0 +1,671 @@
+@import url("reset.css");
+*{margin:0;padding:0;}
+body,html{width:100%;height:100%;font-family: "微软雅黑";overflow: hidden;position: relative;}
+html{font-size:62.5%;}
+ul,ol{list-style: none;}
+a{text-decoration: none;color: #000;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+*, *::after, *::before{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+img{width: 100%;}
+@media screen and (min-width:320px) and (max-width:374px){
+    html{font-size:75%;}
+}
+@media screen and (min-width:375px) and (max-width:413px){
+    html{font-size:93.75%;}
+}
+@media screen and (min-width:414px){
+    html{font-size:100%;}
+}
+/*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+a,button,input,optgroup,select,textarea {
+    tap-highlight-color:rgba(0,0,0,0);
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -moz-tap-highlight-color:rgba(0,0,0,0);
+    -ms-tap-highlight-color:rgba(0,0,0,0);
+    -o-tap-highlight-color:rgba(0,0,0,0);
+    outline:none;
+}
+.fl{float: left;}
+.fr{float: right;}
+/*最外层样式*/
+.wrap{
+	width:100%;
+	height:100%;
+	display:flex;
+	display:-webkit-flex;
+	display:-moz-flex;
+	display:-ms-flex;
+	display:-o-flex;
+	flex-direction:column;
+	-webkit-flex-direction:column;
+	-moz-flex-direction:column;
+	-ms-flex-direction:column;
+	-o-flex-direction:column;
+}
+/*头部样式*/
+.header{
+	width:100%;
+	height:2.75rem;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 10;
+}
+.header a{
+	position: absolute;
+	width: 0.625rem;
+	height: auto;
+	left: 1.5rem;
+	top:0.8rem;
+}
+.header p{
+	font-size:0.8rem;
+}
+/*中间内容样式*/
+.main{
+	flex:1;
+	-webkit-flex:1;
+	-moz-flex:1;
+	-ms-flex:1;
+	-o-flex:1;
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+	display:flex;
+	display:-webkit-flex;
+	display:-moz-flex;
+	display:-ms-flex;
+	display:-o-flex;
+	flex-direction:column;
+	-webkit-flex-direction:column;
+	-moz-flex-direction:column;
+	-ms-flex-direction:column;
+	-o-flex-direction:column;
+}
+/* -------------------------payment支付订单 --------------------------------*/
+.payment_main_shop{
+	width: 100%;
+	height: 10rem;
+	margin-top: 2rem;
+	margin-bottom: 3rem;
+	text-align: center;
+}
+.payment_main_banner{
+	width: 100%;
+	height: 5rem;
+	text-align: center;
+}
+.payment_main_banner img{
+	width: 5rem;
+	height: 100%;
+}
+.payment_main_info{
+	margin-top: 0.75rem;
+	font-size: 0.9rem;
+	margin-bottom: 1.25rem;
+}
+.payment_main_money{
+	width: 100%;
+	height: 1.5rem;
+	font-size: 1.875rem;
+}
+.payment_main_money img{
+	width: 1.5rem;
+	margin-right: 10px;
+}
+.payment_main_money label{
+	font-size: 30px;
+	line-height: 0.24rem;
+}
+.payment_main_pay ul{
+	width: 90%;
+	height: auto;
+	margin-left: 5%;
+	border-top: 0.125rem solid #efefef;
+}
+.payment_main_pay ul li{
+	width: 100%;
+	height: 4rem;
+	cursor:pointer;
+	border-bottom:0.125rem solid #efefef;
+}
+.payment_main_pay ul li dl{
+	display:flex;
+	display:-webkit-flex;
+	display:-moz-flex;
+	display:-ms-flex;
+	display:-o-flex;
+}
+.payment_main_pay ul li dl dt{
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-top: 1.25rem;
+	margin-right: 1rem;
+}
+.payment_main_pay ul li dl dt span{
+	display:block;
+	width:1.5rem;
+	height:1.5rem;
+	border-radius:.8rem;
+	line-height:1.5rem;
+	text-align:center;
+	color:#fff;
+	background:orange;
+}
+.payment_main_pay ul li dl dd{
+	flex:1;
+	-webkit-flex:1;
+	-moz-flex:1;
+	-ms-flex:1;
+	-o-flex:1;
+	position: relative;
+}
+.payment_main_pay ul li dl dd h2{
+	font-size: 1.125rem;
+	margin-top: 0.7rem;
+	color: #333;
+}
+.payment_main_pay ul li dl dd p{
+	font-size: 0.875rem;
+	margin-top:0.1rem;
+	color: #999;
+}
+.payment_main_pay ul li dl dd span{
+	position: absolute;
+	top: 1.4rem;
+	right: 1rem;
+	width: 1.125rem;
+	height: 1.125rem;
+}
+.payment_main_pay ul li dl dd .payment_main_pay_h2{
+	margin-top: 1.3rem;
+}
+.payment_main_pay_sure{
+	width: 100%;
+	height: 2.75rem;
+	margin: 2.25rem 0;
+	display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.payment_main_pay_sure a,.password_next a,.payment_main_pay_sure button,.password_next button{
+	width: 12.5rem;
+	height: 2.75rem;
+	background: #3F4483;
+	border-radius: 100px; 
+	display: block;
+	text-align: center;
+	line-height: 2.75rem;
+	font-family: PingFangSC-Regular;
+	font-size:1.125rem;
+	color: #FFFFFF;
+	cursor:pointer;
+}
+/* -------------------------cashier收银台--------------------------------*/
+.cashier_app{
+	background: #fff;
+	color: #333;
+}
+.wrap .header .cashier_header_right{
+	position: absolute;
+	left:80%;
+	width: 4rem;
+	height: 1.25rem;
+	color: #fff;
+	font-size: 0.875rem;
+}
+.cashier_main_num{
+	width: 100%;
+	height:5rem;
+	margin-top: 1.9rem;
+	margin-bottom: 4.8rem;
+	text-align: center;
+}
+.cashier_main_num h2{
+	font-size: 1.25rem;
+	margin-bottom: 1.2rem;
+}
+.cashier_main_password{
+	width: 100%;
+	height: 5.5rem;
+	display:flex;
+	display:-webkit-flex;
+	display:-moz-flex;
+	display:-ms-flex;
+	display:-o-flex;
+    justify-content:center;
+    align-items:center;
+}
+.cashier_main_password div{
+	width: auto;
+	height: 100%;
+}
+.cashier_main_password p{
+	margin-bottom: 1rem;
+}
+/* ----------------输入密码 -----------------*/
+.alieditContainer{
+	width: 100%;
+	height: 3rem;
+	position:relative;
+}
+.alieditContainer .i-text{
+	position: absolute;
+	opacity:0; 
+	width:100%; 
+	height:3rem; 
+	letter-spacing:2rem;
+	left:0; 
+	top:0;
+	-webkit-user-select:initial; 
+	 /*取消禁用选择页面元素*/
+	 z-index:1;	
+	 padding:0;	
+	 border:0;
+	 border: 1px solid #333333;
+	 -webkit-box-sizing:border-box;
+}
+.alieditContainer .i-text:focus{
+	color:#fff;
+}
+.alieditContainer .sixDigitPassword {
+	width:100%;
+	height:3rem;
+	cursor:text; 
+	outline:none; 
+	position:relative; 
+}
+.alieditContainer .sixDigitPassword i {
+	width:3rem; 
+	height:3rem; 
+	float:left; 
+	display:block; 
+	background: #fff;
+	margin-right: .2rem;
+	padding:0.9rem 0; 
+	border: 1px solid rgba(51,51,51,0.2);
+}
+/* .alieditContainer .sixDigitPassword i.active{
+	background-image: url("https://t.alipayobjects.com/images/rmsweb/T1nYJhXalXXXXXXXXX.gif");
+	background-repeat: no-repeat;
+	background-position: center center; 
+}  */
+.alieditContainer .sixDigitPassword b{
+	display:block; 
+	margin:0.3rem auto 0.25rem auto; 
+	width:0.4375rem; 
+	height:0.4375rem; 
+	overflow:hidden; 
+	display:none;
+	/*visibility:hidden;*/ 
+	background:#000; 
+	border-radius:100%;
+}
+/* -----密码输入之后 ------*/
+.mask{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.5;
+	z-index: 100;
+}
+.mask_all{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 10rem;
+	height: 7.5rem;
+	margin-left: -5rem;
+	margin-top: -4.5rem;
+	background: #fff;
+	border-radius: 15px;
+	opacity:0.94;
+	z-index: 111;
+	text-align: center;
+}
+.mask_all,.mask,.mask_in,.mask_success,.sure,.mask_error{
+	display: none;
+}
+.mask_in img{
+	width: 6.7rem;
+	height: 1.5rem;
+	margin-top: 2.3rem;
+}
+.mask_in p{
+	width: 6.7rem;
+	height: 0.5rem;
+	margin:0.5rem 0 0 1.5rem;
+}
+.mask_in p span{
+	width: 0.5rem;
+	height: 0.5rem;
+	display: inline-block;
+	background:#EA5532;
+	margin-left: 0.5rem;
+	border-radius: 50%;
+	opacity: 0.3;
+}
+.mask_in p .mask_in_span{
+	opacity: 1;
+}
+.mask_success img{
+	width: 2.75rem;
+	height: 2.75rem;
+	margin-top:1.65rem;
+}
+.mask_success p,.mask_error p{
+	color: #333;
+}
+.mask_error h3{
+	width:100%;
+	height:4.6rem;
+	border-bottom:1px solid  #efefef;
+	line-height:4.6rem;
+	corlor:#333;
+	font-size:0.875rem;
+}
+.mask_error p{
+	width:100%;
+	height:2.75rem;
+	line-height:2.75rem;
+	font-size:1rem;
+	color:#333;
+}
+.mask_error p span{
+	display:inline-block;
+	border-right:1px solid #efefef;
+	width:50%;
+	text-align:center;
+	cursor:pointer;
+}
+.mask_error p .again_try{
+	border-right:none;
+}
+/* -------------------------order订单信息--------------------------------*/
+.content .con_title{
+    height: 3.425rem;
+    line-height: 3.425rem;
+    padding-left:1.5rem;
+    margin-bottom: 2.6875rem;
+    font-size: 1.55rem;
+}
+.order_list{
+    padding: 1rem ;
+    height:auto;
+    margin-bottom: 3.5rem;
+}
+/*li*/
+.order_list li,.password_list li{
+    border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+}
+.order_list li .list_wrap,.password_list li .password_list_wrap{
+	line-height:4rem;
+}
+.content ul,.password_list{
+	border:none;
+}
+.content .message{
+	padding-left:3rem;
+	font-size:1rem;
+	width:100%;
+	height:2rem;
+	line-height:2rem;
+	opacity:0;
+	position:relative;
+}
+.content .message img{
+	width:1.5rem;
+	height:auto;
+	position:absolute;
+	top:.3rem;
+	left:1.5rem;
+}
+.content .message span{
+	display:inline-block;
+	margin-left:.8rem;
+	margin-top:-.5rem;
+}
+#back{
+	cursor:pointer;
+}
+/* -------------------------login 登录注册页-------------------------------*/
+.content .login_list{
+	padding: 1rem 0;
+    height:auto;
+    max-height:312px;
+    overflow:scroll;
+	margin-bottom: 1.125rem;
+}
+.content .login_list li{
+	border-bottom: 1px solid #999;
+	position: relative;
+}
+.content .bank_list li input{
+	background:#fff;
+	color:#333;
+}
+.content .bank_list .add_two,.content .bank_list .add_card{
+	display:none;
+}
+.login_list li input{
+	width: 100%;
+	height:100%;
+	border:none;
+	padding-top: 2rem;
+	display: inline-block;
+	font-size: 1.125rem;
+	color: #fff;
+	outline:none;
+	background: #3F4483;
+}
+.login_list li dl dt{
+	padding-top: 0.9rem;
+}
+.main .payment_main_pay{
+	flex:1;
+	-webkit-flex:1;
+	-moz-flex:1;
+	-ms-flex:1;
+	-o-flex:1;
+	width: 100%;
+	height: 100%;
+	overflow:scroll;
+	position:relative;
+}
+.main .payment_main_pay .login_list li dl dd{
+	background: #3F4483;
+}
+.payment_main_pay .login_list li span{
+	position: absolute;
+	height: 1rem;
+	left:1.5rem;
+	bottom:-1.2rem;
+	z-index: 100;
+	font-size:0.68rem;
+}
+.login_list li dl dd img{
+	position: absolute;
+	right: 0;
+	top: 2rem;
+	width: 4.375rem;
+	height: 1.5rem;
+	cursor: pointer;
+}
+.login_sign{
+	width: 100%;
+	height: 2.75rem;
+	bottom:2rem;
+	right:0;
+}
+.login_sign a{
+	color: #fff;
+	margin-left: 5%;
+	font-size: 0.75rem;
+	line-height: 2.75rem;
+}
+.login_sign button{
+	width: 8.75rem;
+	height: 100%;
+	background: rgba(255,255,255,0.4);
+	border:none;
+	float: right;
+	margin-right: 5%;
+	border-radius: 100px;
+	font-size: 1.125rem;
+	color: #3F4483;
+	cursor: pointer;
+}
+.login_mask{
+	position: absolute;
+	width:70%;
+	left: 0;
+	top: 0;
+	right:0;
+	bottom:0;
+	height: 2.75rem;
+	margin:auto;
+	background: rgba(0,0,0,0.8);
+	border-radius: 100px;
+	text-align: center;
+	line-height: 2.75rem;
+	color: #fff;
+	outline: none;  
+	display: none;
+}
+.login_list li label{
+	position: absolute;
+	right: 0;
+	top: 2rem;
+	height: 1.5rem;
+	cursor: pointer;
+}
+.login_list li .sign_next_time b{
+	font-weight: normal;
+}
+.login_list li .sign_next_again{
+	position:absolute;
+	width: 5rem;
+	height: 2rem;
+	border-radius: 100px;
+	border:1px solid #fff;
+	text-align: center;
+	line-height: 2rem;
+	top: 1.5rem;
+	right:0;
+	cursor: pointer;
+	display: none;
+}
+.sign_next_p{
+	margin-top: -1rem;
+	margin-left: 5%;
+}
+/* -------------------------password找回密码1 --------------------------------*/
+.main_password{
+	padding: 0 1.5rem;
+}
+.main_password .password_title h1{
+	height: 3.425rem;
+    line-height: 3.425rem;
+    padding-left: 1.5rem;
+    margin-bottom: 0.6875rem;
+    font-size: 1.55rem;
+}
+.password_list li{
+	position: relative;
+}
+.password_list_wrap input{
+	vertical-align: bottom;
+	width: 100%;
+	line-height: 4rem;
+	border: none;
+	font-size: 1.125rem;
+	outline: none;
+}
+.password_list_wrap button{
+	position: absolute;
+	bottom: 0.5rem;
+	right: 0;
+	float: right;
+	cursor: pointer;
+	border: 1px solid #333;
+	background-color: #ffffff;
+	display: inline-block;
+	padding:0 0.5rem;
+	height: 2rem;
+	border-radius:6.25rem;
+	font-size: 0.75rem;
+	line-height: 0.6875rem;
+}
+.password_list_wrap img{
+	position: absolute;
+	right: 0;
+	bottom: 0.5rem;
+	width: 4.375rem;
+	height: 1.5rem;
+	margin-top: 2rem;
+}
+.password_next{
+	width: 100%;
+	height: 2.75rem;
+	margin-top: 2.25rem;
+	justify-content:center;
+	align-items:center;
+}
+.password_next .next_password{
+	background-color: rgba(63,68,131,0.4);
+}
+/* -------------------------password找回密码2 --------------------------------*/
+.password_list_wrap span{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	float: right;
+	height: 4rem;
+	font-size: 0.75rem;
+	line-height: 4rem;
+}
+.password_next .next_2{
+	background-color: #3F4483;
+}
+/* -------------------------password_reset密码重置 --------------------------------*/
+.reset_list{
+	/*margin-bottom: 132px;*/
+}
+.password_list p{
+	font-size: 0.6875rem;
+	line-height: 1.625rem;
+	height: 1.625rem;
+	margin-bottom: 6.625rem;
+}
+
+.login_list .card_list #card_input,.login_list .card_list #card_input2{
+	width:4rem;
+	height:2rem;
+	border:1px solid #fff;
+	font-size:.8rem;
+	margin-right:3rem;
+	line-height:2rem;
+	padding:0;
+}
+.payment_main_pay .login_list .card_list .card_span{
+	positon:absolute;
+	left:5rem;
+	top:4.5rem;
+	color:#fff;
+}
+.payment_main_pay .login_list .card_list .card_span2{
+	positon:absolute;
+	left:12rem;
+	top:4.5rem;
+	color:#fff;
+}

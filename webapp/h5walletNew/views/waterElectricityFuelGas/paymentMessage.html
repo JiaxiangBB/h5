@@ -1,0 +1,14 @@
+<ion-view title="银行手机验证码" id="bankPhoneCode-view">
+	<ion-content>
+		<h2>银行手机验证码</h2>
+		<p>已将验证码发送到您银行预留手机号，请查收填写并点击提交，银行卡将实时扣款{{moneys}}元</p>	
+		<div class="getCode payMessage">
+			<div class="obtainCode">
+				<span class="messageCode sign_next_again" ng-click="obtainCode()">获取验证码</span>
+				<span class="sign_next_time"><i class="sign_time">30</i>秒后重新获取</span>
+				<input type="numBer" name="" placeholder="请输入短信中的验证码">
+			</div>
+			<div class="submitBut" ng-click="submitBut()" style="opacity: 0.4">确认付款</div>
+		</div>
+	</ion-content>
+</ion-view>

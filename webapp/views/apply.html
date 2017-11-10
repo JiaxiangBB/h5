@@ -1,0 +1,246 @@
+<div class="wrap_main_all wrap_main_all_other" id="applyFirst">
+	<h2>申请全时通电子卡<p id="applicationRecord">申请记录</p></h2>
+	<span class="backToMain"><a class="toApply" style="display: none;">返回</a><a class="toMain">返回</a></span>
+	<div class="approve">
+		<!--申请电子卡 面额-->
+		<main class="recharge_main prepaid_main electronicCard">
+			<div class="approve_list">
+				<p style="font-size:1rem;">选择卡种：</p>
+				<select name="" id="electronicCardSelect" class="electronicCardSelect">
+					<option>请选择</option>
+					<option ng-repeat="item in cardSelect">{{item.name}}</option>
+				</select>
+				<p style="margin-top:10px;font-size:1rem;">申请面值:</p>
+				<ul class="moneyList">
+					<a><li><h4><b>100</b>元</h4></li></a>
+					<a style="margin-right:0;"><li><h4><b>200</b>元</h4></li></a>
+					<a><li><h4><b>500</b>元</h4></li></a>
+					<a style="margin-right:0;"><li><h4><b>1000</b>元</h4></li></a>
+				</ul>
+				<p class="description"><input class="agree" type="checkbox" style="margin-right:8px;">请点击并认真阅读<b>《全时通卡用卡说明》</b></p>
+				<div class="right_list_next" ng-click="show_card_money()">
+					下一步
+				</div>
+			</div>
+		</main>
+		<!--申请电子卡 购卡信息-->
+		<main class="recharge_main prepaid_main electronicMessage" style="display:none;">
+			<div class="approve_list">
+				<p style="font-size:1rem;">购卡张数：</p>
+				<p class="buyCards"><button class="reduce">-</button><input type="text" value="1" class="buyCardsNum"></input><button class="plus">+</button></p>
+				<p style="margin-top:10px;font-size:1rem;">是否需要发票:</p>
+				<ul class="invoice" id="invoiceYes">
+					<li><input type="radio" name="invoice"/><b>是</b></li>
+					<li class="invoiceHeader" style="display:none"><input type="text" class="invoiceText" placeholder="请输入发票抬头"/></li>
+					<li><input type="radio" checked name="invoice"/><b>否</b></li>
+				</ul>
+				
+				<button class="right_list_message show_card_pay">
+					下一步
+				</button>
+			</div>
+		</main>
+		<!--申请电子卡 支付方式-->
+		<main class="recharge_main prepaid_main electronicPay" style="display:none">
+			<div class="recharge_money recharge_money_next approve_list_next">
+				<p>总金额(元):<a class="totalAmount"></a></p>
+				<p class="orderno" style="display:none;"></p>
+				<p>支付方式：</p>
+				<div class="payCardlist">
+					<div class="payLifeList"></div>
+					<div class="payCardlist_btn"><button ng-click="add_banks()">使用新银行卡</button></div>			
+				</div>
+				<!-- <form class="payPawd">
+					<p>支付密码<b style="font-weight: normal;float: right;" ng-click="forget_payPassword()">忘记支付密码？</b></p>
+					<label><input type="password" id="payListPsd"></input><img ng-src="{{imagesSRC+'public/shanchu.png'}}" style="width: 1rem" /></label>
+				</form> -->
+				<form class="shortMessage">
+					<p>短信验证码</p>
+					<label><input type="text" id="shortMessageLife" style="width:60%"></input><button  class="SendLifePhone applySend">点击获取</button><a class="sign_next_time" style="border:none;background:none;display:none"><i class="sign_time"></i>秒后再获取</a></label>
+				</form>
+				<span class="next paySubmit">提交</span>
+			</div>
+		</main>
+	</div>
+	<!-- 购卡说明 -->
+	<div class="mark" id="markApply" style="display:none">
+		<div>
+			<span ng-click="closeadd()">×</span>
+			<h4>北京复华卓越商业管理有限公司单用途商业预付卡章程</h4>
+			<div class="agreement">
+				<p>第一章总则<br>
+第一条 为适应商业支付业务的发展，为消费者提供购物交易便利，维护当事人合法权益，防范资金风险，根据有关法律法规，制订本章程。 <br>
+第二条 本章程适用于北京复华卓越商业管理有限公司（以下简称复华卓越）发行的单用途商业预付卡（以下简称“全时通卡”），分为单用途记名预付会员卡和单用途不记名预付积点卡（以下简称“全时通卡”）两种，存储介质为条形码卡片，“全时通卡”为磁条卡，在线上与线下交易时都需输入密码。<br>
+第三条 “全时通卡”仅限于复华卓越旗下企业使用。购买人、持卡人可以通过“全时通卡”网站 www.ohepay.com的“特约商户”栏目查询可使用“全时通卡”的商户。商户会随网点增减进行调整，请关注网站和商户告示。<br> 
+第四条 发行机构、购买人、特约商户及其他当事人均须遵守本章程使用全时通卡。<br>
+第五条 本章程涉及的部分名词遵从如下定义<br>
+1、“购买人”指购买全时通卡的单位和个人。<br>
+2、“特约商户”指由发行机构授权并接受全时通卡进行交易的商户，包括互联网商户。<br>
+3、“记名卡”指由发行机构发行，该卡可循环充值、消费、积分等多功能的卡。<br>
+4、“不记名卡”指由发行机构发行，该卡只能用于消费、使用完即止的卡。<br>
+<br>
+第二章发行、购买和充值<br>
+第六条复华卓越委托全资企业北京复安通电子商务有限公司（以下简称发卡人）负责“全时通卡”的发卡及系统运营；授权集团成员企业北京全时叁陆伍有限公司、全时汇、全时果王、全时生鲜及咖啡烘焙（以下简称售卡人）销售“全时通卡”。<br> 
+第七条 “全时通卡”的销售方式仅为指定销售网点发售。指定销售网点均已向地方商务主管部门备案，购买人、持卡人均可通过“全时通卡”网站 www.ohepay.com进行查询。 <br>
+第八条 单位、个人可向发行机构或发行机构指定的特约商家购买“全时通卡”，一旦购买了“全时通卡”，视同自愿同意并遵守本章程。<br>
+第九条 个人或单位购买（含充值，下同）“全时通卡”，或一次性购买1万元（含）以上“全时通卡”，应出示购买人或代理人有效身份证件，并留存姓名或单位名称、有效证件号码和联系方式。个人有效身份证件包括：居民身份证、户口薄、军人身份证件、武警身份证件、港澳台居民通行证、护照等。单位有效身份证件包括营业执照、事业单位法人证书、税务登记证、组织机构代码证等。<br> 
+第十条 单张“记名全时通卡”限额不超过5000元，单张“不记名全时通卡”限额不超过1000元。 <br>
+第十一条 单位一次性购卡达5000元（含）以上或个人一次性购卡达5万元（含）以上的，应通过银行转账，不得使用现金。售卡人须对购买人提供的转出、转入账户名称、账号、金额逐笔登记。<br> 
+第十二条 “记名全时通卡”充值的方式分为销售网点付款充值、在线自助转存充值两种。可反复充值，分次消费，并可享受商户为会员提供的折扣、积分等优惠。“不记名全时通卡”可以分次使用，用完废止，不可充值。<br>
+第十三条 发行机构发行面值：100元、200元、500元、1000元五种面值的“不记名全时通卡”及不超过5000元面值的“记名全时通卡”。<br>
+<br>
+第三章 使用、退卡、挂失及收费标准<br>
+第十四条购买人凡以现金购买“全时通卡”，购买次日可激活使用；购买人以银行转账方式购买“全时通卡”，须在资金到账后，售卡人方可发卡并激活。<br> 
+第十五条 持卡人申领到“全时通卡”后，应刮开卡片背面覆膜的6位初始支付密码，购买人、持卡人均可通过“全时通卡”网站 www.ohepay.com进行密码修改，并应妥善保管支付密码。<br> 
+第十六条 持卡人在使用“全时通卡”支付时须由本人通过密码键盘自行输入6位密码。持卡人通过电话、网站、手机WAP和手机短信支付的，必须自行输入密码。 <br>
+第十七条 本卡交易时打印的凭证或凭“全时通卡”卡号、密码等电子数据而办理的各项交易所发生的信息记录之一或全部均属于该项交易的有效凭据，均视为购买人本人行为。<br>
+第十八条 “记名全时通卡”持卡人在全时通卡网站www.ohepay.com按照要求登记真实、有效的个人信息，成为网站注册用户后，可获得各类网上购物、查询等服务。 <br>
+第十九条 “全时通卡”不计息，不可透支，不可套取现金。 <br>
+第二十条 持卡人使用“全时通卡”购物后发生退货的，退货金额由商户核实后回退到原“全时通卡”中，退款周期一般为一周。持卡人应妥善保存使用过的“全时通卡”，以备退款时使用。如退货后卡内资金余额超过限额的，可退回持卡人另外持有的“全时通卡”中。<br> 
+第二十一条 办理“全时通卡”，每张卡收取5元工本费。购买人对卡面有特殊要求需单独印制的，制卡费用另行协商确定。 <br>
+第二十二条 使用银行卡购买“全时通卡”，售卡人按购卡金额收取0.8%的服务费。 <br>
+第二十三条 “全时通卡”遗失或被窃时，“全时通卡”的合法持卡人可以通4001758899客服电话办理冻结和挂失，并在办理挂失手续后，申请补卡。补卡手续费15元。具体办理流程详见：附件一“全时通卡”的挂失及补办流程。“不记名全时通卡”不可冻结、挂失与补办。<br> 
+第二十四条 “记名全时通卡”无有效期限制，可以长期使用。“不记名全时通卡”自出售日起由系统设置有效期不少于3年。出售时卡面印制有效期少于3年的，系统自动调整为3年。 <br>
+第二十五条 持卡人应在有效期内使用“不记名全时通卡”。对自购买日起超过3年以上从未消费使用的“全时通卡”，发卡人从第4年第一个月起按季扣取每月1元的账户服务费。对超过有效期的“不记名全时通卡”，发卡人提供网上、客服电话和客服前台人工协助延期3个月的服务，延期服务每次收取“不记名全时通卡”余额的2%、最多不超过5元的服务费。<br> 
+第二十六条 对于因持卡人使用不当或磨损造成“全时通卡”损坏的，发卡人提供换卡服务，换卡手续费15元。对因密码覆膜刮坏无法识别的“全时通卡”，发卡人在审核后，通过手机短信向持卡人发送刮坏部分的密码。 <br>
+第二十七条购买人要求退卡时，应在购卡三个月后至发卡人指定网点申请办理退卡手续，办理退卡的网点应将资金退入原购买人银行账户内，退卡手续费收取卡余额的10%，最低10元。具体办理流程详见：附件二“全时通卡”退卡办理流程。<br> 
+<br>
+第四章 当事人权利、义务<br>
+第二十八条 发行人、发卡人及售卡人的权利<br> 
+（一）售卡网点一旦发现误充值、误发卡、未付款误激活或因为计算机系统故障发生差错，有权采取措施纠正错误。<br> 
+（二）如持卡人利用“全时通卡”从事非法交易的，一经发现有权立即拒绝或取消该持卡人的交易资格。 <br>
+（三）发卡人有权根据具体情况增加、减少或撤消免费增值服务，无须事先征得持卡人同意，但应进行预先公告。 <br>
+（四）发行机构若发现全时通卡为伪造的卡片，或发现刻意侵占持卡人金额的行为，将立刻终止该卡片的所有功能，并追究伪造者或侵占者的法律责任。	<br>
+第二十九条 发行人、发卡人及售卡人的义务 <br>
+（一）发卡人、售卡人应依法对购买人及代理人、持卡人的身份信息和交易信息承担保密义务，除法律另有规定外，不得未经购买人、持卡人同意向任何单位或个人提供。<br> 
+（二）发卡人对“全时通卡”的密码采取计算机单向加密，任何人无权通过系统查看和查询“全时通卡”密码。“全时通卡”持卡人修改密码只能采取密码重置方式，不能查询原密码。发卡人保证工作人员无法直接查看密码，以确保持卡人密码的安全。密码重置办理流程详见：附件三“全时通卡”密码重置流程。<br> 
+（三）发卡人、售卡人有义务按国家有关规定为购买人开具购卡发票。 <br>
+第三十条购买人、持卡人的权利 <br>
+（一）购买人有权要求“全时通卡”售卡人与之签订购卡协议。<br>
+（二）购买人有权知悉“全时通卡”的功能、使用方法、收费项目及标准。<br>
+（三）持卡人对“全时通卡”交易如有疑问，有权在规定时间内向发卡人提出查询或更正要求。 <br>
+（四）除法律另有规定外，购买人、持卡人有权拒绝发卡人、售卡人向第三方提供身份及交易信息。<br>
+第三十一条购买人、持卡人的义务 <br>
+（一）持卡人不得将“全时通卡”用于套现、洗钱等违法行为。<br>
+（二）持卡人未妥善保管保管“全时通卡”，导致“全时通卡”遗失、灭失的，应当自行承担经济损失。<br>
+（三）持卡人对“全时通卡”、密码保管不善，导致他人冒用“全时通卡”造成的经济损失，应当自行承担。<br>
+（四）持卡人不得在发行机构指定场所外的其他场所使用“全时通卡”，持卡人未按约定进行交易造成经济损失的，应当自行承担。<br>
+第五章 其他违约责任、纠纷处理原则<br>
+第三十二条法律、法规以及各种社会公共利益或公共道德，否则将承担所有相应的法律责任；持卡人不得利用“全时通卡”从事非法或不正当的交易，否则将承担一切后果与责任。 <br>
+第三十三条 “全时通卡”业务投诉受理电话为4001758899。购买人、持卡人可通过投诉，解决业务纠纷或提出服务建议。 <br>
+第三十四条 如因履行本章程引发争议且协商不成的，由发行人住所地人民法院解决。 <br>
+<br>
+第六章 附则<br>
+第三十五条本章程未尽事宜按照国家法律、法规、规章及行业惯例执行，如发行机构与购买人另有约定的，遵从双方约定。<br>
+第三十六条 本章程的任何条款如因任何原因而被确认无效，都不影响本章程其他条款的效力。 <br>
+第三十七条 本章程由发行人制定、修改和解释。本章程的修改或调整经“全时通卡”网站、销售网点发布后生效，无须另行通知。修改后的条款对所有当事人具有同等约束力。<br>
+第三十八条 附件中各项业务操作流程作为本章程不可分割的一部分，与本章程具有同等效力。 <br>
+第三十九条 本章程自发布之日起生效。 <br>
+<br>
+<br>
+<br>
+附件一：<br>
+“全时通卡”挂失及解挂流程<br> 
+<br>
+持卡人如遗失“全时通卡”，请“全时通卡”的合法持卡人通过4001758899客服电话办理挂失。具体流程如下：<br> 
+1、持卡人需要向客服提供持卡人姓名、手机号、身份证件号码及“全时通卡”卡号码，客服人员确认无误后，给予登记挂失。<br>
+2、持卡人如不能提供“全时通卡”基本信息的（包括：持卡人的姓名、电话、身份证件号码及“全时通卡”卡号），同时无法提供消费明细、充值情况、充值电话、余额等信息，导致无法确认所挂失卡为持卡人所有的，可暂时冻结卡内余额，但需由持卡人在24小时内与经营公司确认补全“全时通卡”相关信息，如超过24小时未办理，系统将自动解冻，由持卡人承担后果。<br>
+<br>
+<br>
+<br>
+附件二：<br>
+“全时通卡”退卡及补卡办理流程<br> 
+<br>
+1、 购买人要求退卡时，应在购卡三个月后至发卡人指定的网点申请办理退卡手续。<br> 
+2、 持卡人退卡时应当出示“全时通卡”及有效身份证件，由他人代理退卡的，应当同时出示代理人和被代理人的有效身份证件。<br> 
+3、 被指定的网点受理人员应当识别购买人、单位经办人的身份，核对有效身份证件、身份基本信息，由代理人前来办理的还应当核对代理人和被代理人的有效身份证件、身份基本信息；核对购卡单位名称、购卡数量、购卡日期、购卡总金额、记名预付卡卡号及金额。确保与购卡时登记的持卡人或购买人身份信息一致。<br> 
+4、 被指定网点应在系统专用退卡菜单中，按照原购卡各类信息进行退卡操作。 <br>
+5、 预付卡退卡应当使用银行转账方式，由发卡人将退回资金退至原购卡银行账户。用现金购买或原购卡银行账户已撤销的，退回资金应当退至持卡人提供的与购买人同名的单位或个人银行账户。并留存银行账户信息。退卡金额在100元以下的，可以现金支付。<br> 
+7、 办理退卡部门在专用退卡菜单中操作后，系统应生成出退卡支付单，服务台应开通相应查询权限，打印出退卡支付单后交分管领导、财务总监签名审核后，将汇至银行账户的单据流转至资金部付款。 <br>
+8、 指定退卡网点必须保存退卡记录。 <br>
+9、持卡人因遗失挂失或因损坏“全时通卡”而补办或换卡的，需冻结其卡内余额，由持卡人10天内带好有效证件或相关证明、最近一期本人的固定电话账单，到经营公司前台补办“全时通卡”。“全时通卡”一旦确认补办或换卡的，均在二周后领取新卡。补换新卡费用为15元。办卡时需带好本人身份证，如需由他人代领的还需提供代领人身份证件，经客服人员审核后，对个人信息进行复印存档，由申请人签名确认后，领取新卡。申领的新卡须在三个工作日后方可使用。 <br>
+<br>
+<br>
+附件三：<br>
+“全时通卡”密码重置流程<br> 
+<br>
+1、 持卡人如需重置“全时通卡”的消费密码，可在网站自行修改。<br>
+2、 经客服人员审核后，对持卡人信息进行复印存档，在持卡人签名确认后，由持卡人自行重置“全时通卡”消费密码。<br> 
+3、重置的消费密码于1个工作日后方可使用。 <br>
+4、 持卡人如遗忘“全时通卡”网站登陆名密码，可登陆“全时通卡”网站，在“忘记密码”栏目内自行找回。<br> 
+5、 持卡人因注册邮箱失效、注册信息错误等原因无法通过网站“忘记密码”功能找回登录密码的，参照重置消费密码流程，带好证件到商业经营公司前台办理信息更正手续。<br> 
+<br>
+购买人、持卡人在购买和使用“全时通卡”前，已详细阅读本章程，对本章程的全部条款无疑义，并确认本章程涉及的权利义务、责任限制及免责条款的法律含义。<br>
+				</p>
+			</div>				
+		</div>
+	</div>
+	<!-- 卡列表-->
+	<div class="mark" id="markApplyList" style="display:none;z-index:10000;">
+		<div>
+			<span ng-click="closeadd()">×</span>
+			<h4>全时通电子卡列表<br></h4>
+			<label>申请订单号：<b>{{scoorderno}}</b></label>
+			<div class="agreement">
+				<p ng-repeat="item in scoorderList"><i class="SerialNumber">{{item.sequence}}</i>卡号<i class="cardNumber">{{item.cardno}}</i>密码<i class="passNumber">{{item.password}}</i>面值(元)<i class="amount">{{item.amount}}</i>状态<i class="amount">{{item.status}}</i></p>
+			</div>				
+		</div>
+	</div>
+	<!---------------------------------------- 申请记录 ------------------------------->
+	<div class="wrap_main_all wrap_main_all_other" style="display:none" id="applyRecord">
+		<h2>申请记录</h2>
+		<span class="backToApply"><a>返回</a></span>
+		<div class="help trading">
+			<main class="trading_main apply_main">
+				<ul>
+					<li id="listOne">
+						<span>创建时间</span>
+						<span>申请订单号</span>
+						<span>卡片种类</span>
+						<span>张数</span>
+						<span>金额(元)</span>
+						<span>操作</span>
+					</li>
+					<li class="listTwo applyListTwo" ng-repeat="item in applyList">
+						<span class="scocreatetime"></span>
+						<span class="scoorderno">{{item.scoorderno}}</span>
+						<span>{{item.procductName}}</span>
+						<span>{{item.scocardnum  }}</span>
+						<span>{{item.scoamount}}</span>
+						<span><a class="detail">查看</a><a ng-click="todetail()" style="display:none">充值</a></span>
+					</li>
+					<li id='sorry' class="sorry">
+						<p><img ng-src="{{imagesSRC+'remind/jingshi.png'}}"/>抱歉，没有找到符合筛选条件的记录</p>
+					</li>
+				</ul>
+			</main>
+			<footer class="help_footer">
+				<div id="page"></div>
+			</footer>
+		</div>
+	</div>
+</div>
+<div class="mark" id="aSheet" style="z-index:1000;display:none">
+	<div>
+		<span ng-click="close()">×</span>
+		<p class="text" style="height:70px;line-height:20px">
+			您已成功申请1张全时通卡，<br>
+			卡号为 <i class="cardNo"></i>，密码为 <i class="cardPass"></i><br>
+			发票取票地址为<br>
+			<i class="cardAdd">北京市朝阳区东三环北路甲26号博瑞大厦B座6层</i>
+		</p>
+		<p class="change" ng-click="change()"><a>确定</a></p>
+	</div>			
+</div>
+<div class="mark" id="sheets" style="z-index:1000;display:none">
+	<div>
+		<span ng-click="close()">×</span>
+		<p class="text" style="height:70px;line-height:20px">
+			您已成功申请<i class="sheetNum"></i>张全时通卡  <label style="color:#EA5532;cursor:pointer;">查看详情</label><br>
+			发票取票地址为<br>
+			<i class="cardAdd">北京市朝阳区东三环北路甲26号博瑞大厦B座6层</i>
+		</p>
+		<p class="change" ng-click="change()"><a>确定</a></p>
+	</div>			
+</div>
+

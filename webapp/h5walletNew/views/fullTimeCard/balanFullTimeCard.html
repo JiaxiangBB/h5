@@ -1,0 +1,18 @@
+<!--全时通卡余额 页面-->
+<ion-view title="全时通卡余额" id="balanFullTimeCard-view">
+	<ion-nav-buttons side="right">
+      <button class="button button-light home-view-button" ng-click="showDelFullCard()">
+        <i class="ion-ios-more"></i>
+      </button>
+    </ion-nav-buttons>
+	<ion-content>
+		<div class="card">
+			<img class="balanFullTimeCardImg">
+			<p class="cardNum">{{fullCardNo}}</p>
+			<p class="balance">全时通卡余额（元）</p>
+			<p class="balanceNum">{{aifavabalance}}</p>
+			<p class="balanceSub" ng-click="toRechfullTimeCard()">充值</p>
+		</div>
+		<p class="transDetail" ng-click="fullCardTraDetailsFun()">交易明细</p>
+	</ion-content>
+</ion-view>

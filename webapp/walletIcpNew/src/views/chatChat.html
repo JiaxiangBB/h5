@@ -1,0 +1,30 @@
+<main class="busMain">
+	<div class="loginContent">
+		<div class="chat_box">
+			<dl class="deliveryDetails"  ng-repeat="item in chatDataNum" ng-if="$index<=8">
+				<dt>
+					<img ng-src="{{item.shopImg}}">
+				</dt>
+				<dd class="" style="display:block;">
+					<h4>{{item.shopTitle}}</h4>
+					<p>价格：<i>¥</i><span>{{item.shopPrices}}</span></p>
+					<p>数量：<b>1</b></p>
+				</dd>
+			</dl>
+			<div class="orderDetails" style="display:block;">
+				<p class="amount">小计（ 1 件商品）：<i>¥</i><span>{{shopDinks[0].shopPrices}}</span></p>
+				<p class="totalAmount setCenter"><input id="chatChat" type="button" value="计入结算中心"></p>
+			</div>
+		</div>
+		<br/>
+		<div class="main_title main_title06"></div>
+		<ul class="main_shopList">
+			<li ng-repeat="item in chatDataNum" ng-if="$index<=2">
+            <img ng-src="{{item.shopImg}}">
+            <h4 ui-sref="detailsPage"><a>{{item.shopTitle}}</a></h4>
+            <p><i>¥</i><span>{{item.shopPrices}}</span></p>
+        </li>
+	</ul>
+	</div>
+</main>
+			

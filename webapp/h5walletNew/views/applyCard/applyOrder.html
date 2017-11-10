@@ -1,0 +1,36 @@
+<ion-view title="订单详情" id="billingDetails-view" cache-view="false">
+	<ion-content>
+		<div class="paymentConfirm applyOrder">
+			<h2>
+				<span>总金额</span>
+				<img src="">
+				<i>1000.00</i>
+			</h2>
+			<ul>
+				<li>
+					<p>时间</p>
+					<span>{{time}}</span>
+				</li>
+				<li>
+					<p>卡种</p>
+					<span>电子卡</span>
+				</li>
+				<li>
+					<p>卡面额</p>
+					<span>{{money}}元</span>
+				</li>
+				<li>
+					<p>购买数量</p>
+					<span>{{number}}张</span>
+				</li>
+				<li ng-show={{invoiceJudge}}>
+					<p>发票抬头</p>
+					<span>{{dillName}}</span>
+				</li>
+			</ul>
+			<p class="modify" ng-click="modify()">去修改</p>
+			<button class="applyPay">立即支付</button>
+		</div>
+	</ion-content>
+</ion-view>
+

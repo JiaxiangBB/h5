@@ -1,0 +1,29 @@
+<main class="busMain">
+	<div class="loginContent">
+		<div class="chat_box">
+			<dl class="deliveryDetails">
+				<dt>
+					<img id="joinChatimg" ng-src="{{shopDinksData.shopImg}}">
+				</dt>
+				<dd class="" style="">
+					<p class="joinChat"><img ng-src="{{shopDinksData.shopImgSuo[1].ImgSuo02}}">商品已加入购物车</p>
+				</dd>
+			</dl>
+			<div class="chatDetails" style="">
+				<p class="amount">购物车小计（ 1 件商品）：<i>¥</i><span>{{shopDinksData.shopPrices}}</span></p>
+				<p class="totalAmount shopCat"><input id="jionChat" type="button" value="去购物车结算"></p>
+			</div>
+		</div>
+		<br/>
+		<div class="main_title main_title06"></div>	
+		<ul class="main_shopList">
+			<li ng-repeat="item in dinks" ng-if="$index<=2">
+				<img ng-src="{{item.shopImg}}">
+				<h4><a ui-sref="detailsPage">{{item.shopTitle}}</a></h4>
+				<p><i>¥</i><span>{{item.shopPrices}}</span></p>
+			</li>
+		</ul>
+	</div>
+
+</main>
+			

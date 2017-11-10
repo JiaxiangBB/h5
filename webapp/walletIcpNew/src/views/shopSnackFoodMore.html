@@ -1,0 +1,22 @@
+<div class="mainList">
+    <div class="main_banner">
+        <div id="banner">
+            <div id="full-screen-slider">
+                <ul id="slides" ng-init="slidesLi()">
+                    <li style="background:url('../build/img/first/icon-banner1.png') no-repeat center top"><a href="#" target="_blank"></a></li>
+                    <li style="background:url('../build/img/first/icon-banner2.png') no-repeat center top"><a href="#" target="_blank"></a></li>
+                    <li style="background:url('../build/img/first/icon-banner3.png') no-repeat center top"><a href="#" target="_blank"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main_title main_title02">
+    </div>
+    <ul class="main_shopList">
+        <li ng-repeat="item in shopSnackFood">
+            <img ng-src="{{item.shopImg}}">
+            <h4><a>{{item.shopTitle}}</a></h4>
+            <p><i>¥</i><span>{{item.shopPrices}}</span></p>
+        </li>
+    </ul>   
+</div>
