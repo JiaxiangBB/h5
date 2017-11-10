@@ -1,0 +1,41 @@
+*{margin:0;padding:0;}
+img{border:0;}
+h1,h2,h3,h4,h5,h6,p {font-size: 100%;    -webkit-margin-before: 0px;-webkit-margin-after: 0px;-webkit-margin-start: 0px;-webkit-margin-end: 0px;font-weight:normal;}
+html,body{width:100%;height:100%;overflow:hidden;font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+     "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+     SimSun, sans-serif;}
+body{position:relative;}
+.guide{width:100%;height:100%;position:relative;overflow-y:scroll;overflow-x:hidden;}
+/* .mark{position: absolute;width: 100%;height: 100%;background: rgba(0,0,0,0.8);z-index: 100; }
+.mark_img{position: absolute;width: 165px;height:auto;right: 0;top:50px;z-index: 101;}
+.mark_img img{width: 100%;height: auto;}
+.closs{position: absolute;width: 27px;height: 27px;border-radius: 50%;right: 19px;top: 135px;z-index: 102;} */
+
+header{width:100%;height:50px;position: relative;
+	background: -moz-linear-gradient(top, #101013 1%, #2C2D31 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#101013), color-stop(100%,#2C2D31));
+    background-image: background: -webkit-linear-gradient(#101013 1%, #2C2D31 100%);
+    background-image: background: -o-linear-gradient(#101013 1%, #2C2D31 100%);
+    background-image: background: linear-gradient(#101013 1%, #2C2D31 100%);
+    background: -o-linear-gradient(top, #101013 1%,#2C2D31 100%);
+    background: -ms-linear-gradient(top, #101013 1%,#2C2D31 100%);
+    background: linear-gradient(to bottom, #101013 1%,#2C2D31 100%);
+}
+header p{position: absolute;top:0;color:#fff;height:50px;line-height: 50px;font-family: "宋体"}
+.h_left{left:10px;}
+.h_left span{margin-right: 5px;font-size: 23px;}
+.h_right{right: 10px;}
+.h_right i{display:inline-block;border-radius:50%;border:3px solid #fff;margin-right: 3px;}
+
+.main{width: 100%;height: auto;}
+.m_top{width: 100%;height: 72px;background:#fff;position: relative;}
+.m_top img{width: 132px;height: auto;margin: 24px 0 0 24px;}
+.m_top span{position: absolute; width:100px;height: 13px;font-size: 14px;color:  #E95532;top:35px;left: 168px;}
+.m_middle,.m_bottom{width: 100%;height:auto;}
+.m_middle img{width: 100%;height: auto;}
+.m_bottom p{width: 100%;height: auto;text-align: center;}
+.m_bottom img{width: 180px;height: auto;margin-top: 24px;}
+
+.footer{width: 100%;height: 143px;margin-top: 44px;}
+.footer h2{margin-left: 23px;font-size: 16px;color: #333;height: 15px;line-height: 15px;width: 135px;font-weight: bold;}
+.footer p{margin: 8px 24px 0 24px;font-size: 14px;color: #333;}
