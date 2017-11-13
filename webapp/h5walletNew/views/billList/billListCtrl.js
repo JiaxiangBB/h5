@@ -199,7 +199,7 @@ function billListCtrl($scope,$stateParams,$http,$state,$ionicHistory,$ionicModal
 			}else if(orderSerialNo=="手机充值"){
 				$scope.img=imgRrc+"h5images/icon_shoujirecharge"+variable+".png";
 				$scope.transactionType="手机充值";
-			}else if(orderSerialNo=="83"){
+			}else if(orderSerialNo=="83" || orderSerialNo=="手机流量充值"){
 				$scope.img=imgRrc+"h5images/icon_shoujirecharge"+variable+".png";
 				$scope.transactionType="手机流量充值";
 			}else if(orderSerialNo=="生活缴费"){

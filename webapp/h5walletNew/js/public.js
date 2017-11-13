@@ -12,17 +12,16 @@ function adaptedText(){
 adaptedText();
 ////////////////////////////////////
 function getRootPath(){   
-    // var pathName = window.location.pathname.substring(1);   
-    // var webName = pathName == '' ? '' : pathName.substring(0, pathName.indexOf('/'));  
-    // var str=window.location.host;
-    // var rootPath;
-    // if(str.substr(str.length-1,1)=="m"){
-    //     rootPath = window.location.protocol + '//' + str;
-    // }else{
-    //   rootPath = window.location.protocol + '//' + str + '/'+ 'service';
-    // }
-    // return  rootPath;
-    return window.location.protocol + '//' + window.location.host;
+    var pathName = window.location.pathname.substring(1);   
+    var webName = pathName == '' ? '' : pathName.substring(0, pathName.indexOf('/'));  
+    var str=window.location.host;
+    var rootPath;
+    if(str.substr(str.length-1,1)=="m"){
+        rootPath = window.location.protocol + '//' + str;
+    }else{
+      rootPath = window.location.protocol + '//' + str + '/'+ 'service';
+    }
+    return  rootPath;
 };
 /////////////////////////////////
 //输入支付密码动画
@@ -61,7 +60,7 @@ function getNowFormatDate(getFullYear) {
     if (strDate >= 0 && strDate <= 9) {
         strDate = "0" + strDate;
     }
-    var currentdate = getFullYear + month + strDate;
+    var currentdate = getFullYear.toString() + month + strDate;
     return currentdate;
 }
 //获取参数
